@@ -3,12 +3,38 @@
 **[Live demo](https://daithishan.github.io/milestoneproject1/)**
 
 ## Index
+---
 
+<span id="top"></span>
 
+## Index
+
+- <a href="#context">Context</a>
+- <a href="#project-goals">Project Goals</a>
+- <a href="#ux">User Experience</a>
+- <a href="#ux-stories">User stories</a>
+- <a href="#design">Design</a>
+  - <a href="#inspiration">Inspiration</a>
+  - <a href="#color">Color Scheme</a>
+  - <a href="#type">Typography</a>
+  - <a href="#imagery">Imagery</a>  
+- <a href="#wireframes">Wireframes</a>
+- <a href="#features">Features</a>
+  - <a href="#features-current">Current</a>
+  - <a href="#features-future">Future</a>
+- <a href="#credits">Credits</a>
+
+---
+
+<span id="context"></span>
 
 ## Context
 
-Space Ambush is a mini game developed as part of a fundraising strategy for The Mater Foundation, the official charity of The Mater Public Hospital. Space ambush is a form of rich content for the charity's subscriber list, and redirects at different points to the donation page for the hospital. It's based off Whack-A-Mole, formerly an extremely popular arcade and today browser based game type, which tests the players reflexes by challenging them to hit multiple disappearing targets within a set time limit. 
+Space Ambush is a mini game developed as part of a fundraising strategy for The Mater Foundation, the official charity of The Mater Public Hospital. Space ambush is a form of rich content for the charity's subscriber list, and redirects at different points to the donation page for the hospital. It's based off Whack-A-Mole, formerly an extremely popular arcade and today browser based game type, which tests the players reflexes by challenging them to hit multiple disappearing targets within a set time limit.
+
+---
+
+<span id="project-goals"></span>
 
 ## Project Goals
 
@@ -16,8 +42,10 @@ Space Ambush is a mini game developed as part of a fundraising strategy for The 
 
 2. To generate donations for The Mater Foundation through new and return visits and playthroughs of the game from existing and potentially also from new supporters.
 
-## User Experience (UX)
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
+## User Experience (UX)
+<span id="ux"></span>
 ### Overview
 
 This mini game has been designed to streamline the visitor's path to play, and funnel players towards The Mater Foundation's donation page.
@@ -57,31 +85,42 @@ This mini game has been designed to streamline the visitor's path to play, and f
 3. Capture useful feedback including bug reports and feature suggestions
 4. Generate buzz around this mini game on social media to raise awareness
 
-### Design
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
-#### Design Choices - Inspirations
+### Design
+<span id="design"></span>
+
+#### Project Inspiration
+<span id="inspiration"></span>
+#### Yellowbelly Beer Branded Minigame - Hop Rocket
 
 The major inspiration for this mini game (also listed in credits) is from an Irish craft beer company that developed a video game as part of their outbound marketing [Hop Rocket by Yellowbelly Beer](https://www.youtube.com/watch?v=i7G-gFBJzVk)
+
+![Hop Rocket by Yellowbelly](./assets/images/design-choices/brand-minigame.png)
 
 While this game is no longer available for play, it was an inspired way of engaging potential customers beyond the world of product shots, and behind-the-scenes marketing.
 
 The craft beer company had minimum impact on Space Ambush in terms of functionality and presentation, but a big impact in terms of design concept.
 
-![Mater Foundation Original Home Page](./mater-foundation/assets/images/materfoundation-original.jpg)
+#### Dovile Krasnickaite - Whack-A-Monster
 
 The other major inspiration for this project was from a fellow student from the Code Institute diploma. Their name is Dovile Krasnickaite, and their project was similarly based on the Whack-A-Mole game.
 
+![Dovile Krasnickaite - Whack-A-Monster](./assets/images/design-choices/whack-a-monster.png)
+
 Their project showed how great user experience could revitalise a game from 1970s arcades.
 
-![RNLI Home Page Hero Image](./mater-foundation/assets/images/rnli-hero.jpg)
+#### Memory Improvement Tips - Whack-Em-All
 
 A further inspiration came from Memory Improvement Tips and their browser version of Whack-A-Mole; especially in terms of game logic and game rule designs.
 
+![Memory Improvement Tips - Whack-Em-All](./assets/images/design-choices/whack-em-all.jpg)
+
 I loved how they introduce a penalty click with the mole-bomb, and force the user to make choices between different, simultaneously appearing moles on the basis of scopre points.
 
-https://www.memory-improvement-tips.com/whack-a-mole-game-window.html
 
 #### Color Scheme
+<span id="color"></span>
 
 - The theme of the game is futuristic, alien fun and quick reflexes. So the color palette includes bright, vibrant colors to promote light entertainment and good eye-hand coordination.
 
@@ -107,21 +146,33 @@ https://www.memory-improvement-tips.com/whack-a-mole-game-window.html
 The Space Ambush color palette listed above is derived from digital assets designed by artist Robert Brooks, and purchased with Pro License on https://www.gamedevmarket.net
 
 #### Typography
+<span id="type"></span>
 - Roboto Slab is the main body font used throughout the website, with Sans-Serif as the fallback font. The thick cut, futuristic design helps create the setting for this arcade-based, space game.
 
 - Exo 2 is used for headings, and is similarly a thick cut, futuristic font. Perfect for a slightly retro-arcade, space game feel!
 
 #### Imagery
+<span id="imagery"></span>
 
 - All digital assets used in this 2D Whack-A-Mole game were originally designed by Robert Brooks, and purchased with Pro Liense on https://www.gamedevmarket.net
 
 - These assets have been revised in Adobe Illustrator to remove the appearance of facing sideways, and to provide Whack-A-Mole style animations!
 
-## Features
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
-<span id="features-current"></span>
+### Wireframes
+<span id="wireframes"></span>
+
+
+https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0
+
+
+## Features
+<span id="feature"></span>
 
 ### Current
+<span id="features-current"></span>
+
 
 **1. Menu screens**
 
@@ -140,9 +191,9 @@ The Space Ambush color palette listed above is derived from digital assets desig
 
 **3. Scoreboard and Use of Cookies**
 
-The player's nickname and high scores are saved to their local storage and will display on the scoreboard on return to game, providing cookies are not deleted.
+- The player's nickname and high scores are saved to their local storage and will display on the scoreboard on return to game, providing cookies are not deleted.
 
-A player will not be actively asked to make a donation after they are first asked at the end of their first playthrough, but the donate button in nav bar will remain as a passive ask on the home screen and game over screen.
+- A player will not be actively asked to make a donation after they are first asked at the end of their first playthrough, but the donate button in nav bar will remain as a passive ask on the home screen and game over screen.
 
 **4. Score Generated Comments**
 
@@ -150,7 +201,7 @@ A player will not be actively asked to make a donation after they are first aske
 
 **5. Visual effects**
 
-EVery time a player makes a menu choice, clicks on an alien monster, or fails to click on a monster in time a visual effect is programmed as a result. Monsters turn red when they attack, and yellow when they're hit, and a modal generates when the game is over. At every stage of user experience, visual effects are used to give feedback.
+- Every time a player makes a menu choice, clicks on an alien monster, or fails to click on a monster in time a visual effect is programmed as a result. Monsters turn red when they attack, and yellow when they're hit, and a modal generates when the game is over. At every stage of user experience, visual effects are used to give feedback.
 
 **7. Responsive/intuitive input**
 
@@ -159,8 +210,6 @@ EVery time a player makes a menu choice, clicks on an alien monster, or fails to
 - When the game loses focus (e.g. when the player clicks on another browsing tab or switches apps), it pauses to prevent a frustrating end to the game.
 
 **8. Audio**
-
-The Web Audio API (via HowlerJS) provides reliable, lag-free sound effects on all devices.
 
 
 **9. Minigame Marketing**
@@ -171,58 +220,26 @@ The Web Audio API (via HowlerJS) provides reliable, lag-free sound effects on al
 
 - Returning players will not be actively solicited for further donations, but the donate button will remain as a passive ask in nav bar on home page and game over screen.
 
-- The core game (including the current score and high score) exists entirely in an HTML canvas element and could appear as a standalone element in another environment. Allowing it for closer integration with the main charity website, and for it to be used on charity partner websites!
-
-**10. Object Oriented Programming**
-
-To improve the syntax of the code, Object Oriented Programming has been used as far as possible. The game is built with the following objects:
-
-| Object     | Role                                                                                                                        |
-| :--------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| gameCanvas  | Handles the canvas and its resizing                                                                                         |
-| Snake      | Constructor to handle the snake's location, trajectory and size                                                             |
-| Food       | Constructor to handle the food's location                                                                                   |
-| Spark      | Constructor to handle spark generation and randomisation (separate functions handle the spark array population and updates) |
-| Game       | Handles game state changes, DOM element styling, game settings, collision detection, move validity and updates              |
-| Stopwatch  | Handles game time played (used only for stats updates)                                                                      |
-| Stats      | Handles local storage of statistics                                                                                         |
-| Scoreboard | Handles session scores and the score award text passed to the DOM                                                           |
-
-**11. Customisation**
-
-Rather than being hard-coded, visual and gameplay variables have been extracted to facilitate tweaks to the look and feel of the game. This enables much easier customisation on the developer's part.
-
+### Future
 <span id="features-future"></span>
 
-### Future
+**Leaderboard**
 
-**Improved score-keeping system**
+- Recording scores from different players on an overall leaderboard, which would add considerably to replayability value.
 
-- Recording walls on/off and game speed alongside scores. After all, 200 points on slow with no walls is less of an achievement than 200 on fast with walls enabled
+**Add Level Selection to Game Options**
 
-**Online leaderboard**
-
-- A global/regional leaderboard to give a true sense of competition
-
-**Gameplay modes/customisation**
-
-- Special food changing playstyle - e.g. speed, points multiplier, extra food objects, altering size of snake body
-- Different game modes - e.g. obstacles within the play area, a maze
-- Graphical options - e.g. choice of snake colour, themes, particle effects
-
-<div align="right"><a style="text-align:right" href="#top">Go to index :arrow_double_up:</a></div>
-
-<span id="technologies"></span>
+- Different alien planet with differently patterned ambushes, and aliens.
+- The primary difference would be graphical, adding to ease of implementation.
 
 ## Technologies Used
+<span id="tech"></span>
 
 ### Languages
 
 - HTML
 - CSS
 - Javascript
-  - [HammerJS](https://hammerjs.github.io/) - mobile gesture recognition for responsive controls
-  - [HowlerJS](https://howlerjs.com/) - handling of audio elements using Web Audio API
 
 ### Project management
 
@@ -232,76 +249,13 @@ Rather than being hard-coded, visual and gameplay variables have been extracted 
 
 ### Style and theme
 
-- [Autoprefixer](https://autoprefixer.github.io/) - a PostCSS plugin which parses CSS and adds vendor prefixes
-- [Favicon & App Icon Generator](https://www.favicon-generator.org/) - to generate the game's favicons for a variety of devices
-- [Google Fonts](https://fonts.google.com/) - Eso 2 and Roboto
+- [Google Fonts](https://fonts.google.com/) - Exo 2 and Roboto
 - [Game Developer Market](https://www.gamedevmarket.net) - Digital assets including original virus monster and alien planet artwork
 
+
+## README TEMPLATE FROM MS1
+
 ### Online resources
-
-- [FreeConvert](https://www.freeconvert.com/) - to convert audio file types
-- [Am I Responsive?](http://ami.responsivedesign.is/) - to produce the README showcase image
-
-### Wireframes
-
-- #### Mobile Home Page Wireframe
-
-![Mobile Home Page Wireframe](./mater-foundation/wireframes/mobile-homepage.jpg)
-
-- #### Tablet Home Page Wireframe
-
-![Tablet Home Page Wireframe](./mater-foundation/wireframes/tablet-homepage.jpg)
-
-- #### Desktop Home Page Wireframe
-![Desktop Home Page Wireframe](./mater-foundation/wireframes/desktop-homepage.jpg)
-
-
-## Features
-
-### General Features
-
-- Responsive on all devices, so users get the best, tailored experience for the specific way they access the website.
-- Clearly interactive pages so that users know what actions to take, and how to take them, at every point 
-
-### Button Styled Links
-
-- Page links like Read More and Volunteer are styled as big buttons so users clearly see them, and can easily tap them on mobile devices, to go to the appropriate page.
-
-### Volunteer Form
-
-- The volunteer form allows users to input contact information, and make a selection between different areas of volunteering, so they can note their preference.
-- All input fields apart from the checkbox are required, so users can avoid partial, incomplete submission of details.
-- The submit button provides user feedback for hover, and click, so they know an action has been taken.
-
-### Newsletter Modal
-
-- The newsletter sign up modal is a quick pop up, allowing the user to input their details, and join our mailing list.
-- The submit button provides user feedback for hover, and click, so they know an action has been taken.
-
-### Content Loops
-
-- Each news or patient story is separately hosted but links to another, similar story, so interested users can continue to read clearly communicated content.
-
-### Downloadable Content and External Links
-
-- Downloadable content on the About Us page, and in the footer, opens in a separate tab so the user can read it later at leisure without interrupting their visit.
-
-## Features left to implement
-
-### Donation Functionality
-
-- A donation function is planned for later roll outs. It would work through use of a button styled link and form similar to the existing volunteer functionality would be enabled on the website. This would allow users to support the Mater Foundation through a once off or regular donation.
-
-### Confirmation Emails for Volunteer Sign-Up, Newsletter Sign-Up
-
-- Further to the user feedback elements that exist, a confirmation email feature is planned for later roll outs. It would be linked to submission of both the volunteer form, and the newsletter sign up form, and would trigger an email confirmation to users who've submitted so that they know their submission was received.
-
-## Technologies used
-
-### Languages used
-
-* HTML
-* CSS
 
 ### Frameworks, Libraries and Programs used
 
