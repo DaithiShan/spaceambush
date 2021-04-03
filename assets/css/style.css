@@ -1,1 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&family=Roboto+Slab:wght@300;400&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&family=Roboto+Slab:wght@300;400&display=swap");
+
+/* Top Level General Formatting */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* Game Area */
+
+.game-area {
+  width: 80%;
+  height: 80%;
+  background-size: contain;
+  background-image: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/game-assets/desktop-board.jpg");
+  overflow: hidden;
+}

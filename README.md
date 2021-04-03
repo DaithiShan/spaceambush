@@ -96,7 +96,7 @@ Space Ambush has been designed for quick play, while using local storage for rep
 
 The major inspiration for this mini game (also listed in credits) is from an Irish craft beer company that developed a video game as part of their outbound marketing [Hop Rocket by Yellowbelly Beer](https://www.youtube.com/watch?v=i7G-gFBJzVk)
 
-![Hop Rocket by Yellowbelly](./assets/images/design-choices/brand-minigame.png)
+![Hop Rocket by Yellowbelly](./assets/influences/brand-minigame.png)
 
 While this game is no longer available for play, it was an inspired way of engaging potential customers beyond the world of product shots, and behind-the-scenes marketing.
 
@@ -106,7 +106,7 @@ The craft beer company had minimum impact on Space Ambush in terms of functional
 
 The other major inspiration for this project was from a fellow student from the Code Institute diploma. Their name is Dovile Krasnickaite, and their project was similarly based on the Whack-A-Mole game.
 
-![Dovile Krasnickaite - Whack-A-Monster](./assets/images/design-choices/whack-a-monster.png)
+![Dovile Krasnickaite - Whack-A-Monster](./assets/influences/whack-a-monster.png)
 
 Their project showed how great user experience could revitalise a game from 1970s arcades.
 
@@ -114,7 +114,7 @@ Their project showed how great user experience could revitalise a game from 1970
 
 A further inspiration came from Memory Improvement Tips and their browser version of Whack-A-Mole; especially in terms of game logic and game rule designs.
 
-![Memory Improvement Tips - Whack-Em-All](./assets/images/design-choices/whack-em-all.jpg)
+![Memory Improvement Tips - Whack-Em-All](./assets/influences/whack-em-all.jpg)
 
 I loved how they introduce a penalty click with the mole-bomb, and force the user to make choices between different, simultaneously appearing moles on the basis of scopre points.
 
