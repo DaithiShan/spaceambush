@@ -51,41 +51,36 @@
         <!-- Game Area -->
         <!-- Gameboard influenced by Frank's Labratory: https://www.youtube.com/watch?v=RTb8icFiSfk -->
 
-        <div id="game-container">
-            <div class="controls">
-                <div>
-                    <div>
-                        <h5>Time: <span id="countdown">0</span></h5>
+        <div id="game-container container-fluid">
+            <div class="game-area">
+                <div class="ingame-menu">
+                        <div class="score-container">
+                            <h5>Score: <span id="score">0</span></h5>
+                        </div>
+                        <div class="time-container">
+                            <h5>Time: <span id="countdown">0</span></h5>
+                        </div>
+                        <div class="controls-container">
+                            <button><i class="fas fa-info"></i></button>
+                            <button><i class="fas fa-volume-up"></i></button>
+                             <button><i class="fas fa-times"></i></button>
+                        </div>
+                </div>
+                <div id="game-board">
+                    <div class="plant plant-one">
+                        <div class="alien-one"></div>
                     </div>
-                    <div>
-                        <h5>Score: <span id="score">0</span></h5>
+                    <div class="plant plant-two">
+                        <div class="alien-one"></div>
                     </div>
-                </div>
-                <div class="sound">
-                    <button></button>
-                </div>
-                <div class="pause">
-                    <button></button>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="game-area">
-                    <div id="game-board">
-                        <div class="plant plant-one">
-                            <div class="alien-one"></div>
-                        </div>
-                        <div class="plant plant-two">
-                            <div class="alien-one"></div>
-                        </div>
-                        <div class="plant plant-three">
-                            <div class="alien-one"></div>
-                        </div>
-                        <div class="plant plant-four">
-                            <div class="alien-one"></div>
-                        </div>
-                        <div class="plant plant-five">
-                            <div class="alien-one"></div>
-                        </div>
+                    <div class="plant plant-three">
+                        <div class="alien-one"></div>
+                    </div>
+                    <div class="plant plant-four">
+                        <div class="alien-one"></div>
+                    </div>
+                    <div class="plant plant-five">
+                        <div class="alien-one"></div>
                     </div>
                 </div>
             </div>
