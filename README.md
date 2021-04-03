@@ -30,7 +30,7 @@
 
 ## Context
 
-Space Ambush is a mini game developed as part of a fundraising strategy for The Mater Foundation, the official charity of The Mater Public Hospital. Space ambush is a form of rich content for the charity's subscriber list, and redirects at different points to the donation page for the hospital. It's based off Whack-A-Mole, formerly an extremely popular arcade and today browser based game type, which tests the players reflexes by challenging them to hit multiple disappearing targets within a set time limit.
+Space Ambush is a mini game developed for marketing purposes. It's part of a fundraising strategy for The Mater Foundation, the official charity of The Mater Public Hospital. A mini game can be a form of rich content for your subscriber list, and Space Ambush redirects at different points to the donation form for The Mater Foundation. It's based off Whack-A-Mole, an extremely popular arcade and today browser-based game, which tests your reflexes by challenging you to hit multiple disappearing targets within a set time limit.
 
 ---
 
@@ -38,9 +38,9 @@ Space Ambush is a mini game developed as part of a fundraising strategy for The 
 
 ## Project Goals
 
-1. To positively engage the subscriber list of The Mater Foundation with a new, fun and unexpected form of outbound marketing - the branded mini game!
+1. To positively engage and entertain the subscriber list of The Mater Foundation with something unexpected.
 
-2. To generate donations for The Mater Foundation through new and return visits and playthroughs of the game from existing and potentially also from new supporters.
+2. To generate donations for The Mater Foundation through new and return visits to this mini game, Space Ambush.
 
 <div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
@@ -48,7 +48,7 @@ Space Ambush is a mini game developed as part of a fundraising strategy for The 
 <span id="ux"></span>
 ### Overview
 
-This mini game has been designed to streamline the visitor's path to play, and funnel players towards The Mater Foundation's donation page.
+Space Ambush has been designed for quick play, while using local storage for repeat visits. The idea is also to funnel players towards The Mater Foundation's donation form.
 
 - Mobile-first
 - Streamlined
@@ -68,9 +68,9 @@ This mini game has been designed to streamline the visitor's path to play, and f
 
 -  #### As a returning visitor, I want to:
 
-1. See my old score and beat it, without having to write yet another password
-2. Choose higher difficulties, and find them genuinely more challenging
-3. See a path to skipping the redirect to charity website if I've already donated 
+1. See my old score and beat it
+2. Choose higher difficulties, and experience genuinely harder gameplay
+3. See a path to skipping the exit redirect to the donation form if I've already donated 
 
 -  #### As a frequent visitor, I want to: 
 
@@ -80,7 +80,7 @@ This mini game has been designed to streamline the visitor's path to play, and f
 
 -  #### As the charity benefiting from this mini game, I want to 
 
-1. Tie the game's premise to the charity mission, without boring the user
+1. Tie the game's premise to the charity mission, without boring the player
 2. Drive donations from players through the official charity website
 3. Capture useful feedback including bug reports and feature suggestions
 4. Generate buzz around this mini game on social media to raise awareness
