@@ -22,7 +22,6 @@ body {
   width: 90%;
   height: 90%;
   background-size: contain;
-  background-image: no-repeat;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,6 +112,10 @@ body {
 .alien-one.big {
     left: 55%;
     background-size: 105%;
+}
+
+.plant.up .alien-one {
+    top: 0;
 }
 
 /* End of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
