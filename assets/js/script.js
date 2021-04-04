@@ -23,7 +23,7 @@ function pickRandomPlant(plants) {
 }
 
 function ambush() {
-    const popOutTime = Math.random() * 1300 + 400;
+    const popOutTime = Math.random() * 1300 + 600;
     const plant = pickRandomPlant(plants);
     plant.classList.add("up");
     setTimeout(() => {
@@ -36,26 +36,21 @@ function ambush() {
 
 function playGame() {
     timer = timeLimit/1000;
+    score = 0;
     scoreDisplay.textContent = 0;
     timerDisplay.textContent = timer;
     timeUp = false;
-    score = 0;
     ambush();
-    function isTimeUp() {
-    if (countdown <= 0) {
-      timeUp = true;
-    } else {
-    setTimeOut(()=>setTimeout(isTimeUp, timer * 1000));
-    }
-  }
-
-  setTimeout(isTimeUp, timeLimit);
+    setTimeout(()=>{
+        timeUp = true;
+    }, timeLimit)
 
     let startTimer = setInterval(()=>{
         timer -= 1;
         timerDisplay.textContent = timer;
         if (timer < 0) {
             timer = 0;
+            timerDisplay.textContent = "Time's Up!"
             clearInterval(startTimer);
         }
     }, 1000);
