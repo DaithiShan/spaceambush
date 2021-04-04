@@ -64,10 +64,10 @@ body {
 }
 
 /* Plants and Aliens or Moles and Holes */
-/* Customized holes & moles snippet from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
+/* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     flex: 1 0 33.33%;
     position: relative;
     overflow: hidden;
@@ -82,12 +82,37 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     width: 100px;
     height: 100px;
 }
 
 .plant-forward:after {
     width: 130px;
-    height: 130px;
+    height: 110px;
 }
+
+.alien-one {
+  background-image: url("../images/game-assets/alien-one.svg");
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  top: 100%;
+  width: 90px;
+  height: 160px;
+  transition: 0.3s;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 3;
+}
+
+.alien-one.small {
+    background-size: 90%;
+}
+
+.alien-one.big {
+    left: 55%;
+    background-size: 105%;
+}
+
+/* End of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
