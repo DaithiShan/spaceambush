@@ -11,6 +11,10 @@ let timeLimit = 30000;
 let score = 0;
 let timer;
 
+function randomAmbush(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
 function pickRandomPlant(plants) {
     const randomPlant = Math.floor(Math.random() * plants.length);
     const plant = plants[randomPlant];
@@ -23,7 +27,7 @@ function pickRandomPlant(plants) {
 }
 
 function ambush() {
-    const popOutTime = Math.random() * 1300 + 600;
+    const popOutTime = randomAmbush(1400, 700);
     const plant = pickRandomPlant(plants);
     plant.classList.add("up");
     setTimeout(() => {
