@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto Slab", sans-serif;
     font-weight: 400;
     padding: 0;
     margin: 0;
@@ -19,8 +19,8 @@ body {
 /* Game Area + Board */
 
 .game-container {
-  width: 85%;
-  height: 80%;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   margin: 0;
   background-size: cover;
@@ -49,14 +49,15 @@ body {
 .time-container {
  
     flex: 1;
-
+    font-family: "Exo 2", sans-serif;
 }
 
 #game-board {
     border: 2px solid black;
-    width: 70%;
-    height: 66%;
-    margin: 10% auto;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 33vh auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     z-index: 2;
@@ -66,6 +67,7 @@ body {
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
+    border: 3px solid red;
     flex: 1 0 33.33%;
     position: relative;
     overflow: hidden;
@@ -76,18 +78,17 @@ body {
     display: block;
     background-image: url("../images/game-assets/plant.svg");
     bottom: 0;
-    left: 50%;
+    left: 25%;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 4;
-    width: 90%;
-    height: 80px;
+    width: 80%;
+    height: 66%;
 }
 
 .plant-forward:after {
-    width: 100%;
-    height: 90px;
+    left: 33%;
 }
 
 .alien-one {
@@ -96,7 +97,7 @@ body {
   left: 43%;
   bottom: 0;
   top: 100%;
-  width: 100px;
+  width: 105px;
   height: 170px;
   transition: 0.3s;
   background-repeat: no-repeat;
@@ -109,7 +110,6 @@ body {
 }
 
 .alien-one.big {
-    left: 53%;
     background-size: 95%;
 }
 
@@ -117,4 +117,81 @@ body {
     top: 0;
 }
 
-/* End of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+ 
+    #game-board {
+    width: 80vw;
+    height: 55vh;
+  }
+
+.plant:after {
+    left: 10%;
+    width: 80%;
+    height: 60%
+}
+
+.plant-forward:after {
+    left: 25%;
+}
+
+.alien-one {
+  left: 32%;
+  width: 66%;
+  height: 85%;
+  transition: 0.3s;
+}
+
+.alien-one.small {
+    background-size: 85%;
+}
+
+.alien-one.big {
+    width: 50%;
+    height: 95%;   
+    left: 38%;
+}
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+ 
+    #game-board {
+    width: 80vw;
+    height: 55vh;
+  }
+
+.plant:after {
+    left: 10%;
+    width: 80%;
+    height: 60%
+}
+
+.plant-forward:after {
+    left: 20%;
+}
+
+.alien-one {
+  left: 32%;
+  width: 80%;
+  height: 80%;
+  transition: 0.3s;
+}
+
+.alien-one.small {
+    background-size: 85%;
+}
+
+.alien-one.big {
+    width: 66%;
+    height: 95%;   
+    left: 33%;
+}
+
+}
