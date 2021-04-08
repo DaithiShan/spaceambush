@@ -50,7 +50,12 @@ body {
  
     flex: 1;
     font-family: "Exo 2", sans-serif;
+
 }
+
+  .controls-container button {
+    font-size: 120%;
+  }
 
 #game-board {
     border: 2px solid black;
@@ -63,7 +68,17 @@ body {
     z-index: 2;
 }
 
-/* Plants and Aliens or Moles and Holes */
+/* In-game Menu Buttons */
+
+.controls-container button {
+  background-image: linear-gradient(#fff, #FF55DD);
+  width: 40px;
+  height: 40px;
+}
+
+
+
+/* Plants and Aliens */
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
@@ -162,6 +177,38 @@ body {
     #game-board {
     width: 80vw;
     height: 55vh;
+  }
+
+  .ingame-menu {
+    height: 100px;
+    width: 80%;
+    position: absolute;
+    top: 5%;
+    z-index: 2;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls-container {
+    order: 1;
+}
+
+.controls-container button {
+    margin-right: 10px;
+}
+
+  .score-container {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .time-container {
+      order: 3;
+  }
+
+  .controls-container button {
+    font-size: 120%;
   }
 
 .plant:after {
