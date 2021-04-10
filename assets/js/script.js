@@ -1,7 +1,8 @@
 /* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
 const plants  = document.querySelectorAll(".plant");
-const scoreDisplay = document.querySelector("#score");
 const alienOnes = document.querySelectorAll(".alien-one");
+const scoreDisplay = document.querySelector("#score");
+const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
 const playButton = document.querySelector(".play-button")
 
@@ -9,6 +10,7 @@ let lastPlant;
 let timeUp = false;
 let timeLimit = 30000;
 let score = 0;
+let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
 
 function randomAmbush(min, max) {
@@ -38,10 +40,22 @@ function ambush() {
     }, popOutTime)
 }
 
+function whackAlien(e) {
+    score ++;
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
+    this.style.pointerEvent = "none";
+  setTimeout(() => {
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
+    this.style.pointerEvent = "all";
+  }, 800);
+  scoreDisplay.textContent = score;
+}
+
 function playGame() {
     timer = timeLimit/1000;
     score = 0;
     scoreDisplay.textContent = 0;
+    highScoreDisplay.textContent = "High Score: " + highScore;
     timerDisplay.textContent = timer;
     timeUp = false;
     ambush();
@@ -60,15 +74,12 @@ function playGame() {
     }, 1000);
 }
 
-function whackAlien(e) {
-    score ++;
-    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
-    this.style.pointerEvent = "none";
-  setTimeout(() => {
-    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
-    this.style.pointerEvent = "all";
-  }, 800);
-  scoreDisplay.textContent = score;
+function checkHighScore() {
+    if(score > localStorage.getItem("gameHighScore")) {
+        localStorage.setItem("gameHighScore", score);
+        highScore = score;
+        highScoreDisplay.textContent = "High Score: " + highScore;
+    }
 }
 
 playButton.addEventListener("click", playGame);
