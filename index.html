@@ -51,81 +51,85 @@
         <!-- Game Area -->
 
         <div class="game-container container-fluid">
-                <div class="ingame-menu">
-                        <div class="score-container">
-                            <h4>Score: <span id="score">0</span></h4>
-                        </div>
-                        <div class="time-container">
-                            <h4>Time: <span id="timer">0</span></h4>
-                        </div>
-                        <div class="controls-container">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#help-menu"><i class="fas fa-info"></i></button>
-                            <button type="button"><i class="fas fa-volume-up"></i></button>
-                             <button type="button"><i class="fas fa-times"></i></button>
-                        </div>
+            <div class="ingame-menu">
+                <div class="score-container">
+                    <h4>Score: <span id="score">0</span></h4>
                 </div>
-    
-<!-- Customized board snippet Frank's Labratory: https://youtu.be/RTb8icFiSfk -->
-    
-                <div id="game-board">
-                    <div class="plant plant-back plant-one">
-                        <div class="alien-one small"></div>
-                    </div>
-                    <div class="plant plant-back plant-two">
-                        <div class="alien-one small"></div>
-                    </div>
-                    <div class="plant plant-back plant-three">
-                        <div class="alien-one small"></div>
-                    </div>
-                    <div class="plant plant-forward plant-four">
-                        <div class="alien-one big"></div>
-                    </div>
-                    <div class="plant plant-forward plant-five">
-                        <div class="alien-one big"></div>
-                    </div>
+                <div class="time-container">
+                    <h4>Time: <span id="timer">0</span></h4>
+                </div>
+                <div class="controls-container">
+                    <button class="game-button" type="button" data-bs-toggle="modal" data-bs-target="#help-menu"><i
+                            class="fas fa-info"></i></button>
+                    <button class="game-button" type="button"><i class="fas fa-volume-up"></i></button>
+                    <button type="button" class="play-button game-button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <!-- Customized board snippet Frank's Labratory: https://youtu.be/RTb8icFiSfk -->
+
+            <div id="game-board">
+                <div class="plant plant-back plant-one">
+                    <div class="alien-one small"></div>
+                </div>
+                <div class="plant plant-back plant-two">
+                    <div class="alien-one small"></div>
+                </div>
+                <div class="plant plant-back plant-three">
+                    <div class="alien-one small"></div>
+                </div>
+                <div class="plant plant-forward plant-four">
+                    <div class="alien-one big"></div>
+                </div>
+                <div class="plant plant-forward plant-five">
+                    <div class="alien-one big"></div>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Help Menu -->
-    
-            <div id="help-menu" class="modal help-menu" tabindex = "-1" aria-labelledby="help-menu">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content help-content bg-light">
-                <div class="modal-header inner-header pt-2 px-1 pb-0 text-center">
-                    <h2 class="modal-title">Game Help</h2>
+
+    <div id="help-menu" class="modal help-menu" tabindex="-1" aria-labelledby="help-menu">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content help-content">
+                <div class="modal-header inner-header text-center">
+                    <h3 class="modal-title w-100">Game Help</h3>
                 </div>
                 <div class="pt-2 px-1 pb-0 d-flex flex-column">
                     <ul>
                         <li>
-                           You've been Space Ambushed!
+                            You've been Space Ambushed!
                         </li>
                         <li>
                             What now?
-                            <ol>
+                            <ul>
                                 <li>
-                                    <strong>Easy Mode</strong>
-                                    <br>You're only being attacked by one. Tap or click on your alien ambusher before he attacks! 
+                                    <strong>You're Playing Easy Mode</strong>
+                                    <br>You've been ambushed by a single alien. Tap or click on him quickly! Before he
+                                    gets the chance to attack!!
                                 </li>
                                 <li>
-                                    <strong>Hard Mode</strong>
-                                    <br> You're in double trouble. Tap or click on both attackers. One is twice as dangerous. But worth half the points...
+                                    <strong>You're Playing Hard Mode</strong>
+                                    <br> Uh oh! You've been ambushed by 2 aliens. Tap or click on both attackers
+                                    quickly. Before they attack! One is twice as dangerous, but only worth half
+                                    points...
                                 </li>
-                            </ol>
+                            </ul>
                         </li>
                         <li>
-                            Have fun and try to beat your ambushers!
+                            Have fun and hold off the attack for as long as you can!
                         </li>
                     </ul>
                 </div>
-                <div class="p-2 text-center modal-footer">
-                    <button class="modal-close" data-bs-dismiss="modal">
+                <div class="p-2 justify-content-center modal-footer">
+                    <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
 
     <!-- Footer -->
 

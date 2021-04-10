@@ -62,21 +62,29 @@ body {
     position: relative;
     width: 600px;
     height: 400px;
+    max-width: 100%;
+    max-height: 100%;
     margin: 33vh auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     z-index: 2;
 }
 
-/* In-game Menu Buttons */
+/* Buttons */
 
-.controls-container button {
+.game-button {
   background-image: linear-gradient(#fff, #FF55DD);
   width: 40px;
   height: 40px;
 }
 
-
+.game-button-reverse {
+    background-color: #a8fffd;
+    color: #000;
+    width: 35px;
+    height: 35px;
+    font-size: 120%;
+}
 
 /* Plants and Aliens */
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
@@ -132,6 +140,24 @@ body {
     top: 0;
 }
 
+/* Modal / Menu Styling */
+
+.help-menu {
+    font-family: "Roboto Slab", sans-serif;
+    padding: 5px;
+}
+
+.help-menu 
+
+.help-content {
+    background-image: linear-gradient(#fff, #FF55DD);
+}
+
+
+.modal-header {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+}
 
 
 /* Media Queries */
