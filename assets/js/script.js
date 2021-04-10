@@ -13,7 +13,7 @@ let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
 
-function randomAmbush(min, max) {
+function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
 
@@ -29,7 +29,7 @@ function pickRandomPlant(plants) {
 }
 
 function ambush() {
-    const popOutTime = randomAmbush(1400, 700);
+    const popOutTime = randomTime(1400, 700);
     const plant = pickRandomPlant(plants);
     plant.classList.add("up");
     setTimeout(() => {
@@ -38,6 +38,10 @@ function ambush() {
             ambush();
         }
     }, popOutTime)
+}
+
+function alienAttack() {
+
 }
 
 function whackAlien(e) {
@@ -68,8 +72,9 @@ function playGame() {
         timerDisplay.textContent = timer;
         if (timer < 0) {
             timer = 0;
-            timerDisplay.textContent = "Time's Up!"
             clearInterval(startTimer);
+            checkHighScore();
+            timerDisplay.textContent = "Time's Up!"
         }
     }, 1000);
 }
