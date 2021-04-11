@@ -90,7 +90,6 @@ body {
     margin-top: 15px;
     font-size: 105%;
     border-radius: 20px;
-
 }
 
 /* Game Area + Board */
@@ -219,6 +218,10 @@ body {
 
 /* Modal / Menu Styling */
 
+.modal {
+    z-index: 8;
+}
+
 .help-menu {
     font-family: "Roboto Slab", sans-serif;
     padding: 5px;
@@ -285,8 +288,12 @@ body {
     .main-menu-content {
         top: 15%;
         width: 80vw;
-        height: 60vh;
+        height: fit-content;
         left: 10%;
+    }
+
+    .main-menu-buttons {
+        height: 200px;
     }
 
     #game-board {
@@ -359,7 +366,7 @@ body {
     .plant:after {
     left: 5%;
     width: 80%;
-    height: 66%
+    height: fit-content;
 }
 
 .plant-back:after {
