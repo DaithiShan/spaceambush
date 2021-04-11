@@ -1,10 +1,14 @@
 /* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
+
+// Global Variables
+const mainPlayButton = document.querySelector("#main-play-button")
+
 const plants  = document.querySelectorAll(".plant");
 const alienOnes = document.querySelectorAll(".alien-one");
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
-const playButton = document.querySelector(".play-button")
+const gamePlayButton = document.querySelector(".game-play-button")
 
 let lastPlant;
 let timeUp = false;
@@ -12,6 +16,8 @@ let timeLimit = 30000;
 let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
+
+// In-Game Functions
 
 function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
@@ -45,6 +51,7 @@ function alienAttack() {
 }
 
 function whackAlien(e) {
+    // whackSound();
     score ++;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
     this.style.pointerEvent = "none";
@@ -87,5 +94,27 @@ function checkHighScore() {
     }
 }
 
-playButton.addEventListener("click", playGame);
+
+
+// Menu Functions
+// Basic functionality inspired by Andy Osbourne : https://github.com/Andy-Osborne/Dwarf-Match/
+function launchGame() {
+    clickSound();
+    document.getElementById("main-menu").classList.remove("d-block");
+    document.getElementById("main-menu").classList.add("d-none");
+    document.getElementById("donate-container").classList.remove("d-block");
+    document.getElementById("donate-container").classList.add("d-none");
+    document.getElementById("game-container").classList.remove("d-none");
+    document.getElementById("game-container").classList.add("d-block");
+
+}
+
+
+
+
+
+
+// Event Listeners
+mainPlayButton.addEventListener("click",)
+gamePlayButton.addEventListener("click", playGame);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlien));

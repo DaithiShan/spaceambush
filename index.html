@@ -16,7 +16,7 @@
 
 <body>
     <header>
-                <div class="donate-container container-fluid">
+                <div id="donate-container" class="container-fluid d-block">
                     <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
                 </div>
     </header>
@@ -24,9 +24,11 @@
     <main class="content">
         <div class="container-fluid">
 
+            <!-- HTML structure from Dwarf Match Game: https://andy-osborne.github.io/Dwarf-Match/  -->
+
             <!-- Main Menu -->
 
-            <div id="main-menu" class="main-background">
+            <div id="main-menu" class="main-background d-block">
                 <div class="main-menu-content">
                     <div class="main-menu-header text-center">
                         <h1 class="main-menu-title w-100">Space Ambush</h1>
@@ -35,7 +37,7 @@
                         <p>How long can YOU hold off an Alien Ambush in Outer Space?</p>
                     </div>
                     <div class="main-menu-buttons flex-column d-flex align-items-center text-center">
-                    <button class="main-menu-button game-button-reverse w-50">
+                    <button id="main-play-button" class="main-menu-button game-button-reverse w-50">
                         <span><strong>Play</strong></span>
                     </button>
                     <button class="main-menu-button game-button-reverse w-50">
@@ -51,7 +53,7 @@
 
         <!-- Game Area -->
 
-        <div class="game-container main-background container-fluid d-none">
+        <div id="game-container" class="container-fluid d-none">
             <div class="ingame-menu">
                 <div class="score-container">
                     <h4>Score: <span id="score">0</span></h4>
@@ -64,7 +66,7 @@
                     <button class="game-button" type="button" data-bs-toggle="modal" data-bs-target="#help-menu"><i
                             class="fas fa-info"></i></button>
                     <button class="game-button" type="button"><i class="fas fa-volume-up"></i></button>
-                    <button type="button" class="play-button game-button"><i class="fas fa-times"></i></button>
+                    <button type="button" class="game-play-button game-button"><i class="fas fa-times"></i></button>
                 </div>
             </div>
 
@@ -89,6 +91,31 @@
             </div>
         </div>
     </main>
+
+    <!-- Game Set-Up -->
+
+    <div id="set-up" class="modal d-none">
+            <div class="set-up-content">
+                <div class="set-up-header pt-2 px-1 pb-0 text-center">
+                    <h2 class="w-100">Pick your game level</h2>
+                </div>
+                <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                    <button class="game-button-reverse" id="easy">
+                        <img src="./assets/images/level-choice/easy.jpg" alt="Level selection button that says easy and features a blue alien lifeform">
+                    </button>
+                    <p>You're up against a single alien lifeform. Tap or click on him quickly! Or he'll get the chance to attack!!</p>
+                    <button class="game-button-reverse" id="hard">
+                        <img src="./assets/images/level-choice/hard.jpg" alt="Level selection button that says hard and features an angry green alien lifeform">
+                    </button>
+                    <p>Uh oh! You're in double trouble. Tap or click on both aliens quickly. Before they attack! One is twice as dangerous, but only worth half points...</p>
+                </div>
+                <div class="p-2 text-center">
+                    <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
     <!-- Help Menu -->
 
