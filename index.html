@@ -16,7 +16,7 @@
 
 <body>
     <header>
-                <div id="donate-container" class="container-fluid d-block">
+                <div id="donate-container" class="container-fluid d-none">
                     <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
                 </div>
     </header>
@@ -28,8 +28,8 @@
 
             <!-- Main Menu -->
 
-            <div id="main-menu" class="main-background d-block">
-                <div class="main-menu-content">
+            <div id="main-menu" class="main-background d-none">
+                <div class="main-menu-content d-block">
                     <div class="main-menu-header text-center">
                         <h1 class="main-menu-title w-100">Space Ambush</h1>
                     </div>
@@ -37,7 +37,7 @@
                         <p>How long can YOU hold off an Alien Ambush in Outer Space?</p>
                     </div>
                     <div class="main-menu-buttons flex-column d-flex align-items-center text-center">
-                    <button id="main-play-button" class="main-menu-button game-button-reverse w-50">
+                    <button id="main-play-button" class="main-menu-button game-button-reverse w-50" data-bs-toggle="modal" data-bs-target="#set-up">
                         <span><strong>Play</strong></span>
                     </button>
                     <button class="main-menu-button game-button-reverse w-50">
@@ -53,7 +53,7 @@
 
         <!-- Game Area -->
 
-        <div id="game-container" class="container-fluid d-none">
+        <div id="game-container" class="container-fluid">
             <div class="ingame-menu">
                 <div class="score-container">
                     <h4>Score: <span id="score">0</span></h4>
@@ -75,18 +75,23 @@
             <div id="game-board">
                 <div class="plant plant-back plant-one">
                     <div class="alien-one small"></div>
+                    <div class="alien-two small"></div>
                 </div>
                 <div class="plant plant-back plant-two">
                     <div class="alien-one small"></div>
+                    <div class="alien-two small"></div>
                 </div>
                 <div class="plant plant-back plant-three">
                     <div class="alien-one small"></div>
+                    <div class="alien-two small"></div>
                 </div>
                 <div class="plant plant-forward plant-four">
                     <div class="alien-one big"></div>
+                    <div class="alien-two big"></div>
                 </div>
                 <div class="plant plant-forward plant-five">
                     <div class="alien-one big"></div>
+                    <div class="alien-two big"></div>
                 </div>
             </div>
         </div>
@@ -95,17 +100,18 @@
     <!-- Game Set-Up -->
 
     <div id="set-up" class="modal d-none">
-            <div class="set-up-content">
-                <div class="set-up-header pt-2 px-1 pb-0 text-center">
-                    <h2 class="w-100">Pick your game level</h2>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content set-up-content ">
+                <div class="set-up-header modal-header pt-2 px-1 pb-0 text-center">
+                    <h2 class="modal-title w-100">Pick your level</h2>
                 </div>
                 <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
-                    <button class="game-button-reverse" id="easy">
-                        <img src="./assets/images/level-choice/easy.jpg" alt="Level selection button that says easy and features a blue alien lifeform">
+                    <button class="text-center level-select-btn" onclick="levelChoice(this); gameSetUp()" id="easy">
+                        <img src="./assets/images/level-choice/easy.png" alt="Level selection button that says easy and features a blue alien lifeform">
                     </button>
                     <p>You're up against a single alien lifeform. Tap or click on him quickly! Or he'll get the chance to attack!!</p>
-                    <button class="game-button-reverse" id="hard">
-                        <img src="./assets/images/level-choice/hard.jpg" alt="Level selection button that says hard and features an angry green alien lifeform">
+                    <button class="text-center level-select-btn" onclick="levelChoice(this); gamePlay()" id="hard">
+                        <img src="./assets/images/level-choice/hard.png" alt="Level selection button that says hard and features an angry green alien lifeform">
                     </button>
                     <p>Uh oh! You're in double trouble. Tap or click on both aliens quickly. Before they attack! One is twice as dangerous, but only worth half points...</p>
                 </div>
@@ -113,6 +119,7 @@
                     <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
                     </button>
+                </div>
                 </div>
             </div>
         </div>

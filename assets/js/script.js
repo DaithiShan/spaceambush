@@ -35,9 +35,10 @@ function pickRandomPlant(plants) {
 }
 
 function ambush() {
-    const popOutTime = randomTime(1400, 700);
+    const popOutTime = randomTime(1200, 1000);
     const plant = pickRandomPlant(plants);
     plant.classList.add("up");
+    setTimeout(()=>{alienAttack.call(plant)}, 450);
     setTimeout(() => {
         plant.classList.remove("up");
         if(!timeUp) { 
@@ -47,12 +48,25 @@ function ambush() {
 }
 
 function alienAttack() {
-
+    if(!this.children[0].isWhacked) {
+        this.children[0].isAttacking = Math.random() < 0.35;
+        if(this.children[0].isAttacking) {
+        this.children[0].pointerEvent = "none";
+        this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
+        score--;
+        scoreDisplay.textContent = score;
+        setTimeout(() => {
+    this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
+    this.children[0].style.pointerEvent = "all";
+  }, 800)
+      }
+  }
 }
 
 function whackAlien(e) {
     // whackSound();
     score ++;
+    this.isWhacked;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
     this.style.pointerEvent = "none";
   setTimeout(() => {
@@ -66,7 +80,7 @@ function playGame() {
     timer = timeLimit/1000;
     score = 0;
     scoreDisplay.textContent = 0;
-    highScoreDisplay.textContent = "High Score: " + highScore;
+    highScoreDisplay.textContent = highScore;
     timerDisplay.textContent = timer;
     timeUp = false;
     ambush();
@@ -90,31 +104,31 @@ function checkHighScore() {
     if(score > localStorage.getItem("gameHighScore")) {
         localStorage.setItem("gameHighScore", score);
         highScore = score;
-        highScoreDisplay.textContent = "High Score: " + highScore;
+        highScoreDisplay.textContent = highScore;
     }
 }
 
 
 
-// Menu Functions
+// Main Menu Functions
 // Basic functionality inspired by Andy Osbourne : https://github.com/Andy-Osborne/Dwarf-Match/
-function launchGame() {
-    clickSound();
-    document.getElementById("main-menu").classList.remove("d-block");
-    document.getElementById("main-menu").classList.add("d-none");
-    document.getElementById("donate-container").classList.remove("d-block");
+function gameSetUp() {
+    // clickSound();
+    document.getElementsByClassName("main-menu-content")[0].classList.remove("d-block");
+    document.getElementsByClassName("main-menu-content")[0].classList.add("d-none");
     document.getElementById("donate-container").classList.add("d-none");
-    document.getElementById("game-container").classList.remove("d-none");
-    document.getElementById("game-container").classList.add("d-block");
-
+    document.getElementById("set-up").classList.remove("d-none");
+    document.getElementById("set-up").classList.add("d-block");
+    document.querySelectorAll(".modal-close").forEach(item => {
+        item.addEventListener("click", event => {
+            document.getElementById("setUp").classList.remove("d-block");
+            document.getElementById("setUp").classList.add("d-none");
+        });
+    });
 }
 
 
-
-
-
-
 // Event Listeners
-mainPlayButton.addEventListener("click",)
+mainPlayButton.addEventListener("click", gameSetUp);
 gamePlayButton.addEventListener("click", playGame);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlien));

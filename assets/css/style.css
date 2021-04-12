@@ -134,7 +134,7 @@ body {
   }
 
 #game-board {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     position: relative;
     width: 600px;
     height: 400px;
@@ -166,7 +166,7 @@ body {
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     flex: 1 0 33.33%;
     position: relative;
     overflow: hidden;
@@ -220,6 +220,14 @@ body {
 
 .modal {
     z-index: 8;
+}
+
+.modal-backdrop {
+    background-color: transparent;
+}
+
+.set-up-content {
+    background-image: linear-gradient(#fff, #FF55DD)
 }
 
 .help-menu {
