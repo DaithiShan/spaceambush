@@ -36,18 +36,19 @@ function pickRandomPlant(plants) {
 
 function ambush() {
     const popOutTime = randomTime(1100, 900);
+    const popOutTimeTwo = randomTime(1500, 1200)
     const plant = pickRandomPlant(plants);
     const plantTwo = pickRandomPlant(plants);
     if (plant === plantTwo) {
         pickRandomPlant(plants)
     }
-    plantTwo.children[1].isAmbushing = Math.random() < 0.5;
+    plantTwo.children[1].isAmbushing = Math.random() < 0.35;
     if(plantTwo.children[1].isAmbushing) {
         plantTwo.classList.add("up-two");
-        setTimeout(()=>{alienAttack.call(plantTwo)}, 670);
+        // setTimeout(()=>{alienAttack.call(plantTwo)}, 670);
         setTimeout(() => {
         plantTwo.classList.remove("up-two");
-    }, popOutTime)
+    }, popOutTimeTwo)
 };
     plant.classList.add("up");
     setTimeout(()=>{alienAttack.call(plant)}, 670);

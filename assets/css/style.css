@@ -189,8 +189,9 @@ body {
 .plant-forward:after {
     left: 33%;
 }
-
-.alien-one {
+ 
+.alien-one,
+.alien-two {
   background-image: url("../images/game-assets/alien-one.svg");
   position: absolute;
   left: 43%;
@@ -206,24 +207,18 @@ body {
 
 .alien-two {
   background-image: url("../images/game-assets/alien-two.svg");
-  position: absolute;
-  left: 43%;
-  bottom: 0;
-  top: 100%;
-  width: 105px;
-  height: 170px;
-  transition: 0.3s;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  z-index: 3;
+  height: 180px;
 }
 
-.alien-one.small {
-    background-size: 88%;
+.plant-forward .alien-one.big {
+    left: 40%;
+    width: 105px;
 }
 
-.alien-one.big {
-    background-size: 95%;
+.plant-forward .alien-two.big {
+    left: 35%;
+    width: 130px;
+    height: 160px;
 }
 
 .plant.up .alien-one {
@@ -259,7 +254,6 @@ body {
     background-image: linear-gradient(#fff, #FF55DD);
 }
 
-
 .modal-header {
     font-family: "Exo 2", sans-serif;
     text-align: center;
@@ -290,18 +284,21 @@ body {
     left: 25%;
 }
 
-.alien-one {
+.alien-one,
+.alien-two {
   left: 32%;
   width: 66%;
   height: 85%;
   transition: 0.3s;
 }
 
-.alien-one.small {
+.alien-one.small,
+.alien-two.small {
     background-size: 85%;
 }
 
-.alien-one.big {
+.alien-one.big,
+.alien-two.big {
     width: 50%;
     height: 95%;   
     left: 38%;
@@ -369,18 +366,21 @@ body {
     left: 20%;
 }
 
-.alien-one {
+.alien-one,
+.alien-two {
   left: 32%;
   width: 80%;
   height: 80%;
   transition: 0.3s;
 }
 
-.alien-one.small {
+.alien-one.small,
+.alien-two.small {
     background-size: 85%;
 }
 
-.alien-one.big {
+.alien-one.big,
+.alien-two.big {
     width: 66%;
     height: 95%;   
     left: 33%;
@@ -389,14 +389,16 @@ body {
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) {
 
-.alien-one {
+.alien-one,
+.alien-two {
   left: 15%;
   width: 90%;
   height: 75%;
   transition: 0.3s;
 }
 
-.alien-one.big {
+.alien-one.big,
+.alien-two.big {
     left: 33%;
     width: 75%;
     height: 85%;
