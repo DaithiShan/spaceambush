@@ -1,14 +1,14 @@
 /* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
 
 // Global Variables
-const mainPlayButton = document.querySelector("#main-play-button")
+const mainPlayButton = document.querySelector("#main-play-button");
 
 const plants  = document.querySelectorAll(".plant");
 const alienOnes = document.querySelectorAll(".alien-one");
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
-const gamePlayButton = document.querySelector(".game-play-button")
+const gamePlayButton = document.querySelector(".game-play-button");
 
 let lastPlant;
 let timeUp = false;
@@ -35,21 +35,21 @@ function pickRandomPlant(plants) {
 }
 
 function ambush() {
-    const popOutTime = randomTime(1200, 1000);
+    const popOutTime = randomTime(1100, 900);
     const plant = pickRandomPlant(plants);
-    plant.classList.add("up");
-    setTimeout(()=>{alienAttack.call(plant)}, 450);
+    plant.classList.add("up-two");
+    setTimeout(()=>{alienAttack.call(plant)}, 670);
     setTimeout(() => {
-        plant.classList.remove("up");
+        plant.classList.remove("up-two");
         if(!timeUp) { 
             ambush();
         }
-    }, popOutTime)
+    }, popOutTime);
 }
 
 function alienAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.35;
+        this.children[0].isAttacking = Math.random() < 0.4;
         if(this.children[0].isAttacking) {
         this.children[0].pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
@@ -58,7 +58,7 @@ function alienAttack() {
         setTimeout(() => {
     this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
     this.children[0].style.pointerEvent = "all";
-  }, 800)
+  }, 800);
       }
   }
 }
@@ -66,7 +66,6 @@ function alienAttack() {
 function whackAlien(e) {
     // whackSound();
     score ++;
-    this.isWhacked;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
     this.style.pointerEvent = "none";
   setTimeout(() => {
@@ -74,6 +73,7 @@ function whackAlien(e) {
     this.style.pointerEvent = "all";
   }, 800);
   scoreDisplay.textContent = score;
+  return this.isWhacked;
 }
 
 function playGame() {
@@ -86,7 +86,7 @@ function playGame() {
     ambush();
     setTimeout(()=>{
         timeUp = true;
-    }, timeLimit)
+    }, timeLimit);
 
     let startTimer = setInterval(()=>{
         timer -= 1;
@@ -95,7 +95,7 @@ function playGame() {
             timer = 0;
             clearInterval(startTimer);
             checkHighScore();
-            timerDisplay.textContent = "Time's Up!"
+            timerDisplay.textContent = "Time's Up!";
         }
     }, 1000);
 }
