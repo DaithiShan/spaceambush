@@ -194,7 +194,7 @@ body {
 .alien-two {
   background-image: url("../images/game-assets/alien-one.svg");
   position: absolute;
-  left: 43%;
+  left: 40%;
   bottom: 0;
   top: 100%;
   width: 105px;
@@ -207,7 +207,9 @@ body {
 
 .alien-two {
   background-image: url("../images/game-assets/alien-two.svg");
-  height: 180px;
+  height: 160px;
+  width: 120px;
+  left: 35%;
 }
 
 .plant-forward .alien-one.big {
@@ -217,7 +219,7 @@ body {
 
 .plant-forward .alien-two.big {
     left: 35%;
-    width: 130px;
+    width: 140px;
     height: 160px;
 }
 

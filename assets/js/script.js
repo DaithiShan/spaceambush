@@ -5,6 +5,7 @@ const mainPlayButton = document.querySelector("#main-play-button");
 
 const plants  = document.querySelectorAll(".plant");
 const alienOnes = document.querySelectorAll(".alien-one");
+const alienTwos = document.querySelectorAll(".alien-two");
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
@@ -76,7 +77,7 @@ function alienAttack() {
   }
 }
 
-function whackAlien(e) {
+function whackAlienOne(e) {
     // whackSound();
     score ++;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
@@ -84,7 +85,20 @@ function whackAlien(e) {
   setTimeout(() => {
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
     this.style.pointerEvent = "all";
-  }, 800);
+  }, 700);
+  scoreDisplay.textContent = score;
+  return this.isWhacked;
+}
+
+function whackAlienTwo(e) {
+    // whackSound();
+    score ++;
+//     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two-yellow.svg)";
+//     this.style.pointerEvent = "none";
+//   setTimeout(() => {
+//     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
+//     this.style.pointerEvent = "all";
+//   }, 700);
   scoreDisplay.textContent = score;
   return this.isWhacked;
 }
@@ -144,4 +158,5 @@ function gameSetUp() {
 // Event Listeners
 mainPlayButton.addEventListener("click", gameSetUp);
 gamePlayButton.addEventListener("click", playGame);
-alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlien));
+alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
+alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", whackAlienOne));
