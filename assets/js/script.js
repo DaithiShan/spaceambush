@@ -43,16 +43,16 @@ function ambush() {
     if (plant === plantTwo) {
         pickRandomPlant(plants)
     }
-    plantTwo.children[1].isAmbushing = Math.random() < 0.35;
+    plantTwo.children[1].isAmbushing = Math.random() < 0.34;
     if(plantTwo.children[1].isAmbushing) {
         plantTwo.classList.add("up-two");
-        // setTimeout(()=>{alienAttack.call(plantTwo)}, 670);
+        setTimeout(()=>{alienTwoAttack.call(plantTwo)}, 670);
         setTimeout(() => {
         plantTwo.classList.remove("up-two");
     }, popOutTimeTwo)
 };
     plant.classList.add("up");
-    setTimeout(()=>{alienAttack.call(plant)}, 670);
+    setTimeout(()=>{alienOneAttack.call(plant)}, 670);
     setTimeout(() => {
         plant.classList.remove("up");
         if(!timeUp) { 
@@ -61,9 +61,9 @@ function ambush() {
     }, popOutTime);
 }
 
-function alienAttack() {
+function alienOneAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.4;
+        this.children[0].isAttacking = Math.random() < 0.34;
         if(this.children[0].isAttacking) {
         this.children[0].pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
@@ -76,6 +76,23 @@ function alienAttack() {
       }
   }
 }
+
+function alienTwoAttack() {
+    if(!this.children[1].isWhacked) {
+        this.children[1].isAttacking = Math.random() < 0.4;
+        if(this.children[1].isAttacking) {
+        this.children[1].pointerEvent = "none";
+        this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two-attack.svg)";
+        score--;
+        scoreDisplay.textContent = score;
+        setTimeout(() => {
+    this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
+    this.children[1].style.pointerEvent = "all";
+  }, 600);
+      }
+  }
+}
+
 
 function whackAlienOne(e) {
     // whackSound();
@@ -90,15 +107,15 @@ function whackAlienOne(e) {
   return this.isWhacked;
 }
 
-function whackAlienTwo(e) {
+function smackAlienTwo(e) {
     // whackSound();
     score ++;
-//     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two-yellow.svg)";
-//     this.style.pointerEvent = "none";
-//   setTimeout(() => {
-//     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
-//     this.style.pointerEvent = "all";
-//   }, 700);
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-two-dizzy.svg)";
+    this.style.pointerEvent = "none";
+  setTimeout(() => {
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
+    this.style.pointerEvent = "all";
+  }, 800);
   scoreDisplay.textContent = score;
   return this.isWhacked;
 }
@@ -159,4 +176,4 @@ function gameSetUp() {
 mainPlayButton.addEventListener("click", gameSetUp);
 gamePlayButton.addEventListener("click", playGame);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
-alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", whackAlienOne));
+alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
