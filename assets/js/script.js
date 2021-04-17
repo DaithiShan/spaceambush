@@ -1,7 +1,15 @@
 /* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
 
 // Global Variables
-const mainMenu = document.querySelector("#main-menu")
+const mainDonate = document.getElementById("donate-container");
+
+const mainMenu = document.getElementsByClassName("main-menu-content")[0];
+
+const setUpMenu = document.querySelector("#set-up");
+
+const easyLevel = document.querySelector("#easy");
+const hardLevel = document.querySelector("#hard");
+const setUpClose = document.querySelector("#set-up-close")
 
 const mainPlayButton = document.querySelector("#main-play-button");
 
@@ -14,21 +22,59 @@ const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
 const gamePlayButton = document.querySelector(".game-play-button");
-const gameOverMenu = document.querySelector("#game-over")
-const gameOverScore = document.querySelector("#game-over-score")
-const gameOverHighScore = document.querySelector("#game-over-high-score")
-const gameOverRestart = document.querySelector("#game-over-restart")
+const gameOverMenu = document.querySelector("#game-over");
+const gameOverScore = document.querySelector("#game-over-score");
+const gameOverHighScore = document.querySelector("#game-over-high-score");
+const noAndReturn = document.querySelector("#no-return");
+const yesAndReturn = document.querySelector("#yes-return");
 
-let levelSelect;
+
 let lastPlant;
 let timeUp = false;
+let levelHard = false;
 let timeLimit = 30000;
 let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
 
-// Main-Menu Functions
-function startGame() {}
+// // Main-Menu Functions
+
+// Basic functionality inspired by Andy Osbourne : https://github.com/Andy-Osborne/Dwarf-Match/
+
+// Set-Up Menu
+function gameSetUp() {
+    // clickSound();
+    mainMenu.classList.remove("d-block");
+    mainMenu.classList.add("d-none");
+    mainDonate.classList.add("d-none");
+    setUpMenu.classList.remove("d-none");
+    setUpMenu.classList.add("d-block");
+    document.querySelectorAll(".modal-close").forEach(item => {
+        item.addEventListener("click", event => {
+            setUpMenu.classList.remove("d-block");
+            setUpMenu.classList.add("d-none");
+            mainMenu.classList.remove("d-none");
+            mainMenu.classList.add("d-block")
+        });
+    });
+}
+
+function startEasyGame() {
+    setUpMenu.classList.remove("d-block");
+    setUpMenu.classList.add("d-none");
+    game.classList.remove("d-none");
+    game.classList.add("d-block");
+    playGame();
+}
+
+function startHardGame() {
+    setUpMenu.classList.remove("d-block");
+    setUpMenu.classList.add("d-none");
+    game.classList.remove("d-none");
+    game.classList.add("d-block");
+    playGame();
+    levelHard = true;
+}
 
 // In-Game Functions
 
@@ -56,7 +102,7 @@ function ambush() {
     if (plant === plantTwo) {
         pickRandomPlant(plants)
     }
-    if(levelSelect){
+    if(levelHard){
     plantTwo.children[1].isAmbushing = Math.random() < 0.34;
     if(plantTwo.children[1].isAmbushing) {
         plantTwo.classList.add("up-two");
@@ -166,25 +212,6 @@ function checkHighScore() {
     }
 }
 
-
-
-// Main Menu Functions
-// Basic functionality inspired by Andy Osbourne : https://github.com/Andy-Osborne/Dwarf-Match/
-function gameSetUp() {
-    // clickSound();
-    document.getElementsByClassName("main-menu-content")[0].classList.remove("d-block");
-    document.getElementsByClassName("main-menu-content")[0].classList.add("d-none");
-    document.getElementById("donate-container").classList.add("d-none");
-    document.getElementById("set-up").classList.remove("d-none");
-    document.getElementById("set-up").classList.add("d-block");
-    document.querySelectorAll(".modal-close").forEach(item => {
-        item.addEventListener("click", event => {
-            document.getElementById("setUp").classList.remove("d-block");
-            document.getElementById("setUp").classList.add("d-none");
-        });
-    });
-}
-
 // Game Over Menu
 
 function gameOver() {
@@ -204,7 +231,7 @@ function gameOverMenuLaunch() {
 }
 
 // Restart Game
-function Restart() {
+function homeReturn() {
     gameOverMenu.classList.remove("d-block");
     gameOverMenu.classList.add("d-none");
     game.classList.add("d-none");
@@ -215,7 +242,13 @@ function Restart() {
 
 // Event Listeners
 mainPlayButton.addEventListener("click", gameSetUp);
-gameOverRestart.addEventListener("click", Restart);
+
+easyLevel.addEventListener("click", startEasyGame);
+hardLevel.addEventListener("click", startHardGame);
+setUpClose.addEventListener("click", )
+
+noAndReturn.addEventListener("click", homeReturn);
+yesAndReturn.addEventListener("click", homeReturn)
 gamePlayButton.addEventListener("click", playGame);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));

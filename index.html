@@ -106,14 +106,14 @@
                     <h2 class="modal-title w-100">Pick your level</h2>
                 </div>
                 <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
-                    <button class="text-center level-select-btn" onclick="levelChoice(this); gameSetUp()" id="easy">
+                    <button class="text-center level-select-btn" id="easy">
                         <img src="./assets/images/level-choice/easy.png" alt="Level selection button that says easy and features a blue alien lifeform">
                     </button>
-                    <p>You're up against a single alien lifeform. Tap or click on him quickly! Or he'll get the chance to attack!!</p>
+                    <p>You're up against a single alien lifeform. To score points, tap or click on him, but do it quickly! Or he'll turn red, shoot you and damage your score</p>
                     <button class="text-center level-select-btn" onclick="levelChoice(this); gamePlay()" id="hard">
                         <img src="./assets/images/level-choice/hard.png" alt="Level selection button that says hard and features an angry green alien lifeform">
                     </button>
-                    <p>Uh oh! You're in double trouble. Tap or click on both aliens quickly. Before they attack! One is twice as dangerous, but only worth half points...</p>
+                    <p>Uh oh! You're in double trouble. To score points, tap or click on both alien attackers quickly. Before they attack! Once they turn red, they shoot and damage your score...</p>
                 </div>
                 <div class="p-2 text-center">
                     <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
@@ -159,7 +159,7 @@
                     </ul>
                 </div>
                 <div class="p-2 justify-content-center modal-footer">
-                    <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                    <button id="set-up-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
@@ -183,8 +183,8 @@
                     <p>Can you help provide care in the Mater Hospital today?</p>
                 </div>
                 <div class="game-over-donate">
-                        <a id="game-over-restart" class="game-over-button d-inline">No</a>
-                        <a class="game-over-button d-inline" href="https://www.materfoundation.ie/donate" target="_blank">Yes</a>
+                        <a id="no-return" class="game-over-button d-inline">No</a>
+                        <a id="yes-return" class="game-over-button d-inline" href="https://www.materfoundation.ie/donate" target="_blank">Yes</a>
                     </div>
             </div>
         </div>

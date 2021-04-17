@@ -257,7 +257,7 @@ body {
     top:0;
 }
 
-/* Modal / Menu Styling */
+/* Menu Styling */
 
 .modal {
     z-index: 8;
@@ -270,10 +270,11 @@ body {
 
 .modal-backdrop {
     background-color: transparent;
+    z-index: -1;
 }
 
 .set-up-content {
-    background-image: linear-gradient(#fff, #FF55DD)
+    background-image: linear-gradient(#fff, #FF55DD);
 }
 
 .help-menu {
