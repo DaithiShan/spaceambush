@@ -41,6 +41,7 @@ body {
 .donate a {
     text-decoration: none;
     color: #000;
+    cursor: pointer;
 }
 
 /* Main Menu */
@@ -90,6 +91,7 @@ body {
     margin-top: 15px;
     font-size: 105%;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* Game Area + Board */
@@ -152,6 +154,7 @@ body {
   background-image: linear-gradient(#fff, #FF55DD);
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .game-button-reverse {
@@ -160,11 +163,13 @@ body {
     width: 35px;
     height: 35px;
     font-size: 120%;
+    cursor: pointer;
 }
 
 .game-over-donate {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .game-over-button {
@@ -182,6 +187,7 @@ body {
     border-radius: 20px;
     padding: 10px 10px;
     margin: 25px 70px 50px;
+    cursor: pointer
 }
 
 /* Plants and Aliens */

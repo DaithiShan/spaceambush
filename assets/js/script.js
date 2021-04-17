@@ -245,7 +245,6 @@ mainPlayButton.addEventListener("click", gameSetUp);
 
 easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
-setUpClose.addEventListener("click", )
 
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)
