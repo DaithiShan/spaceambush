@@ -1,7 +1,11 @@
 /* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
 
 // Global Variables
+const mainMenu = document.querySelector("#main-menu")
+
 const mainPlayButton = document.querySelector("#main-play-button");
+
+const game = document.querySelector("#game-container")
 
 const plants  = document.querySelectorAll(".plant");
 const alienOnes = document.querySelectorAll(".alien-one");
@@ -10,13 +14,21 @@ const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
 const gamePlayButton = document.querySelector(".game-play-button");
+const gameOverMenu = document.querySelector("#game-over")
+const gameOverScore = document.querySelector("#game-over-score")
+const gameOverHighScore = document.querySelector("#game-over-high-score")
+const gameOverRestart = document.querySelector("#game-over-restart")
 
+let levelSelect;
 let lastPlant;
 let timeUp = false;
 let timeLimit = 30000;
 let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
+
+// Main-Menu Functions
+function startGame() {}
 
 // In-Game Functions
 
@@ -35,14 +47,16 @@ function pickRandomPlant(plants) {
     return plant;
 }
 
+// Use if statement to control what level of ambush
 function ambush() {
     const popOutTime = randomTime(1100, 900);
-    const popOutTimeTwo = randomTime(1500, 1200)
     const plant = pickRandomPlant(plants);
+    const popOutTimeTwo = randomTime(1500, 1200);
     const plantTwo = pickRandomPlant(plants);
     if (plant === plantTwo) {
         pickRandomPlant(plants)
     }
+    if(levelSelect){
     plantTwo.children[1].isAmbushing = Math.random() < 0.34;
     if(plantTwo.children[1].isAmbushing) {
         plantTwo.classList.add("up-two");
@@ -51,6 +65,7 @@ function ambush() {
         plantTwo.classList.remove("up-two");
     }, popOutTimeTwo)
 };
+}
     plant.classList.add("up");
     setTimeout(()=>{alienOneAttack.call(plant)}, 670);
     setTimeout(() => {
@@ -93,7 +108,6 @@ function alienTwoAttack() {
   }
 }
 
-
 function whackAlienOne(e) {
     // whackSound();
     score ++;
@@ -102,7 +116,7 @@ function whackAlienOne(e) {
   setTimeout(() => {
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
     this.style.pointerEvent = "all";
-  }, 700);
+  }, 800);
   scoreDisplay.textContent = score;
   return this.isWhacked;
 }
@@ -135,11 +149,11 @@ function playGame() {
     let startTimer = setInterval(()=>{
         timer -= 1;
         timerDisplay.textContent = timer;
-        if (timer < 0) {
+        if (timer <= 0) {
             timer = 0;
             clearInterval(startTimer);
             checkHighScore();
-            timerDisplay.textContent = "Time's Up!";
+            gameOver();
         }
     }, 1000);
 }
@@ -171,9 +185,37 @@ function gameSetUp() {
     });
 }
 
+// Game Over Menu
+
+function gameOver() {
+    if (timeUp) {
+        // victorySound();
+        gameOverMenuLaunch();
+        gameOverScore.innerText = score;
+        gameOverHighScore.innerText = highScore;
+    }
+}
+
+// Function launches the victory modal when the user completes the game
+
+function gameOverMenuLaunch() {
+    gameOverMenu.classList.remove("d-none");
+    gameOverMenu.classList.add("d-block");
+}
+
+// Restart Game
+function Restart() {
+    gameOverMenu.classList.remove("d-block");
+    gameOverMenu.classList.add("d-none");
+    game.classList.add("d-none");
+    mainMenu.classList.remove("d-none");
+}
+
+
 
 // Event Listeners
 mainPlayButton.addEventListener("click", gameSetUp);
+gameOverRestart.addEventListener("click", Restart);
 gamePlayButton.addEventListener("click", playGame);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));

@@ -162,6 +162,28 @@ body {
     font-size: 120%;
 }
 
+.game-over-donate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-over-button {
+    text-align: center;
+    border: 1px solid black;
+    flex: 1;
+    font-family: "Exo 2", sans-serif;
+    font-size: 120%;
+    font-weight: 500;
+    background-color: #a8fffd;
+    color: #000;
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin: 25px 70px 50px;
+}
+
 /* Plants and Aliens */
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
@@ -241,6 +263,11 @@ body {
     z-index: 8;
 }
 
+.modal-header {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+}
+
 .modal-backdrop {
     background-color: transparent;
 }
@@ -250,20 +277,41 @@ body {
 }
 
 .help-menu {
-    font-family: "Roboto Slab", sans-serif;
     padding: 5px;
 }
-
-.help-menu 
 
 .help-content {
     background-image: linear-gradient(#fff, #FF55DD);
 }
 
-.modal-header {
-    font-family: "Exo 2", sans-serif;
-    text-align: center;
+.game-over {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/game-assets/game-board.jpg");
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
+
+.game-over-content {
+    background-image: linear-gradient(#fff, #FF55DD );
+    box-sizing: border-box;
+    position: absolute;
+    top: 12vh;
+    width: 600px;
+    height: fit-content;
+    left: 25%;
+    font-size: 1rem;
+    z-index: 3;
+}
+
+
 
 
 /* Media Queries */
@@ -402,8 +450,9 @@ body {
   transition: 0.3s;
 }
 
-.alien-one.small {
-    background-size: 85%;
+.plant-back .alien-one.small {
+    left: 25%;
+    height: 70%;
 }
 
 .alien-one.big {

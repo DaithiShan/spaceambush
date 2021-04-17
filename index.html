@@ -28,7 +28,7 @@
 
             <!-- Main Menu -->
 
-            <div id="main-menu" class="main-background d-none">
+            <div id="main-menu" class="main-background d-block">
                 <div class="main-menu-content d-block">
                     <div class="main-menu-header text-center">
                         <h1 class="main-menu-title w-100">Space Ambush</h1>
@@ -53,7 +53,7 @@
 
         <!-- Game Area -->
 
-        <div id="game-container" class="container-fluid">
+        <div id="game-container" class="container-fluid d-none">
             <div class="ingame-menu">
                 <div class="score-container">
                     <h4>Score: <span id="score">0</span></h4>
@@ -166,6 +166,29 @@
             </div>
         </div>
     </div>
+
+        <!-- Game Over Menu -->
+
+        <div id="game-over" class="game-over modal d-none">
+            <div class="game-over-content modal-content">
+                <div class="modal-header text-center">
+                    <h2 class="w-100">Game Over</h2>
+                </div>
+                <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                    <p><strong>Score: </strong><span id="game-over-score">x</span></p>
+                    <p><strong>High score: </strong><span id="game-over-high-score">x</span></p>
+                    <p>You survived Space Ambush!</p>
+                    <p>But back on Earth, we've also been blindsided and need your help!</p>
+                    <p>Help us combat the spread of a global pandemic today for the cost of a coffee, and play again later!</p>
+                    <p>Can you help provide care in the Mater Hospital today?</p>
+                </div>
+                <div class="game-over-donate">
+                        <a id="game-over-restart" class="game-over-button d-inline">No</a>
+                        <a class="game-over-button d-inline" href="https://www.materfoundation.ie/donate" target="_blank">Yes</a>
+                    </div>
+            </div>
+        </div>
+
 
     <!-- Footer -->
 
