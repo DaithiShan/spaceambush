@@ -44,7 +44,7 @@
                         <button class="main-menu-button game-button-reverse w-50">
                             <span><strong>High Scores</strong></span>
                         </button>
-                        <button class="main-menu-button game-button-reverse w-50">
+                        <button id="main-audio-button" class="main-menu-button game-button-reverse w-50">
                             <span><strong>Audio</strong></span>
                         </button>
                     </div>
@@ -196,42 +196,46 @@
             </div>
         </div>
 
-        <!-- Audio Menu -->
+        <div id="audio-menu" class="modal audio-menu d-none">
+            <div class="modal-dialog" role="document">
+                <div class="audio-content modal-content">
+                    <div class="modal-header pt-2 px-1 pb-0 text-center">
+                        <h2 class="modal-title w-100">Audio Controls</h2>
+                    </div>
+                    <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                        <h4>Sound Effects</h4>
+                        <p>Choose volume level or toggle Sound effects ON or OFF.</p>
+                        <label for="sVolume-slider"><strong>Volume:</strong></label>
+                        <input type="range" value="40" min="0" max="100" step="10" id="sVolume-slider"
+                            name="sound-volume">
+                        <br>
+                        <p>Use button below to toggle Sound ON or OFF:</p>
+                        <button id="audio-btn" class="audio-button game-button-reverse">
+                            <span>On</span>
+                        </button>
+                        <hr>
+                        <h4>Game Music</h4>
+                        <p>Choose volume level or toggle Game Music On or Off.</p>
+                        <label for="mVolume-slider"><strong>Volume:</strong></label>
+                        <input type="range" value="40" min="0" max="100" step="10" id="mVolume-slider"
+                            name="music-volume">
+                        <br>
+                        <p>Use button below to toggle Game Music On or Off:</p>
+                        <button id="music-btn" class="audio-button game-button-reverse">
+                            <span>On</span>
+                        </button>
 
-        <div id="audio-menu" class="modal d-none audio-menu">
-            <div class="audio-content">
-                <div class="inner-header pt-2 px-1 pb-0 text-center">
-                    <h2>Audio Controls</h2>
-                </div>
-                <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
-                    <h3>Sound Effects</h3>
-                    <p>Choose volume level or toggle sound effects On or Off.</p>
-                    <label for="sVolume-slider"><strong>Volume:</strong></label>
-                    <input type="range" value="40" min="0" max="100" step="10" id="sVolume-slider" name="sound-volume">
-                    <br>
-                    <p>Toggle sound On or Off:</p>
-                    <button id="audio-btn" class="game-button-reverse">On</button>
-                    <hr>
-                    <h3>Game Music</h3>
-                    <p>Choose volume level or toggle game music On or Off.</p>
-                    <label for="mVolume-slider"><strong>Volume:</strong></label>
-                    <input type="range" value="40" min="0" max="100" step="10" id="mVolume-slider" name="music-volume">
-                    <br>
-                    <p>Toggle music On or Off:</p>
-                    <button id="music-btn" class="general-btn main-color">
-                        <span>ON</span>
-                    </button>
+                        <audio id="game-music">
+                            <source src="assets/audio/Space Loop.mp3" type="audio/mp3">
+                            <p>Your browser doesn't support HTML5 audio.</p>
+                        </audio>
 
-                    <audio id="game-music">
-                        <source src="assets/audio/Space Loop.mp3" type="audio/mp3">
-                        <p>Your browser doesn't support HTML5 audio.</p>
-                    </audio>
-
-                </div>
-                <div class="p-2 text-center">
-                    <button id="audio-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                    </button>
+                    </div>
+                    <div class="p-2 text-center">
+                        <button id="audio-close" class="audio-modal-close game-button-reverse" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
