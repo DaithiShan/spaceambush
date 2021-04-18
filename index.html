@@ -16,9 +16,9 @@
 
 <body>
     <header>
-                <div id="donate-container" class="container-fluid d-none">
-                    <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
-                </div>
+        <div id="donate-container" class="container-fluid d-none">
+            <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
+        </div>
     </header>
 
     <main class="content">
@@ -37,15 +37,16 @@
                         <p>How long can YOU hold off an Alien Ambush in Outer Space?</p>
                     </div>
                     <div class="main-menu-buttons flex-column d-flex align-items-center text-center">
-                    <button id="main-play-button" class="main-menu-button game-button-reverse w-50" data-bs-toggle="modal" data-bs-target="#set-up">
-                        <span><strong>Play</strong></span>
-                    </button>
-                    <button class="main-menu-button game-button-reverse w-50">
-                        <span><strong>High Scores</strong></span>
-                    </button>
-                    <button class="main-menu-button game-button-reverse w-50">
-                        <span><strong>Audio</strong></span>
-                    </button>
+                        <button id="main-play-button" class="main-menu-button game-button-reverse w-50"
+                            data-bs-toggle="modal" data-bs-target="#set-up">
+                            <span><strong>Play</strong></span>
+                        </button>
+                        <button class="main-menu-button game-button-reverse w-50">
+                            <span><strong>High Scores</strong></span>
+                        </button>
+                        <button class="main-menu-button game-button-reverse w-50">
+                            <span><strong>Audio</strong></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -95,77 +96,81 @@
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- Game Set-Up -->
+        <!-- Game Set-Up -->
 
-    <div id="set-up" class="modal d-none">
+        <div id="set-up" class="modal d-none">
             <div class="modal-dialog" role="document">
                 <div class="modal-content set-up-content ">
-                <div class="set-up-header modal-header pt-2 px-1 pb-0 text-center">
-                    <h2 class="modal-title w-100">Pick your level</h2>
-                </div>
-                <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
-                    <button class="text-center level-select-btn" id="easy">
-                        <img src="./assets/images/level-choice/easy.png" alt="Level selection button that says easy and features a blue alien lifeform">
-                    </button>
-                    <p>You're up against a single alien lifeform. To score points, tap or click on him, but do it quickly! Or he'll turn red, shoot you and damage your score</p>
-                    <button class="text-center level-select-btn" onclick="levelChoice(this); gamePlay()" id="hard">
-                        <img src="./assets/images/level-choice/hard.png" alt="Level selection button that says hard and features an angry green alien lifeform">
-                    </button>
-                    <p>Uh oh! You're in double trouble. To score points, tap or click on both alien attackers quickly. Before they attack! Once they turn red, they shoot and damage your score...</p>
-                </div>
-                <div class="p-2 text-center">
-                    <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
+                    <div class="set-up-header modal-header pt-2 px-1 pb-0 text-center">
+                        <h2 class="modal-title w-100">Pick your level</h2>
+                    </div>
+                    <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                        <button class="text-center level-select-btn" id="easy">
+                            <img src="./assets/images/level-choice/easy.png"
+                                alt="Level selection button that says easy and features a blue alien lifeform">
+                        </button>
+                        <p>You're up against a single alien lifeform. To score points, tap or click on him, but do it
+                            quickly! Or he'll turn red, shoot you and damage your score</p>
+                        <button class="text-center level-select-btn" onclick="levelChoice(this); gamePlay()" id="hard">
+                            <img src="./assets/images/level-choice/hard.png"
+                                alt="Level selection button that says hard and features an angry green alien lifeform">
+                        </button>
+                        <p>Uh oh! You're in double trouble. To score points, tap or click on both alien attackers
+                            quickly. Before they attack! Once they turn red, they shoot and damage your score...</p>
+                    </div>
+                    <div class="p-2 text-center">
+                        <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-    <!-- Help Menu -->
+        <!-- Help Menu -->
 
-    <div id="help-menu" class="modal help-menu" tabindex="-1" aria-labelledby="help-menu">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content help-content">
-                <div class="modal-header inner-header text-center">
-                    <h3 class="modal-title w-100">Game Help</h3>
-                </div>
-                <div class="pt-2 px-1 pb-0 d-flex flex-column">
-                    <ul>
-                        <li>
-                            You've been Space Ambushed!
-                        </li>
-                        <li>
-                            What now?
-                            <ul>
-                                <li>
-                                    <strong>You're Playing Easy Mode</strong>
-                                    <br>You've been ambushed by a single alien. Tap or click on him quickly! Before he
-                                    gets the chance to attack!!
-                                </li>
-                                <li>
-                                    <strong>You're Playing Hard Mode</strong>
-                                    <br> Uh oh! You've been ambushed by 2 aliens. Tap or click on both attackers
-                                    quickly. Before they attack! One is twice as dangerous, but only worth half
-                                    points...
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Have fun and hold off the attack for as long as you can!
-                        </li>
-                    </ul>
-                </div>
-                <div class="p-2 justify-content-center modal-footer">
-                    <button id="set-up-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
-                        <i class="fas fa-times"></i>
-                    </button>
+        <div id="help-menu" class="modal help-menu" tabindex="-1" aria-labelledby="help-menu">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content help-content">
+                    <div class="modal-header inner-header text-center">
+                        <h3 class="modal-title w-100">Game Help</h3>
+                    </div>
+                    <div class="pt-2 px-1 pb-0 d-flex flex-column">
+                        <ul>
+                            <li>
+                                You've been Space Ambushed!
+                            </li>
+                            <li>
+                                What now?
+                                <ul>
+                                    <li>
+                                        <strong>You're Playing Easy Mode</strong>
+                                        <br>You've been ambushed by a single alien. Tap or click on him quickly! Before
+                                        he
+                                        gets the chance to attack!!
+                                    </li>
+                                    <li>
+                                        <strong>You're Playing Hard Mode</strong>
+                                        <br> Uh oh! You've been ambushed by 2 aliens. Tap or click on both attackers
+                                        quickly. Before they attack! One is twice as dangerous, but only worth half
+                                        points...
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Have fun and hold off the attack for as long as you can!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-2 justify-content-center modal-footer">
+                        <button id="set-up-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
         <!-- Game Over Menu -->
 
@@ -179,15 +184,58 @@
                     <p><strong>High score: </strong><span id="game-over-high-score">x</span></p>
                     <p>You survived Space Ambush!</p>
                     <p>But back on Earth, we've also been blindsided and need your help!</p>
-                    <p>Help us combat the spread of a global pandemic today for the cost of a coffee, and play again later!</p>
+                    <p>Help us combat the spread of a global pandemic today for the cost of a coffee, and play again
+                        later!</p>
                     <p>Can you help provide care in the Mater Hospital today?</p>
                 </div>
                 <div class="game-over-donate">
-                        <a id="no-return" class="game-over-button d-inline">No</a>
-                        <a id="yes-return" class="game-over-button d-inline" href="https://www.materfoundation.ie/donate" target="_blank">Yes</a>
-                    </div>
+                    <a id="no-return" class="game-over-button d-inline">No</a>
+                    <a id="yes-return" class="game-over-button d-inline" href="https://www.materfoundation.ie/donate"
+                        target="_blank">Yes</a>
+                </div>
             </div>
         </div>
+
+        <!-- Audio Menu -->
+
+        <div id="audio-menu" class="modal d-none audio-menu">
+            <div class="audio-content">
+                <div class="inner-header pt-2 px-1 pb-0 text-center">
+                    <h2>Audio Controls</h2>
+                </div>
+                <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                    <h3>Sound Effects</h3>
+                    <p>Choose volume level or toggle sound effects On or Off.</p>
+                    <label for="sVolume-slider"><strong>Volume:</strong></label>
+                    <input type="range" value="40" min="0" max="100" step="10" id="sVolume-slider" name="sound-volume">
+                    <br>
+                    <p>Toggle sound On or Off:</p>
+                    <button id="audio-btn" class="game-button-reverse">On</button>
+                    <hr>
+                    <h3>Game Music</h3>
+                    <p>Choose volume level or toggle game music On or Off.</p>
+                    <label for="mVolume-slider"><strong>Volume:</strong></label>
+                    <input type="range" value="40" min="0" max="100" step="10" id="mVolume-slider" name="music-volume">
+                    <br>
+                    <p>Toggle music On or Off:</p>
+                    <button id="music-btn" class="general-btn main-color">
+                        <span>ON</span>
+                    </button>
+
+                    <audio id="game-music">
+                        <source src="assets/audio/Space Loop.mp3" type="audio/mp3">
+                        <p>Your browser doesn't support HTML5 audio.</p>
+                    </audio>
+
+                </div>
+                <div class="p-2 text-center">
+                    <button id="audio-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
     <!-- Footer -->
