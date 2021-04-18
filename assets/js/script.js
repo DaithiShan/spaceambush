@@ -4,6 +4,8 @@
 const mainDonate = document.getElementById("donate-container");
 
 const mainMenu = document.getElementsByClassName("main-menu-content")[0];
+const mainPlayButton = document.querySelector("#main-play-button");
+const mainAudio = document.querySelector("#main-audio-button")
 
 const setUpMenu = document.querySelector("#set-up");
 
@@ -11,7 +13,7 @@ const easyLevel = document.querySelector("#easy");
 const hardLevel = document.querySelector("#hard");
 const setUpClose = document.querySelector("#set-up-close")
 
-const mainPlayButton = document.querySelector("#main-play-button");
+const audioMenu = document.querySelector("#audio-menu")
 
 const game = document.querySelector("#game-container")
 
@@ -76,6 +78,24 @@ function startHardGame() {
     levelHard = true;
 }
 
+// Audio Menu
+
+function audioDisplay() {
+        mainMenu.classList.remove("d-block");
+        mainMenu.classList.add("d-none");
+        audioMenu.classList.remove("d-none");
+        audioMenu.classList.add("d-block");
+        document.querySelectorAll(".audio-modal-close").forEach(item => {
+            item.addEventListener("click", event => {
+                audioMenu.classList.remove("d-block");
+                audioMenu.classList.add("d-none");
+                mainMenu.classList.remove("d-none");
+                mainMenu.classList.add("d-block");
+            });
+        });
+    }
+
+
 // In-Game Functions
 
 function randomTime(min, max) {
@@ -130,6 +150,7 @@ function alienOneAttack() {
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
         score--;
         scoreDisplay.textContent = score;
+        clickSound();
         setTimeout(() => {
     this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
     this.children[0].style.pointerEvent = "all";
@@ -146,6 +167,7 @@ function alienTwoAttack() {
         this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two-attack.svg)";
         score--;
         scoreDisplay.textContent = score;
+        clickSound();
         setTimeout(() => {
     this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
     this.children[1].style.pointerEvent = "all";
@@ -155,7 +177,7 @@ function alienTwoAttack() {
 }
 
 function whackAlienOne(e) {
-    // whackSound();
+    clickSound();
     score ++;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
     this.style.pointerEvent = "none";
@@ -168,7 +190,7 @@ function whackAlienOne(e) {
 }
 
 function smackAlienTwo(e) {
-    // whackSound();
+    clickSound();
     score ++;
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two-dizzy.svg)";
     this.style.pointerEvent = "none";
@@ -181,6 +203,10 @@ function smackAlienTwo(e) {
 }
 
 function playGame() {
+    if (playMenuMusic() === true) {
+    stopMenuMusic();
+    }
+    playMusic();
     timer = timeLimit/1000;
     score = 0;
     scoreDisplay.textContent = 0;
@@ -216,14 +242,15 @@ function checkHighScore() {
 
 function gameOver() {
     if (timeUp) {
-        // victorySound();
+        stopMusic();
+        gameOverEffect();
         gameOverMenuLaunch();
         gameOverScore.innerText = score;
         gameOverHighScore.innerText = highScore;
     }
 }
 
-// Function launches the victory modal when the user completes the game
+// Function launches the Game Over modal when the user completes the game
 
 function gameOverMenuLaunch() {
     gameOverMenu.classList.remove("d-none");
@@ -245,6 +272,17 @@ mainPlayButton.addEventListener("click", gameSetUp);
 
 easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
+
+// Audio Options Listener.
+
+mainAudio.addEventListener("click", audioDisplay)
+
+document.getElementById("sound-button").addEventListener("click", event => {
+    soundEffectController();
+});
+document.getElementById("music-button").addEventListener("click", event => {
+    musicController();
+});
 
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)

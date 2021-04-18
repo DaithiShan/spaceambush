@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 
-<body>
+<body onload="defaultVolume();">
     <header>
         <div id="donate-container" class="container-fluid d-none">
             <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
@@ -128,6 +128,19 @@
             </div>
         </div>
 
+              <!-- Scores -->
+      <div
+        id="high-scores-container"
+        class="d-none"
+      >
+        <p id="scores-list-text">
+          You haven't achieved anything yet. Once you do, your top 5 scores will be displayed here.
+        </p>
+        <div id="high-scores-list" class="high-scores-list">
+          <ol></ol>
+        </div>
+      </div>
+
         <!-- Help Menu -->
 
         <div id="help-menu" class="modal help-menu" tabindex="-1" aria-labelledby="help-menu">
@@ -211,7 +224,7 @@
                         <br>
                         <p>Use button below to toggle Sound ON or OFF:</p>
                         <button id="sound-button" class="audio-button game-button-reverse">
-                            <span>On</span>
+                            <span><i class="fas fa-volume-up"></i></span>
                         </button>
                         <hr>
                         <h4>Game Music</h4>
@@ -222,11 +235,11 @@
                         <br>
                         <p>Use button below to toggle Game Music ON or OFF:</p>
                         <button id="music-button" class="audio-button game-button-reverse">
-                            <span>On</span>
+                            <span><i class="fas fa-volume-up"></i></span>
                         </button>
 
                         <audio id="game-music">
-                            <source src="assets/audio/Space Loop.mp3" type="audio/mp3">
+                            <source src="assets/audio/game-music.mp3" type="audio/mp3">
                             <p>Your browser doesn't support HTML5 audio.</p>
                         </audio>
 

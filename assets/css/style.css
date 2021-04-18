@@ -170,6 +170,7 @@ body {
     background-color:#00ffff;
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 .audio-modal-close {
