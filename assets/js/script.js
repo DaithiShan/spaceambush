@@ -24,7 +24,10 @@ const alienTwos = document.querySelectorAll(".alien-two");
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
-const gameExitButton = document.querySelector(".game-exit-button");
+
+const gameAudioButton = document.querySelector("#game-audio-button");
+const gameExitButton = document.querySelector("#game-exit-button");
+
 const gameOverMenu = document.querySelector("#game-over");
 const gameOverScore = document.querySelector("#game-over-score");
 const gameOverHighScore = document.querySelector("#game-over-high-score");
@@ -344,8 +347,11 @@ document.getElementById("music-button").addEventListener("click", event => {
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
 
+gameAudioButton.addEventListener("click", toggleAudio);
+gameExitButton.addEventListener("click", gameOver);
+
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)
-gameExitButton.addEventListener("click", gameOver);
+
 
 

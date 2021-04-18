@@ -6,6 +6,7 @@ let audio = {
     gameMenuMusic: new Audio("assets/audio/menu-music.mp3"),
     isSoundMuted: false,
     isMusicMuted: false,
+    isMenuMusic: false,
     soundButton: document.getElementById("sound-button"),
     musicButton: document.getElementById("music-button"),
     musicVolumeSlider: document.getElementById("mVolume-slider"),
@@ -28,6 +29,7 @@ audio.musicVolumeSlider.addEventListener("change", event => {
         stopMenuMusic();
     } else {
         playMenuMusic();
+        audio.isMenuMusic = true;
     }
 });
 
@@ -42,6 +44,7 @@ function musicController() {
         audio.isMusicMuted = false;
         audio.musicButton.innerHTML = "<i class='fas fa-volume-up'></i>";
         playMenuMusic();
+        audio.isMenuMusic = true;
     } else if (audio.isMusicMuted === false) {
         audio.isMusicMuted = true;
         audio.musicButton.innerHTML = "<i class='fas fa-volume-mute'></i>";
@@ -62,7 +65,6 @@ function musicController() {
 //The below function will play music as long as the conditions are met.
 
 function playMusic() {
-    // isGameActive();
     if (audio.isMusicMuted !== true) {
         audio.gameMusic.play();
         audio.gameMusic.loop = true;
@@ -70,7 +72,6 @@ function playMusic() {
 }
 
 function playMenuMusic() {
-    // isGameActive();
     if (audio.isMusicMuted !== true) {
         audio.gameMenuMusic.play();
         audio.gameMenuMusic.loop = true;
@@ -127,6 +128,35 @@ function soundEffectController() {
 function clickSound() {
     if (audio.isSoundMuted === false) {
         audio.clickAudio.play();
+    }
+}
+
+// Toggles both Music and Sound together
+
+function toggleAudio() {
+    if(audio.isSoundMuted === false && audio.isMusicMuted === false)
+    {
+        audio.isSoundMuted = true;
+        audio.isMusicMuted = true;
+        audio.gameMusic.pause();
+        audio.gameMusic.currentTime = 0;
+        audio.clickAudio.pause();
+        gameAudioButton.innerHTML = "<i class='fas fa-volume-mute'></i>";
+    } else if(audio.isSoundMuted === false) {
+        audio.isSoundMuted = true;
+        audio.clickAudio.pause();
+        gameAudioButton.innerHTML = "<i class='fas fa-volume-mute'></i>";
+    } else if(audio.isMusicMuted === false) {
+        audio.isMusicMuted = true;
+        audio.gameMusic.pause();
+        gameAudioButton.innerHTML = "<i class='fas fa-volume-mute'></i>";
+    } else {
+        audio.isSoundMuted = false;
+        audio.isMusicMuted = false;
+        audio.clickAudio.play();
+        audio.gameMusic.play();
+        audio.gameMusic.loop = true;
+        gameAudioButton.innerHTML = "<i class='fas fa-volume-up'></i>"
     }
 }
 
