@@ -294,6 +294,10 @@ body {
     background-image: linear-gradient(#fff, #FF55DD);
 }
 
+.main-highscore-content {
+    background-image: linear-gradient(#fff, #FF55DD);
+}
+
 .audio-content {
     background-image: linear-gradient(#fff, #FF55DD);
     height: fit-content;

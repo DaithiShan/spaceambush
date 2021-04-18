@@ -41,7 +41,7 @@
                             data-bs-toggle="modal" data-bs-target="#set-up">
                             <span><strong>Play</strong></span>
                         </button>
-                        <button class="main-menu-button game-button-reverse w-50">
+                        <button id="main-highscore-button" class="main-menu-button game-button-reverse w-50">
                             <span><strong>High Scores</strong></span>
                         </button>
                         <button id="main-audio-button" class="main-menu-button game-button-reverse w-50">
@@ -128,18 +128,27 @@
             </div>
         </div>
 
-              <!-- Scores -->
-      <div
-        id="high-scores-container"
-        class="d-none"
-      >
-        <p id="scores-list-text">
-          You haven't achieved anything yet. Once you do, your top 5 scores will be displayed here.
-        </p>
-        <div id="high-scores-list" class="high-scores-list">
-          <ol></ol>
+        <!-- Scores -->
+        <div id="main-highscore-container" class="modal d-none">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content main-highscore-content">
+                    <div class="main-highscore-header modal-header pt-2 px-1 pb-0 text-center">
+                        <h2 class="modal-title w-100">Your High Scores</h2>
+                    </div>
+                    <p id="scores-list-text">
+                        You haven't achieved anything yet. Once you do, your top 5 scores will be displayed here.
+                    </p>
+                    <div id="high-scores-list" class="high-scores-list">
+                        <ol></ol>
+                    </div>
+                    <div class="p-2 justify-content-center modal-footer">
+                        <button id="score-modal-close" class="score-modal-close modal-close game-button-reverse" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
         <!-- Help Menu -->
 
@@ -269,6 +278,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
         integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
         crossorigin="anonymous"></script>
+    <script src="assets/js/highscores.js"></script>
     <script src="assets/js/audio.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
