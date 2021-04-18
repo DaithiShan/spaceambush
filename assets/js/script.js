@@ -65,6 +65,7 @@ function gameSetUp() {
 
 function startEasyGame() {
     clickSound();
+    levelHard = false;
     setUpMenu.classList.remove("d-block");
     setUpMenu.classList.add("d-none");
     game.classList.remove("d-none");
