@@ -1,11 +1,12 @@
-/* Base functionality influenced by Frank's Labratory tutorial: https://youtu.be/RTb8icFiSfk */
-
 // Global Variables
-const mainDonate = document.getElementById("donate-container");
+
+const donateButton = document.getElementById("donate-container");
 
 const mainMenu = document.getElementsByClassName("main-menu-content")[0];
 const mainPlayButton = document.querySelector("#main-play-button");
-const mainAudio = document.querySelector("#main-audio-button")
+const mainAudioButton = document.querySelector("#main-audio-button")
+const mainHighScoreButton = document.querySelector("#main-highscore-button")
+const mainHighScoreMenu = document.querySelector("#main-highscore-container")
 
 const setUpMenu = document.querySelector("#set-up");
 
@@ -23,7 +24,7 @@ const alienTwos = document.querySelectorAll(".alien-two");
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
-const gamePlayButton = document.querySelector(".game-play-button");
+const gameExitButton = document.querySelector(".game-exit-button");
 const gameOverMenu = document.querySelector("#game-over");
 const gameOverScore = document.querySelector("#game-over-score");
 const gameOverHighScore = document.querySelector("#game-over-high-score");
@@ -39,16 +40,15 @@ let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
 
-// // Main-Menu Functions
+// Main Menu Functions
 
-// Basic functionality inspired by Andy Osbourne : https://github.com/Andy-Osborne/Dwarf-Match/
+// This opens Level Set Up on clicking Play Button
 
-// Set-Up Menu
 function gameSetUp() {
-    // clickSound();
+    clickSound();
     mainMenu.classList.remove("d-block");
     mainMenu.classList.add("d-none");
-    mainDonate.classList.add("d-none");
+    donateButton.classList.add("d-none");
     setUpMenu.classList.remove("d-none");
     setUpMenu.classList.add("d-block");
     document.querySelectorAll(".modal-close").forEach(item => {
@@ -61,7 +61,10 @@ function gameSetUp() {
     });
 }
 
+// This follows Level Set Up, and sets to Easy Level
+
 function startEasyGame() {
+    clickSound();
     setUpMenu.classList.remove("d-block");
     setUpMenu.classList.add("d-none");
     game.classList.remove("d-none");
@@ -69,7 +72,10 @@ function startEasyGame() {
     playGame();
 }
 
+// This follows Level Set Up, and sets to Hard Level
+
 function startHardGame() {
+    clickSound();
     setUpMenu.classList.remove("d-block");
     setUpMenu.classList.add("d-none");
     game.classList.remove("d-none");
@@ -78,7 +84,24 @@ function startHardGame() {
     levelHard = true;
 }
 
-// Audio Menu
+// This opens High Score Display on clicking High Scores
+
+function mainHighScoreDisplay() {
+        mainMenu.classList.remove("d-block");
+        mainMenu.classList.add("d-none");
+        mainHighScoreMenu.classList.remove("d-none");
+        mainHighScoreMenu.classList.add("d-block");
+        document.querySelectorAll(".score-modal-close").forEach(item => {
+            item.addEventListener("click", event => {
+                mainHighScoreMenu.classList.remove("d-block");
+                mainHighScoreMenu.classList.add("d-none");
+                mainMenu.classList.remove("d-none");
+                mainMenu.classList.add("d-block");
+            });
+        });
+    }
+
+// This opens Audio Set Up on clicking Audio Button
 
 function audioDisplay() {
         mainMenu.classList.remove("d-block");
@@ -98,9 +121,13 @@ function audioDisplay() {
 
 // In-Game Functions
 
+// This function creates a random time window for each space ambush
+
 function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
+
+// This function selects the andom plants from which aliens ambush you
 
 function pickRandomPlant(plants) {
     const randomPlant = Math.floor(Math.random() * plants.length);
@@ -113,7 +140,8 @@ function pickRandomPlant(plants) {
     return plant;
 }
 
-// Use if statement to control what level of ambush
+// This function controls each space ambush by the aliens
+
 function ambush() {
     const popOutTime = randomTime(1100, 900);
     const plant = pickRandomPlant(plants);
@@ -122,16 +150,7 @@ function ambush() {
     if (plant === plantTwo) {
         pickRandomPlant(plants)
     }
-    if(levelHard){
-    plantTwo.children[1].isAmbushing = Math.random() < 0.34;
-    if(plantTwo.children[1].isAmbushing) {
-        plantTwo.classList.add("up-two");
-        setTimeout(()=>{alienTwoAttack.call(plantTwo)}, 670);
-        setTimeout(() => {
-        plantTwo.classList.remove("up-two");
-    }, popOutTimeTwo)
-};
-}
+
     plant.classList.add("up");
     setTimeout(()=>{alienOneAttack.call(plant)}, 670);
     setTimeout(() => {
@@ -140,11 +159,27 @@ function ambush() {
             ambush();
         }
     }, popOutTime);
+
+    // This part of the function calls in a second alien for the Hard Level
+
+    if(levelHard){
+    plantTwo.children[1].isAmbushing = Math.random() < 0.30;
+    if(plantTwo.children[1].isAmbushing) {
+        setTimeout(()=> {
+        plantTwo.classList.add("up-two");
+        setTimeout(()=>{alienTwoAttack.call(plantTwo)}, 670);
+        setTimeout(() => {
+        plantTwo.classList.remove("up-two");
+      }, popOutTimeTwo)}, 300);
+    };
+  };
 }
+
+// This function sets probability and attack time of Alien One
 
 function alienOneAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.34;
+        this.children[0].isAttacking = Math.random() < 0.30;
         if(this.children[0].isAttacking) {
         this.children[0].pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
@@ -158,6 +193,8 @@ function alienOneAttack() {
       }
   }
 }
+
+// This function sets the probability and attack time of Alien Two
 
 function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
@@ -176,6 +213,8 @@ function alienTwoAttack() {
   }
 }
 
+// This function controls the user's ability to whack Alien One
+
 function whackAlienOne(e) {
     clickSound();
     score ++;
@@ -188,6 +227,8 @@ function whackAlienOne(e) {
   scoreDisplay.textContent = score;
   return this.isWhacked;
 }
+
+// This function controls the user's ability to smack Alien Two
 
 function smackAlienTwo(e) {
     clickSound();
@@ -202,9 +243,22 @@ function smackAlienTwo(e) {
   return this.isWhacked;
 }
 
+// This function checks if the game time of 30 seconds is finished
+
+function isTimeUp() {
+    if (timer <= 0) {
+      timeUp = true;
+      gameOver();
+    } else {
+      setTimeout(isTimeUp, timer * 1000);
+    }
+  }
+
+// This is the master function for gameplay, and calls all participating sub-functions e.g. ambush, audio, etc 
+
 function playGame() {
-    if (playMenuMusic() === true) {
-    stopMenuMusic();
+    if(audio.isMenuMusic) {
+        stopMenuMusic();
     }
     playMusic();
     timer = timeLimit/1000;
@@ -214,9 +268,8 @@ function playGame() {
     timerDisplay.textContent = timer;
     timeUp = false;
     ambush();
-    setTimeout(()=>{
-        timeUp = true;
-    }, timeLimit);
+
+    setTimeout(isTimeUp, timeLimit);
 
     let startTimer = setInterval(()=>{
         timer -= 1;
@@ -230,6 +283,8 @@ function playGame() {
     }, 1000);
 }
 
+// This function checks the user's high score using local storage
+
 function checkHighScore() {
     if(score > localStorage.getItem("gameHighScore")) {
         localStorage.setItem("gameHighScore", score);
@@ -238,36 +293,37 @@ function checkHighScore() {
     }
 }
 
-// Game Over Menu
+// This function ends the game, and calls the Game Over Menu function
 
 function gameOver() {
-    if (timeUp) {
-        stopMusic();
+        timeUp = true;
         gameOverEffect();
+        stopMusic();
         gameOverMenuLaunch();
         gameOverScore.innerText = score;
         gameOverHighScore.innerText = highScore;
-    }
 }
 
-// Function launches the Game Over modal when the user completes the game
+// This function is responsible for the Game Over Menu
 
 function gameOverMenuLaunch() {
     gameOverMenu.classList.remove("d-none");
     gameOverMenu.classList.add("d-block");
 }
 
-// Restart Game
+// This function returns the user to the Main Menu after every game
+
 function homeReturn() {
+    clickSound();
     gameOverMenu.classList.remove("d-block");
     gameOverMenu.classList.add("d-none");
+    game.classList.remove("d-block");
     game.classList.add("d-none");
     mainMenu.classList.remove("d-none");
+    mainMenu.classList.add("d-block");
 }
 
-
-
-// Event Listeners
+// These are all the Event Listeners
 mainPlayButton.addEventListener("click", gameSetUp);
 
 easyLevel.addEventListener("click", startEasyGame);
@@ -275,7 +331,9 @@ hardLevel.addEventListener("click", startHardGame);
 
 // Audio Options Listener.
 
-mainAudio.addEventListener("click", audioDisplay)
+mainAudioButton.addEventListener("click", audioDisplay);
+
+mainHighScoreButton.addEventListener("click", mainHighScoreDisplay);
 
 document.getElementById("sound-button").addEventListener("click", event => {
     soundEffectController();
@@ -286,6 +344,6 @@ document.getElementById("music-button").addEventListener("click", event => {
 
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)
-gamePlayButton.addEventListener("click", playGame);
+gameExitButton.addEventListener("click", gameOver);
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
