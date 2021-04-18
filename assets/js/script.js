@@ -324,17 +324,15 @@ function homeReturn() {
     mainMenu.classList.add("d-block");
 }
 
-// These are all the Event Listeners
+// Event Listeners
 mainPlayButton.addEventListener("click", gameSetUp);
 
 easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
 
-// Audio Options Listener.
+mainHighScoreButton.addEventListener("click", mainHighScoreDisplay);
 
 mainAudioButton.addEventListener("click", audioDisplay);
-
-mainHighScoreButton.addEventListener("click", mainHighScoreDisplay);
 
 document.getElementById("sound-button").addEventListener("click", event => {
     soundEffectController();
@@ -343,8 +341,11 @@ document.getElementById("music-button").addEventListener("click", event => {
     musicController();
 });
 
+alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
+alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
+
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)
 gameExitButton.addEventListener("click", gameOver);
-alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
-alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
+
+
