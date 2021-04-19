@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Roboto+Slab:wght@300;400;600&display=swap");
 
-/* Top Level General Formatting */
+/* Top Level DOM Elements */
 
 html {
     height: 100%;
@@ -16,7 +16,7 @@ body {
     margin: 0;
 }
 
-/* Donate Button */
+/* Home Page Donate Button */
 
 #donate-container {
     height: 100px;
@@ -65,11 +65,11 @@ body {
 .main-menu-content {
     background-image: linear-gradient(#fff, #FF55DD );
     box-sizing: border-box;
-    position: absolute;
     top: 12vh;
     width: 600px;
-    height: 400px;
-    left: 25%;
+    height: fit-content;
+    margin: auto;
+    margin-top: 12vh;
     z-index: 3;
 }
 
@@ -92,6 +92,10 @@ body {
     font-size: 105%;
     border-radius: 20px;
     cursor: pointer;
+}
+
+#main-audio-button {
+    margin-bottom: 5vh;
 }
 
 /* Game Area + Board */
@@ -136,7 +140,6 @@ body {
   }
 
 #game-board {
-    /* border: 2px solid black; */
     position: relative;
     width: 600px;
     height: 400px;
@@ -162,7 +165,7 @@ body {
     color: #000;
     width: 35px;
     height: 35px;
-    font-size: 120%;
+    font-size: 110%;
     cursor: pointer;
 }
 
@@ -205,7 +208,6 @@ body {
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
-    /* border: 3px solid red; */
     flex: 1 0 33.33%;
     position: relative;
     overflow: hidden;
@@ -283,38 +285,24 @@ body {
 .modal-header {
     font-family: "Exo 2", sans-serif;
     text-align: center;
+    margin-bottom: 1vh;
+}
+
+.modal-content {
+    background-image: linear-gradient(#fff, #FF55DD);
+    height: auto;
+    width: auto;
+    margin: auto;
+    margin-top: 12vh;
+}
+
+.modal-close {
+    margin-bottom: 3vh;
 }
 
 .modal-backdrop {
     background-color: transparent;
     z-index: -1;
-}
-
-.set-up-content {
-    background-image: linear-gradient(#fff, #FF55DD);
-}
-
-.main-highscore-content {
-    background-image: linear-gradient(#fff, #FF55DD);
-}
-
-.audio-content {
-    background-image: linear-gradient(#fff, #FF55DD);
-    height: fit-content;
-}
-
-.audio-content p {
-    margin-top: 20px;
-    margin-bottom: 0;
-    padding: 10px; 
-}
-
-.help-menu {
-    padding: 5px;
-}
-
-.help-content {
-    background-image: linear-gradient(#fff, #FF55DD);
 }
 
 .game-over {
@@ -348,11 +336,6 @@ body {
 
 @media only screen and (max-width: 768px) {
 
-    .main-menu-content {
-        left: 10%;
-        height: 40vh;
-    }
- 
     #game-board {
     width: 80vw;
     height: 55vh;
@@ -405,7 +388,6 @@ body {
         top: 15%;
         width: 80vw;
         height: fit-content;
-        left: 10%;
     }
 
     .main-menu-buttons {
@@ -508,16 +490,10 @@ body {
     width: 75%;
     height: 85%;
 }
+
 }
 
 @media only screen and (max-device-width: 320px) {
-
-     .main-menu-content {
-        top: 20%;
-        width: 80vw;
-        height: 70vh;
-        left: 10%;
-    }
 
     .main-menu-text {
     font-size: 20px;
