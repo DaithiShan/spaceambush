@@ -283,7 +283,6 @@ function playGame() {
         if (timer <= 0) {
             timer = 0;
             clearInterval(startTimer);
-            checkHighScore();
             gameOver();
         }
     }, 1000);
@@ -305,6 +304,7 @@ function gameOver() {
         timeUp = true;
         gameOverEffect();
         stopMusic();
+        checkHighScore();
         gameOverMenuLaunch();
         gameOverScore.innerText = score;
         gameOverHighScore.innerText = highScore;
@@ -353,6 +353,7 @@ alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo))
 gameAudioButton.addEventListener("click", toggleAudio);
 gameExitButton.addEventListener("click", ()=>{
     timeUp = true;
+    timer = 0;
     clearInterval(startTimer);
 });
 
