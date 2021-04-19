@@ -121,8 +121,8 @@ body {
     background-color: #a8fffd;
     color: #000;
     text-decoration: none;
-    width: 100px;
-    height: 50px;
+    max-width: 110%;
+    max-height: 110%;
     border-radius: 20px;
     padding: 10px 10px;
     margin: 25px 70px 50px;
@@ -131,6 +131,9 @@ body {
 
 .modal-close {
     margin: 2vh auto;
+    height: auto;
+    width: auto;
+    border-radius: 10%;
 }
 
 /* Menu Styling */
@@ -151,6 +154,10 @@ body {
     width: auto;
     margin: auto;
     margin-top: 12vh;
+}
+
+.modal-content p {
+    padding: 0 20px;
 }
 
 .modal-backdrop {
@@ -182,8 +189,7 @@ body {
 .game-over-content {
     background-image: linear-gradient(#fff, #FF55DD );
     box-sizing: border-box;
-    top: 12vh;
-    width: 600px;
+    width: fit-content;
     height: fit-content;
     font-size: 1rem;
     z-index: 3;
