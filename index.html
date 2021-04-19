@@ -16,8 +16,8 @@
 
 <body onload="defaultVolume();">
     <header>
-        <div id="donate-container" class="container-fluid d-none">
-            <button class="donate"><a href="https://www.materfoundation.ie/donate">Donate</a></button>
+        <div id="donate-button-container" class="container-fluid d-none">
+            <a class="donate" href="https://www.materfoundation.ie/donate">Donate</a>
         </div>
     </header>
 
@@ -101,19 +101,19 @@
 
         <div id="set-up" class="modal d-none">
             <div class="modal-dialog" role="document">
-                <div class="modal-content set-up-content ">
-                    <div class="set-up-header modal-header pt-2 px-1 pb-0 text-center">
+                <div class="modal-content set-up-content">
+                    <div class="modal-header pt-2 px-1 pb-0 text-center">
                         <h2 class="modal-title w-100">Pick your level</h2>
                     </div>
                     <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
-                        <button class="text-center level-select-btn" id="easy">
-                            <img src="./assets/images/level-choice/easy.png"
+                        <button class="text-center level-select-button" id="easy">
+                            <img src="./assets/images/menu-buttons/easy.png"
                                 alt="Level selection button that says easy and features a blue alien lifeform">
                         </button>
                         <p>You're up against a single alien lifeform. To score points, tap or click on him, but do it
                             quickly! Or he'll turn red, shoot you and damage your score</p>
-                        <button class="text-center level-select-btn" id="hard">
-                            <img src="./assets/images/level-choice/hard.png"
+                        <button class="text-center level-select-button" id="hard">
+                            <img src="./assets/images/menu-buttons/hard.png"
                                 alt="Level selection button that says hard and features an angry green alien lifeform">
                         </button>
                         <p>Uh oh! You're in double trouble. To score points, tap or click on both alien attackers
@@ -121,7 +121,7 @@
                     </div>
                     <div class="p-2 text-center">
                         <button class="modal-close game-button-reverse" data-bs-dismiss="modal">
-                            <i class="fas fa-times"></i>
+                            Close
                         </button>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="p-2 justify-content-center modal-footer">
                         <button id="score-modal-close" class="score-modal-close modal-close game-button-reverse" data-bs-dismiss="modal">
-                            <i class="fas fa-times"></i>
+                            Close
                         </button>
                     </div>
                 </div>
@@ -167,27 +167,20 @@
                                 What now?
                                 <ul>
                                     <li>
-                                        <strong>You're Playing Easy Mode</strong>
-                                        <br>You've been ambushed by a single alien. Tap or click on him quickly! Before
-                                        he
-                                        gets the chance to attack!!
+                                        <strong>Use your reflexes:</strong>
+                                        <br>To win points, you have to quickly tap or click on your alien attackers.
                                     </li>
                                     <li>
-                                        <strong>You're Playing Hard Mode</strong>
-                                        <br> Uh oh! You've been ambushed by 2 aliens. Tap or click on both attackers
-                                        quickly. Before they attack! One is twice as dangerous, but only worth half
-                                        points...
+                                        <strong>Be quick, or it'll cost you:</strong>
+                                        <br>Aliens attack when they turn red, and each attack costs you a point!
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                Have fun and hold off the attack for as long as you can!
                             </li>
                         </ul>
                     </div>
                     <div class="p-2 justify-content-center modal-footer">
                         <button id="set-up-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
-                            <i class="fas fa-times"></i>
+                            Close
                         </button>
                     </div>
                 </div>
@@ -229,7 +222,7 @@
                         <p>Choose volume level or toggle Sound effects ON or OFF.</p>
                         <label for="sVolume-slider"><strong>Volume:</strong></label>
                         <input type="range" value="40" min="0" max="100" step="10" id="sVolume-slider"
-                            name="sound-volume">
+                            name="sound-volume" class="audio-slider">
                         <br>
                         <p>Use button below to toggle Sound ON or OFF:</p>
                         <button id="sound-button" class="audio-button game-button-reverse">
@@ -240,7 +233,7 @@
                         <p>Choose volume level or toggle Game Music ON or OFF.</p>
                         <label for="mVolume-slider"><strong>Volume:</strong></label>
                         <input type="range" value="40" min="0" max="100" step="10" id="mVolume-slider"
-                            name="music-volume">
+                            name="music-volume" class="audio-slider">
                         <br>
                         <p>Use button below to toggle Game Music ON or OFF:</p>
                         <button id="music-button" class="audio-button game-button-reverse">
@@ -254,8 +247,8 @@
 
                     </div>
                     <div class="p-2 text-center">
-                        <button id="audio-close" class="audio-modal-close game-button-reverse" data-bs-dismiss="modal">
-                            <i class="fas fa-times"></i>
+                        <button id="audio-close" class="modal-close game-button-reverse" data-bs-dismiss="modal">
+                            Close
                         </button>
                     </div>
                 </div>
