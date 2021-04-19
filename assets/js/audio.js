@@ -25,6 +25,7 @@ function defaultVolume() {
 
 audio.musicVolumeSlider.addEventListener("change", event => {
     audio.gameMusic.volume = audio.musicVolumeSlider.value / 100;
+    audio.gameMenuMusic.volume = audio.musicVolumeSlider.value/100;
     if (audio.gameMusic.volume === 0) {
         stopMenuMusic();
     } else {
