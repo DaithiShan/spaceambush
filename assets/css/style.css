@@ -16,34 +16,6 @@ body {
     margin: 0;
 }
 
-/* Home Page Donate Button */
-
-#donate-container {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.donate {
-    margin-top: 25px;
-    margin-right: 5%;
-    z-index: 2;
-    font-family: "Exo 2", sans-serif;
-    font-weight: 700;
-    font-size: 100%;
-    border-radius: 25px;
-    width: 90px;
-    height: 45px;
-    background-image: linear-gradient(to right, #fff, #FF55DD);
-}
-
-.donate a {
-    text-decoration: none;
-    color: #000;
-    cursor: pointer;
-}
-
 /* Main Menu */
 
 .main-background {
@@ -87,6 +59,8 @@ body {
     padding: .5rem;
 }
 
+/* Buttons */
+
 .main-menu-button {
     margin-top: 15px;
     font-size: 105%;
@@ -94,11 +68,128 @@ body {
     cursor: pointer;
 }
 
+.game-button {
+  background-image: linear-gradient(#fff, #FF55DD);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.game-button-reverse {
+    background-color: #a8fffd;
+    color: #000;
+    width: 35px;
+    height: 35px;
+    font-size: 110%;
+    cursor: pointer;
+}
+
+.level-select-button {
+    margin: 2vh auto;
+}
+
 #main-audio-button {
     margin-bottom: 5vh;
 }
 
-/* Game Area + Board */
+.audio-button {
+    background-color:#00ffff;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 1vh;
+    cursor: pointer;
+}
+
+.audio-slider {
+    margin-bottom: 25px;
+}
+
+.game-over-donate {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.game-over-button {
+    text-align: center;
+    border: 1px solid black;
+    flex: 1;
+    font-family: "Exo 2", sans-serif;
+    font-size: 120%;
+    font-weight: 500;
+    background-color: #a8fffd;
+    color: #000;
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin: 25px 70px 50px;
+    cursor: pointer
+}
+
+.modal-close {
+    margin: 2vh auto;
+}
+
+/* Menu Styling */
+
+.modal {
+    z-index: 8;
+}
+
+.modal-header {
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+.modal-content {
+    background-image: linear-gradient(#fff, #FF55DD);
+    height: auto;
+    width: auto;
+    margin: auto;
+    margin-top: 12vh;
+}
+
+.modal-backdrop {
+    background-color: transparent;
+    z-index: -1;
+}
+
+.set-up-content img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+.game-over {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../images/game-assets/game-board.jpg");
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.game-over-content {
+    background-image: linear-gradient(#fff, #FF55DD );
+    box-sizing: border-box;
+    top: 12vh;
+    width: 600px;
+    height: fit-content;
+    font-size: 1rem;
+    z-index: 3;
+}
+
+/* All the Game Area Stylings */
 
 #game-container {
   width: 100vw;
@@ -129,7 +220,6 @@ body {
 
 .score-container,
 .time-container {
- 
     flex: 1;
     font-family: "Exo 2", sans-serif;
 
@@ -151,60 +241,8 @@ body {
     z-index: 2;
 }
 
-/* Buttons */
+/* Game Assets: Alien Plant Bushes and Alien Ambushers Styling */
 
-.game-button {
-  background-image: linear-gradient(#fff, #FF55DD);
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
-
-.game-button-reverse {
-    background-color: #a8fffd;
-    color: #000;
-    width: 35px;
-    height: 35px;
-    font-size: 110%;
-    cursor: pointer;
-}
-
-.audio-button {
-    background-color:#00ffff;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.audio-modal-close {
-    margin: 30px 0;
-}
-
-.game-over-donate {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.game-over-button {
-    text-align: center;
-    border: 1px solid black;
-    flex: 1;
-    font-family: "Exo 2", sans-serif;
-    font-size: 120%;
-    font-weight: 500;
-    background-color: #a8fffd;
-    color: #000;
-    text-decoration: none;
-    width: 100px;
-    height: 50px;
-    border-radius: 20px;
-    padding: 10px 10px;
-    margin: 25px 70px 50px;
-    cursor: pointer
-}
-
-/* Plants and Aliens */
 /* Start of customized code from Frank's Labratory: https://youtu.be/RTb8icFiSfk */
 
 .plant {
@@ -224,7 +262,7 @@ body {
     position: absolute;
     z-index: 4;
     width: 80%;
-    height: 66%;
+    height: 55%;
 }
 
 .plant-forward:after {
@@ -238,7 +276,7 @@ body {
   bottom: 0;
   top: 100%;
   width: 105px;
-  height: 170px;
+  height: 160px;
   transition: 0.3s;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -251,8 +289,8 @@ body {
   left: 27%;
   bottom: 0;
   top: 100%;
-  width: 130px;
-  height: 150px;
+  width: 110px;
+  height: 130px;
   transition: 0.3s;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -276,62 +314,6 @@ body {
     top:0;
 }
 
-/* Menu Styling */
-
-.modal {
-    z-index: 8;
-}
-
-.modal-header {
-    font-family: "Exo 2", sans-serif;
-    text-align: center;
-    margin-bottom: 1vh;
-}
-
-.modal-content {
-    background-image: linear-gradient(#fff, #FF55DD);
-    height: auto;
-    width: auto;
-    margin: auto;
-    margin-top: 12vh;
-}
-
-.modal-close {
-    margin-bottom: 3vh;
-}
-
-.modal-backdrop {
-    background-color: transparent;
-    z-index: -1;
-}
-
-.game-over {
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-size: cover;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url("../images/game-assets/game-board.jpg");
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.game-over-content {
-    background-image: linear-gradient(#fff, #FF55DD );
-    box-sizing: border-box;
-    position: absolute;
-    top: 12vh;
-    width: 600px;
-    height: fit-content;
-    left: 25%;
-    font-size: 1rem;
-    z-index: 3;
-}
-
 /* Media Queries */
 
 @media only screen and (max-width: 768px) {
@@ -344,7 +326,7 @@ body {
 .plant:after {
     left: 10%;
     width: 80%;
-    height: 60%
+    height: 55%
 }
 
 .plant-forward:after {
@@ -352,7 +334,7 @@ body {
 }
 
 .alien-one {
-  left: 32%;
+  left: 28%;
   width: 66%;
   height: 85%;
   transition: 0.3s;
