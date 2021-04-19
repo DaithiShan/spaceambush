@@ -136,7 +136,7 @@ body {
     border-radius: 10%;
 }
 
-/* Menu Styling */
+/* Mini Menu Stylings */
 
 .modal {
     z-index: 8;
@@ -195,6 +195,18 @@ body {
     z-index: 3;
 }
 
+.ingame-menu {
+    height: 3vh;
+    width: 80%;
+    margin: auto;
+    right: 0;
+    margin-top: 25px;
+    z-index: 5;
+    display: flex;
+    /* justify-content: flex-end;
+    align-items: baseline; */
+}
+
 /* All the Game Area Stylings */
 
 #game-container {
@@ -210,18 +222,6 @@ body {
   background-image: url("../images/game-assets/game-board.jpg");
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-.ingame-menu {
-    height: 5%;
-    width: 45%;
-    position: absolute;
-    top: 20px;
-    z-index: 5;
-    left: 50%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
 }
 
 .score-container,
@@ -278,7 +278,7 @@ body {
 .alien-one {
   background-image: url("../images/game-assets/alien-one.svg");
   position: absolute;
-  left: 40%;
+  left: 30%;
   bottom: 0;
   top: 100%;
   width: 105px;
@@ -304,7 +304,7 @@ body {
 }
 
 .plant-forward .alien-one.big {
-    left: 40%;
+    left: 35%;
     width: 105px;
 }
 
@@ -340,26 +340,17 @@ body {
 }
 
 .alien-one {
-  left: 28%;
+  left: 0;
   width: 66%;
   height: 85%;
   transition: 0.3s;
 }
 
-.alien-two.small {
-    left: 15%;
-    width: 80%;
-    height: 75%;
-}
-
+.alien-two.small,
 .alien-two.big {
-    left: 15%;
+    left: 0;
     width: 80%;
     height: 75%;
-}
-
-.alien-one.small {
-    background-size: 85%;
 }
 
 .plant-forward .alien-one.big {
@@ -388,13 +379,9 @@ body {
   }
 
   .ingame-menu {
-    height: 100px;
-    width: 80%;
     position: absolute;
     top: 5%;
-    z-index: 2;
-    right: 0;
-    display: flex;
+    z-index: 8;
     flex-direction: column;
 }
 
