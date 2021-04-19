@@ -51,11 +51,11 @@ function gameSetUp() {
     clickSound();
     mainMenu.classList.remove("d-block");
     mainMenu.classList.add("d-none");
-    donateButton.classList.add("d-none");
     setUpMenu.classList.remove("d-none");
     setUpMenu.classList.add("d-block");
     document.querySelectorAll(".modal-close").forEach(item => {
         item.addEventListener("click", event => {
+            clickSound();
             setUpMenu.classList.remove("d-block");
             setUpMenu.classList.add("d-none");
             mainMenu.classList.remove("d-none");
@@ -97,6 +97,7 @@ function mainHighScoreDisplay() {
         mainHighScoreMenu.classList.add("d-block");
         document.querySelectorAll(".score-modal-close").forEach(item => {
             item.addEventListener("click", event => {
+                clickSound();
                 mainHighScoreMenu.classList.remove("d-block");
                 mainHighScoreMenu.classList.add("d-none");
                 mainMenu.classList.remove("d-none");
@@ -112,8 +113,9 @@ function audioDisplay() {
         mainMenu.classList.add("d-none");
         audioMenu.classList.remove("d-none");
         audioMenu.classList.add("d-block");
-        document.querySelectorAll(".audio-modal-close").forEach(item => {
+        document.querySelectorAll(".modal-close").forEach(item => {
             item.addEventListener("click", event => {
+                clickSound();
                 audioMenu.classList.remove("d-block");
                 audioMenu.classList.add("d-none");
                 mainMenu.classList.remove("d-none");
@@ -167,7 +169,7 @@ function ambush() {
     // This part of the function calls in a second alien for the Hard Level
 
     if(levelHard){
-    plantTwo.children[1].isAmbushing = Math.random() < 0.30;
+    plantTwo.children[1].isAmbushing = Math.random() < 0.28;
     if(plantTwo.children[1].isAmbushing) {
         setTimeout(()=> {
         plantTwo.classList.add("up-two");
@@ -183,7 +185,7 @@ function ambush() {
 
 function alienOneAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.30;
+        this.children[0].isAttacking = Math.random() < 0.25;
         if(this.children[0].isAttacking) {
         this.children[0].pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
@@ -202,7 +204,7 @@ function alienOneAttack() {
 
 function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
-        this.children[1].isAttacking = Math.random() < 0.4;
+        this.children[1].isAttacking = Math.random() < 0.36;
         if(this.children[1].isAttacking) {
         this.children[1].pointerEvent = "none";
         this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two-attack.svg)";
@@ -319,6 +321,7 @@ function gameOverMenuLaunch() {
 
 function homeReturn() {
     clickSound();
+    levelHard = false;
     gameOverMenu.classList.remove("d-block");
     gameOverMenu.classList.add("d-none");
     game.classList.remove("d-block");
@@ -348,7 +351,10 @@ alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne))
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
 
 gameAudioButton.addEventListener("click", toggleAudio);
-gameExitButton.addEventListener("click", gameOver);
+gameExitButton.addEventListener("click", ()=>{
+    timeUp = true;
+    clearInterval(startTimer);
+});
 
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)
