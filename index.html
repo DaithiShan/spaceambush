@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
         type="text/css">
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_aG9eoLFF9h72Tly4gOqYV");
+        })();
+    </script>
 </head>
 
 <body onload="defaultVolume();">
@@ -34,18 +40,18 @@
                         <h1 class="main-menu-title w-100">Space Ambush</h1>
                     </div>
                     <div class="main-menu-text text-center">
-                        <p>How long can YOU hold off an Alien Ambush in Outer Space?</p>
+                        <p>Can YOU hold off an Alien Ambush in Outer Space?</p>
                     </div>
                     <div class="main-menu-buttons flex-column d-flex align-items-center text-center">
                         <button id="main-play-button" class="main-menu-button game-button-reverse w-50"
                             data-bs-toggle="modal" data-bs-target="#set-up">
                             <span><strong>Play</strong></span>
                         </button>
-                        <button id="main-highscore-button" class="main-menu-button game-button-reverse w-50">
-                            <span><strong>Scoreboard</strong></span>
-                        </button>
                         <button id="main-audio-button" class="main-menu-button game-button-reverse w-50">
                             <span><strong>Audio</strong></span>
+                        </button>
+                        <button id="main-contact-button" class="main-menu-button game-button-reverse w-50">
+                            <span><strong>Contact</strong></span>
                         </button>
                     </div>
                 </div>
@@ -65,9 +71,11 @@
                 </div>
                 <div class="controls-container">
                     <button class="game-button" type="button" data-bs-toggle="modal" data-bs-target="#help-menu"><i
-                            class="fas fa-info"></i></button>
-                    <button id="game-audio-button" class="game-button" type="button"><i class="fas fa-volume-up"></i></button>
-                    <button type="button" id="game-exit-button" class="game-button"><i class="fas fa-times"></i></button>
+                            class="fas fa-info center"></i></button>
+                    <button id="game-audio-button" class="game-button" type="button"><i
+                            class="fas fa-volume-up center"></i></button>
+                    <button type="button" id="game-exit-button" class="game-button"><i
+                            class="fas fa-times center"></i></button>
                 </div>
             </div>
 
@@ -129,20 +137,33 @@
         </div>
 
         <!-- Scores -->
-        <div id="main-highscore-container" class="modal d-none">
+        <div id="contact-container" class="modal d-none">
             <div class="modal-dialog" role="document">
-                <div class="modal-content main-highscore-content">
-                    <div class="main-highscore-header modal-header pt-2 px-1 pb-0 text-center">
-                        <h2 class="modal-title w-100">Your High Scores</h2>
+                <div class="modal-content contact-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title w-100">Get in touch</h2>
                     </div>
-                    <p id="scores-list-text">
-                        You haven't achieved anything yet. Once you do, your top 5 scores will be displayed here.
+                    <div class="text-center">
+                    <p id="contact-text">
+                        Send in a review, or a new idea!
                     </p>
-                    <div id="high-scores-list" class="high-scores-list">
-                        <ol></ol>
                     </div>
+                    <form class="center-form" aria-label="Contact Form" onsubmit="sendMail(this);">
+                        <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                        <input type="text" id="name" placeholder="Full Name" aria-label="Enter Full Name" name="name" required>
+                        <br>
+                        <input type="email" id="emailaddress" placeholder="Email Address" aria-label="Enter Email" name="emailaddress" required>
+                        <br>
+                        <textarea placeholder="Write a message" id="message" aria-label="Enter Message" name="message" required></textarea>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                        <button type="submit" id="send-btn" class="contact-submit" aria-label="Press Send">Submit</button>
+                        </div>
+                    </form>
                     <div class="p-2 justify-content-center modal-footer">
-                        <button id="score-modal-close" class="score-modal-close modal-close game-button-reverse" data-bs-dismiss="modal">
+                        <button id="contact-modal-close" class="modal-close game-button-reverse"
+                            data-bs-dismiss="modal">
                             Close
                         </button>
                     </div>
@@ -271,7 +292,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
         integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
         crossorigin="anonymous"></script>
-    <script src="assets/js/highscores.js"></script>
+    <script src="assets/js/sendEmail.js"></script>
     <script src="assets/js/audio.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

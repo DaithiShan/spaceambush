@@ -5,8 +5,8 @@ const donateButton = document.getElementById("donate-container");
 const mainMenu = document.getElementsByClassName("main-menu-content")[0];
 const mainPlayButton = document.querySelector("#main-play-button");
 const mainAudioButton = document.querySelector("#main-audio-button")
-const mainHighScoreButton = document.querySelector("#main-highscore-button")
-const mainHighScoreMenu = document.querySelector("#main-highscore-container")
+const contactButton = document.querySelector("#main-contact-button")
+const contactForm = document.querySelector("#contact-container")
 
 const setUpMenu = document.querySelector("#set-up");
 
@@ -15,6 +15,7 @@ const hardLevel = document.querySelector("#hard");
 const setUpClose = document.querySelector("#set-up-close")
 
 const audioMenu = document.querySelector("#audio-menu")
+
 
 const game = document.querySelector("#game-container")
 
@@ -90,16 +91,16 @@ function startHardGame() {
 
 // This opens High Score Display on clicking High Scores
 
-function mainHighScoreDisplay() {
+function contactFormDisplay() {
         mainMenu.classList.remove("d-block");
         mainMenu.classList.add("d-none");
-        mainHighScoreMenu.classList.remove("d-none");
-        mainHighScoreMenu.classList.add("d-block");
-        document.querySelectorAll(".score-modal-close").forEach(item => {
+        contactForm.classList.remove("d-none");
+        contactForm.classList.add("d-block");
+        document.querySelectorAll(".modal-close").forEach(item => {
             item.addEventListener("click", event => {
                 clickSound();
-                mainHighScoreMenu.classList.remove("d-block");
-                mainHighScoreMenu.classList.add("d-none");
+                contactForm.classList.remove("d-block");
+                contactForm.classList.add("d-none");
                 mainMenu.classList.remove("d-none");
                 mainMenu.classList.add("d-block");
             });
@@ -154,7 +155,7 @@ function ambush() {
     const popOutTimeTwo = randomTime(1500, 1200);
     const plantTwo = pickRandomPlant(plants);
     if (plant === plantTwo) {
-        pickRandomPlant(plants)
+        pickRandomPlant(plants);
     }
 
     plant.classList.add("up");
@@ -185,7 +186,7 @@ function ambush() {
 
 function alienOneAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.25;
+        this.children[0].isAttacking = Math.random() < 0.28;
         if(this.children[0].isAttacking) {
         this.children[0].pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
@@ -204,7 +205,7 @@ function alienOneAttack() {
 
 function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
-        this.children[1].isAttacking = Math.random() < 0.36;
+        this.children[1].isAttacking = Math.random() < 0.34;
         if(this.children[1].isAttacking) {
         this.children[1].pointerEvent = "none";
         this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two-attack.svg)";
@@ -336,7 +337,7 @@ mainPlayButton.addEventListener("click", gameSetUp);
 easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
 
-mainHighScoreButton.addEventListener("click", mainHighScoreDisplay);
+contactButton.addEventListener("click", contactFormDisplay);
 
 mainAudioButton.addEventListener("click", audioDisplay);
 
