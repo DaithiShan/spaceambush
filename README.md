@@ -1,8 +1,18 @@
 # Space Ambush
 
+[Space Ambush](https://daithishan.github.io/milestoneproject1/) is a whack-a-mole type game with a sci-fi twist. It has been designed to offer new challenges to retro-arcade game, and flow quickly from one section to the next for brief bursts of play. It's responsive across different devices.
+
+The game colors are vibrant and bright, the music fits the alien world and both combine to provide stimulation and immersion.
+
+Space Ambush was built with HTML, CSS and Javascript and is an experimental form of rich content for younger supporters of The Mater Foundation, the charity for which I work as a digital fundraiser.
+
+## Demo
+
+A live demo of the website can be found here (https://daithishan.github.io/milestoneproject1/).
+
 **[Live demo](https://daithishan.github.io/milestoneproject1/)**
 
-## Index
+## README Index
 ---
 
 <span id="top"></span>
@@ -22,6 +32,9 @@
 - <a href="#features">Features</a>
   - <a href="#features-current">Current</a>
   - <a href="#features-future">Future</a>
+- <a href="#testing">Testing</a>
+  - <a href="#code-validation">Current</a>
+  - <a href="#manual-testing">Future</a>
 - <a href="#credits">Credits</a>
 
 ---
@@ -30,7 +43,9 @@
 
 ## Context
 
-Space Ambush is a mini game developed for marketing purposes. It's part of a fundraising strategy for The Mater Foundation, the official charity of The Mater Public Hospital. A mini game can be a form of rich content for your subscriber list, and Space Ambush redirects at different points to the donation form for The Mater Foundation. It's based off Whack-A-Mole, an extremely popular arcade and today browser-based game, which tests your reflexes by challenging you to hit multiple disappearing targets within a set time limit.
+Space Ambush is a mini game developed for marketing purposes. I developed it as an experimental way of developing new content for the younger supporters of The Mater Foundation, the charity for which I work in digital fundraising.
+
+It's based off the retro-arcade game Whack-A-Mole, but I've tried to add a challenging twist for that game, while adding bright colours, synth and short play bursts.
 
 ---
 
@@ -38,7 +53,7 @@ Space Ambush is a mini game developed for marketing purposes. It's part of a fun
 
 ## Project Goals
 
-1. To positively engage and entertain the subscriber list of The Mater Foundation with something unexpected.
+1. To positively engage and entertain the younger subscriber list of The Mater Foundation with something unexpected.
 
 2. To generate donations for The Mater Foundation through new and return visits to this mini game, Space Ambush.
 
@@ -61,29 +76,21 @@ Space Ambush has been designed for quick play, while using local storage for rep
 
 -   #### As a first time visitor, I want to:
 
-1. See evidence that the mini game is the charity's product
-2. Quickly get involved in gameplay to assess it, with minimal set up
-3. Have option to toggle succint help rather than mandatory instructions
-4. Experience intuitive gameplay, with simple controls, and clear scoring
+1. See an appealing landing page, with clear, quick pathway to gameplay
+2. Quickly learn the controls, and how to toggle audio and quick exit
+3. Intuitively grasp the scoring system, and understand how I win and lose points
 
 -  #### As a returning visitor, I want to:
 
 1. See my old score and beat it
 2. Choose higher difficulties, and experience genuinely harder gameplay
-3. See a path to skipping the exit redirect to the donation form if I've already donated 
-
--  #### As a frequent visitor, I want to: 
-
-1. See if there are any mods or changes planned, or any related news
-2. See a clearly indicated place to provide player feedback
-3. Let my followers know about this game, and my highest score on it!
+3. Have an option to contact developers for any bugs, or for other feedback
 
 -  #### As the charity benefiting from this mini game, I want to 
 
-1. Tie the game's premise to the charity mission, without boring the player
+1. Tie the game's premise to the charity mission after playthrough, without boring the player
 2. Drive donations from players through the official charity website
 3. Capture useful feedback including bug reports and feature suggestions
-4. Generate buzz around this mini game on social media to raise awareness
 
 <div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
@@ -92,15 +99,14 @@ Space Ambush has been designed for quick play, while using local storage for rep
 
 #### Project Inspiration
 <span id="inspiration"></span>
-#### Yellowbelly Beer Branded Minigame - Hop Rocket
 
-The major inspiration for this mini game (also listed in credits) is from an Irish craft beer company that developed a video game as part of their outbound marketing [Hop Rocket by Yellowbelly Beer](https://www.youtube.com/watch?v=i7G-gFBJzVk)
+#### Branded Minigames
+
+A conceptual inspiration for this mini game is from an Irish beer company that developed a video game as part of their marketing. The company is called Yellowbelly Beer, and the game is called [Hop Rocket](https://www.youtube.com/watch?v=i7G-gFBJzVk)
 
 ![Hop Rocket by Yellowbelly](./assets/influences/brand-minigame.png)
 
-While this game is no longer available for play, it was an inspired way of engaging potential customers beyond the world of product shots, and behind-the-scenes marketing.
-
-The craft beer company had minimum impact on Space Ambush in terms of functionality and presentation, but a big impact in terms of design concept.
+While this game is no longer available for play, I thought it was an interesting way of engaging a customerbase.
 
 #### Dovile Krasnickaite - Whack-A-Monster
 
@@ -108,15 +114,15 @@ The other major inspiration for this project was from a fellow student from the 
 
 ![Dovile Krasnickaite - Whack-A-Monster](./assets/influences/whack-a-monster.png)
 
-Their project showed how great user experience could revitalise a game from 1970s arcades.
+Their project showed how design and music could revitalise a game from 1970s arcades.
 
 #### Memory Improvement Tips - Whack-Em-All
 
-A further inspiration came from Memory Improvement Tips and their browser version of Whack-A-Mole; especially in terms of game logic and game rule designs.
+A further inspiration came from Memory Improvement Tips and their version of Whack-A-Mole, especially in terms of adding a new twist where the moles can fight back.
 
 ![Memory Improvement Tips - Whack-Em-All](./assets/influences/whack-em-all.jpg)
 
-I loved how they introduce a penalty click with the mole-bomb, and force the user to make choices between different, simultaneously appearing moles on the basis of scopre points.
+I also loved how they introduce a penalty click with the mole-bomb, which I didn't have time to introduce. I also liked how they pressured the user to make choices between different, simultaneously appearing moles. Cognitive overload makes the simple concept of Whack-A-Mole more difficult than a pure reflex test.
 
 
 #### Color Scheme
@@ -134,14 +140,14 @@ I loved how they introduce a penalty click with the mole-bomb, and force the use
 ##### Space Ambush - Monster One Colors:
 
 - ![#A8FFFD](https://via.placeholder.com/15/A8FFFD/000000?text=+) #a8fffd (Aqua Blue)
-- ![#ffff00](https://via.placeholder.com/15/ffffff/000000?text=+) #ffff00 (Lemon Glacier)
-- ![#ff6464](https://via.placeholder.com/15/FF55DD/000000?text=+) #ff6464(Bittersweet)
+- ![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) #ffff00 (Lemon Glacier)
+- ![#ff6464](https://via.placeholder.com/15/ff6464/000000?text=+) #ff6464(Bittersweet)
 
 ##### Space Ambush - Monster Two Colors:
 
-- ![#1eefba](https://via.placeholder.com/15/A8FFFD/000000?text=+) #1eefba (Sea Green Crayola)
-- ![#ffde00](https://via.placeholder.com/15/ffffff/000000?text=+) #ffde00 (Yellow Pantone)
-- ![#be0000](https://via.placeholder.com/15/FF55DD/000000?text=+) #be0000(International Orange Engineering)
+- ![#1eefba](https://via.placeholder.com/15/1eefba/000000?text=+) #1eefba (Sea Green Crayola)
+- ![#ffde00](https://via.placeholder.com/15/ffde00/000000?text=+) #ffde00 (Yellow Pantone)
+- ![#be0000](https://via.placeholder.com/15/be0000/000000?text=+) #be0000(International Orange Engineering)
 
 The Space Ambush color palette listed above is derived from digital assets designed by artist Robert Brooks, and purchased with Pro License on https://www.gamedevmarket.net
 
@@ -154,11 +160,11 @@ The Space Ambush color palette listed above is derived from digital assets desig
 #### Imagery
 <span id="imagery"></span>
 
-- All digital assets used in this 2D Whack-A-Mole game were originally designed by Robert Brooks, and purchased with Pro Liense on https://www.gamedevmarket.net
+- All digital assets used were originally designed by Robert Brooks, and purchased with Pro Liense on https://www.gamedevmarket.net
 
-- These assets have been revised in Adobe Illustrator to remove the appearance of facing sideways, and to provide Whack-A-Mole style animations!
+- These assets have been revised in Adobe Illustrator by me to remove their initial sideways-scrolling left-facing design, and to provide Whack-A-Mole style animations!
 
-<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 ### Wireframes
 <span id="wireframes"></span>
@@ -166,6 +172,7 @@ The Space Ambush color palette listed above is derived from digital assets desig
 
 https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0
 
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 ## Features
 <span id="feature"></span>
@@ -174,63 +181,86 @@ https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0
 <span id="features-current"></span>
 
 
-**1. Menu screens**
+**1. Modal Menus**
 
-| Menu    | Description                                                                                                                                                                                                         |
+| Menu Type  | Description                                                                                                                                                                                                         |
 | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Main Menu | Requests user nickname, provides access to options and leaderboard menus                                                                                                                                     |
-| Options | Provides choice on difficulty levels to the player                                                                                                                                              |
-| Scoreboard  | Shows a list of my highest 5 scores.
+| Main Menu | Provides access to level selection and gameplay, audio options and contact form                                                                                                                                     |
+| Level Selection | Provides options between easy and hard which will determine gameplay                                                                                                                                              |
+| Audio | Provides volume choice using sliders, with immediate feedback on sound levels                                                                                                                                             |
+| Game Over  | Displays score, all time high score and a prompt for donation to Mater Foundation
 
-**2. Difficulty Levels**
+**2. Level Selection**
 
-- Space Ambush can be played in easy, normal or hard mode.
-    * In easy mode, players must click or tap a randomly appearing monster. If they don't, they are attacked and lose points.
-    * In normal mode, players are presented with two monsters; the first provides more points if hit, the second cost more points if not hit.
-    * In hard mode, players are presented with two monsters and a bomb. They face the same conundrum as normal mode, but if they click the bomb they lose all their points.
+- Space Ambush can be played in easy or hard mode.
+    * In easy mode, players must click or tap a randomly appearing monster to win points. If they don't act quickly, the alien turns red and attacks them, losing them points.
 
-**3. Scoreboard and Use of Cookies**
+    * In hard mode, players are in double trouble. They face two aliens that both have a random chance of turning red and attacking them. It's harder to win points, as the aliens appear in quick succession, which is confusing.
 
-- The player's nickname and high scores are saved to their local storage and will display on the scoreboard on return to game, providing cookies are not deleted.
+**3. Game Area**
 
-- A player will not be actively asked to make a donation after they are first asked at the end of their first playthrough, but the donate button in nav bar will remain as a passive ask on the home screen and game over screen.
+- The game area has a responsive design which will adapt to the user's device dimensions.
 
-**4. Score Generated Comments**
+- The ingame controls on the top are also responsive, and will display differently on wide screens vs mobile screens.
 
-- Every time a player reaches a certain threshold with their score, they unlock a score generated comment. This feature is to encourage replay value, as scores deemed of low value generate a tease comment, and as the score climbs, the tone changes gradually to one of increased admiration.
+- The layout of the alien plants is also responsive and will vary slightly on wide screens vs mobile screens to offer the best type of game play on each.
 
-**5. Visual effects**
+**4. Alien Ambushers**
+
+- When the user starts the game, they will immediately be ambushed by aliens.
+
+- The number of aliens ambushing at any time is controlled by the difficulty setting.
+
+- The user will have a randomized time window in which to zap the aliens by clicking on them. But the aliens have a randomized probability of also attacking the user.
+
+- When the user successfully attacks, they'll gain points. When the alien attacks, the user will lose points.
+
+**5. Timer and Score**
+
+- When the user starts the game, there is an active timer that immediately triggers and continues counting down to game end. 
+
+- A score and high score also appears on entry. A user earns points by attacking the aliens before they hid behind the plants, and loses points when the alien turns red and attacks them.
+
+- High score is saved and pulled from local storage.
+
+**6. Visual Feedback**
 
 - Every time a player makes a menu choice, clicks on an alien monster, or fails to click on a monster in time a visual effect is programmed as a result. Monsters turn red when they attack, and yellow when they're hit, and a modal generates when the game is over. At every stage of user experience, visual effects are used to give feedback.
 
-**7. Responsive/intuitive input**
+**5. Audio**
+
+- The game has four types of audio; a lasergun click sound, a short gameplay audio clip, a longer menu music audio clip and a game over laser cannon effect.
+
+- The user can set the volume of the sound effects (lasergun, laser cannon) and the music (game music, menu music) using sliders. The user can also toggle on and off the game music in the game.
+
+**6. Responsive/Intuitive Input**
 
 - The game can be controlled with either a mouse or touch-screen tap gestures
 
-- When the game loses focus (e.g. when the player clicks on another browsing tab or switches apps), it pauses to prevent a frustrating end to the game.
-
-**8. Audio**
-
-
-**9. Minigame Marketing**
+**7. Minigame Marketing**
 
 - The business goal for the mini game is to generate donations from subscribers and supporters of The Mater Foundation.
 
-- On initial completion of the game, users will be prompted to consider making a donation to The Mater Foundation. On clicking yes, they're redirected the charity's donation form.
+- On completion of the game, users will be prompted to consider making a donation to The Mater Foundation. On clicking yes, they're redirected the charity's donation form.
 
-- Returning players will not be actively solicited for further donations, but the donate button will remain as a passive ask in nav bar on home page and game over screen.
+- All players have the option to select No, which will return them to the main menu where they can choose the difficulty level of their next game.
 
-### Future
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
+
+### Future Features
 <span id="features-future"></span>
 
-**Leaderboard**
+**Scoreboard**
 
-- Recording scores from different players on an overall leaderboard, which would add considerably to replayability value.
+- I'd like to add a feature that records a list of high scores from the user's session or local storage, which could be displayed at the end, or through a button on the main game menu. This would add to the replayability value for returning visitors.
 
-**Add Level Selection to Game Options**
+**Add further level variations**
 
-- Different alien planet with differently patterned ambushes, and aliens.
-- The primary difference would be graphical, adding to ease of implementation.
+- I'd like to extend the difficulty levels to include a medium between easy and hard. This might involve slowing down the rate of appearance and reducing the probability of attack.
+
+- I'd also like to add a feature where users could choose different backgrounds and aliens for their ambush. This might involve Javascript which sets the background image, and the images to be used for alien and plant div classes.
+
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 ## Technologies Used
 <span id="tech"></span>
@@ -252,204 +282,32 @@ https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0
 - [Google Fonts](https://fonts.google.com/) - Exo 2 and Roboto
 - [Game Developer Market](https://www.gamedevmarket.net) - Digital assets including original virus monster and alien planet artwork
 
-
-## README TEMPLATE FROM MS1
-
-### Online resources
-
-### Frameworks, Libraries and Programs used
-
-* Bootstrap v5.0.0 beta ; used to help build the core stylings, and assist with responsiveness
-
-* jQUery ; used for the mobile version of the navbar, and for the newsletter sign-up modal
-
-* Google Fonts; used to import 'Fire Sans' for the title font and 'Roboto' for the body font
-
-* Git; used for version control by utilizing the Gitpod terminal to commit to Git, and push to github
-
-* Github; used to store the project code in a repository, and to deploy the page
-
-* Balsamiq; used to create the wireframes during the design process
-
-* Canva; used to format and edit the website images
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 ## Testing
+<span id="testing"></span>
 
-### Validation
-* W3C HTML validation
-* W3C CSS validation
+### Code Validation
+<span id="code-validation"></span>
 
-The developer used W3C HTML validation and W3C CSS validation to help debug, and check the validity of the website's code.
+All code written has been thoroughly validated and passed through the following online validators:
 
-### Responsiveness
-* The Google Chrome Responsive Viewer Plugin was used to test responsiveness across a range of devices
-    * **[View the plugin here.](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en)**
+- HTML - All code was run through the [W3C HTML Validator](https://validator.w3.org/) to ensure it was valid code and no errors were made.
 
-### Performance
-* Lighthouse from the Google Chrome Developer Tools provided an analysis of the website's performance.
-    * This analysis was key in fixing a development issue around the use of pngs over jpgs for many images, detailed in bugs.
+- CSS - All styling was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to ensure it was valid and no errors were made.
 
-    * ![Screenshot of full performance report from Google Chrome Developer Tool Lighthouse.](./mater-foundation/assets/images/lighthouse-report.jpg)   
+- JavaScript - All my script was run through the [JSHint](https://jshint.com/) validator and no errors were found.
 
-### User Stories Testing
+### Manual Testing
+<span id="manual-testing"></span>
 
-Most common path through the existing Mater Foundation website:
+You can view the testing done in the [test.md](https://daithishan.github.io/milestoneproject1/) where I have written in-depth on the various tests I have performed.
 
-* Home > Donate
-* Home > Volunteer is the anticipated most common path based on this data.
-* Home page therefore has 2 large, colourful call to action buttons to volunteer
-
-The latest news and patient stories part of the website are the second most frequented, and offer 2 calls to action each.
-
-* Home > Patient-1 > Patient-2 > Etc
-* Home > Patient-1 > Volunteer
-
-Similarly,
-
-* Home > News-1 > News-2 > News-3 > Etc
-* Home > News-1 > Newsletter Sign-Up
-
-### Testing User Stories from UX Section of ReadME
-
-#### First Time Visitor / Potential Volunteer
-
-- As a first time visitor / potential volunteer, I want immediately to have a window or doorway on to the cause.
-    * Home hero image opens on to hospital, and text + CTA position user as a potential life-saving hospital worker.
-
-- As a new visitor / potential volunteer, I want to see a list of ways of getting involved.
-    * The volunteer form has a dropdown list of different interests to choose from for this user.
-    * Additionally, the footer on every page offers opportunity to join newsletter, social media, or email the charity.
-
-- As a new visitor / potential volunteer, I want to learn how people benefit.
-    * Every page provides access to multiple stories direct from patients, and news of recent patient care projects
-
-- As a new visitor / potential volunteer, I want to be assured of charity's legitimacy
-    * Footer on every page provides charity registration number, and multiple contact points.
-
-#### Returning Visitor / Volunteer
-
-- As a returning visitor / volunteer, I want to read news that makes me confident I made a difference
-    * Latest news is accessible on every page, and shows how volunteers have enabled big projects that will make a transformative difference
-
-- As a returning visitor / volunteer, I want to see a timeline of what the charity has achieved and get a sense of progress
-    * A timeline of major achievements is accessible on the About page
-
-- As a returning visitor / volunteer, I want to read stories from patients I'm trying to help
-    * Patient stories are illustrated by photos of patients themselves, and stories are in direct quotes.
-    * Each story is always linked or listed alongside another, to allow user to continue to pursue reading easily.
-
-#### Returning Visitor / Volunteer 
-
-- As a returning visitor / volunteer, I want to read consistently updated news and stories
-    * This is a key reason for the size of this M1P, to provide a multiplicity of news (5) and stories (4)
-
-2. To view the charity's strategy, so I feel longterm commitment is worthwhile
-    * The About page features a downloadable Mater strategy with objectives benefiting patient outcomes
-
-3. To join the newsletter, or social media, to feel a greater sense of belonging
-    * This feature is accessible on every page via the footer, and is positioned in hero element on Latest News section
-
-### Bugs Discovered & Resolved
-
-#### Dropdown Box
-
-![Image of first bug, which caused empty box to appear underneath dropdown menu](./mater-foundation/bug-shots/bug-one.jpg)
-
-
-1. Custom Navbar Dropdown Issues
-    * When I first implemented a customized css snippet for my navbar dropdown menu, I noticed that it was generating an additional empty box under right under the parent menu item.
-    * To solve the problem of this empty box, I located the point it was being generated (although not the source) and targeted that point with CSS reducing it to null
-
-```
-/* Customized CSS Snippet for Navbar from https://inspirationalpixels.com/creating-a-dropdown-menu-with-html-css/ */
-
-.navbar-nav .nav-item ul {
-    position: absolute;
-    top:100%;
-    left:0px;
-    padding: 0;
-    margin: 0;
-    opacity: 100%;
-    z-index: 1;
-}
-
-.navbar-nav .nav-item ul li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-/* .customized CSS Snippet from https://inspirationalpixels.com/creating-a-dropdown-menu-with-html-css/*/
-
-/* Additional CSS required to fix bug in that snippet */
-
-div.dropdown-menu.show {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-/* .additional CSS required to fix that snippet bug */
-
-```
-
-2. Custom Modal Issues
-
-![Image of second bug, which caused empty box to appear underneath dropdown menu](./mater-foundation/bug-shots/bug-two.jpg)
-
-    * When I initially tested my custom modal it displayed fine. However, when I tried to enter information into the fields, I couldn't click on it. In fact, clicking on it dismissed it.
-    * To solve this, I spent ages reading through the potential problems and solutions. But I realized when customizing the snippet I had removed key functionality.
-
-```
-<!-- Customized modal from Bootstrap/Whiskey Drop Module -->
-
-    <div class="modal" tabindex="-1" role="dialog" id="newsletter-modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-container bg-light">
-                <div class="cancel-wrapper">
-                  <button type="button" class="close cancel" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <form class="newsletter-modal">
-                        <div class="modal-heading-wrapper">
-                            <h4 class="heading">Newsletter Sign-Up Form</h4>
-                        </div>
-                        <div class="modal-input">
-                            <label class="visually-hidden" for="modal-full-name">Full Name</label>
-                            <input type="text" class="form-control" id="modal-full-name" aria-label="full-name"
-                                name="modal-full-name" placeholder="Full Name" required>
-                        </div>
-                        <div class="modal-input">
-                            <label class="visually-hidden" for="modal-email">Email address</label>
-                            <input type="email" class="form-control" id="modal-email" aria-label="email-address"
-                                name="modal-email" placeholder="Email address" required>
-                        </div>
-                        <button type="submit" class="btn btn--orange" data-dismiss="modal">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    <!-- .customized modal from Bootstrap/Whiskey Drop Module -->
-
-```
-
-The problem with this code is in the 3rd div from top. I had removed the class name "modal-content" and replaced it with "modal-container".
-After looking through documentation on Bootstrap, I finally realized this mistake.
-
-3. Button Styled Calls to Action
-    * Originally, the button styled calls to action were anchor tags wrapping button tags, rather than pure CSS styled anchor tags
-    * This caused display issues on Internet Explorer, and was flagged as an error by W3C HTML Validator
-    * I resolved by deleting out the button tags on every page, and using CSS to style the anchor tags appropriately.
-
-4. Image size
-    * Originally on generating a Lighthouse report on my deployed page, it returned a performance rating of 30%
-    * I had used png files instead of jpg out of concern for image quality
-    * However, these files considerable slowed the load time of the website. So I converted all image files except the logo.
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 
 ## Deployment
+<span id="deployment"></span>
 
 This project was developed using GitPod, committed to Git and pushed to GitHub using the built-in function within GitPod
 
@@ -489,26 +347,53 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > Unpacking objects: 100% (10/10), done.
 ```
 
-### Content
-* All content was written by the developer in his professional capacity as Community Officer for the Mater Foundation.
-
-### Media
-* All images were created by or have been consented for use by the developer in his professional capacity as Community Officer for the Mater Foundation.
-
 ## Credits
 
-#### General
-    * The Mater Foundation website served as the starting point for my project, as I want to redesign it - [View Site Here](https://www.materfoundation.ie)
-    * Bootstrap as a framework was incredibly useful to building this website
-    * The Whiskey Drop Section of the Code Institute Bootstrap Module was very helpful to giving me an idea of where to begin writing, and how to begin structuring, my code.
+### Music and Sound Effects
 
-#### Navbar Dropdown
-    * I owe inspirationalpixels.com credit for the styling of the dropdown menu. [View Snippet](https://inspirationalpixels.com/creating-a-dropdown-menu-with-html-css)
+1. The Royalty Free Music used for the game is titled "Mint Condition" by Alexander Nakarada. You can view his website [here](https://www.serpentsoundstudios.com). This work is licensed under a Creative Commons Attribution 4.0 International License.
+    - I edited the music to reduce the length of it as mentioned in the testing.md.
 
-#### Footer
-    * I owe GitHub user kashgiricse credit for the structure of the footer. [View Template] (https://github.com/akashgiricse/templates-using-bootstrap4)
+2. All sound effects were obtained by [freesound](https://freesound.org/).
+    - The sounds used for [clicking](https://freesound.org/people/Daleonfire/sounds/376694/) and the [game over sound](https://freesound.org/people/waxsocks/sounds/500546/) were created by users [Daleonfire](https://freesound.org/people/LittleRobotSoundFactory/) and [Waxsocks](https://freesound.org/people/waxsocks/). This work is licensed under a  Attribution 3.0 Unported (CC BY 3.0) Licence.
+        - I edited the click sound to reduce the length of it as mentioned in the testing.md.
 
-#### Acknowledgements
+### Images
 
-    * I owe my mentor Allen Varghese a lot of credit for great mentoring, and the discovery of the responsive view Chrome plugin, and cooolor.com for color palettes.
-    * I owe the Slack community a great deal of credit also for their responsiveness and willingness to always help with small problems!
+1. The assets used in the game are from [GameDevMarket](https://craftpix.net/) which I hold a annual membership to. This allows me to:
+
+    - Use, copy, adapt, modify, prepare derivative works based upon all purchased assets;
+
+    - Use the purchased game assets as many times as I like;
+
+    - Sell and distribute games with their assets. **Which is not relevant to this as this was created as an experiment and for educational use only**
+
+2. The image used at the beginning of the README.md showing the responsive layouts was created using [Am I Responsive?](http://ami.responsivedesign.is/#).
+
+### Code Credits
+
+1. The HTML structure and JS for modal menus and landing pages was inspired by an incredible Code Institute student, and his own game based MS2 Project [Andy Osborne](https://github.com/Andy-Osborne/Dwarf-Match).
+
+2. The basic game functionality was inspired by this tutorial by Frank's Labratory [video](https://www.youtube.com/watch?v=RTb8icFiSfk).
+
+3. The high score local storage functionality was inspired by a follow up tutorial in that series [video](https://www.youtube.com/watch?v=tyJelsUG-z4&t=0s).
+
+4. The randomized probability that alien ambushers would attack you if not clicked on quickly was inspired by this tutorial on Better Programming [video and article](https://betterprogramming.pub/building-a-whack-a-mole-game-with-rn-sprite-sheet-e8871ca594ce)
+
+### Acknowledgements
+
+A special thanks to:
+
+- My Code Institute Mentor Owonikoko Oluwaseun for her support and superb direction during the project.
+
+### Learning Resources
+
+- Throughout my journey of creating this site, I was continuously learning and improving my knowledge and I used the following resources to achieve this:
+
+- [Code Institute](https://codeinstitute.net/).
+
+- [Udemy](https://www.udemy.com/course/understand-javascript/).
+
+- [YouTube](https://www.youtube.com/watch?v=RTb8icFiSfk.
+
+- [w3schools](https://www.w3schools.com/).
