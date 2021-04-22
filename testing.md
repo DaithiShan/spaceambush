@@ -141,7 +141,7 @@ I needed to use a blend of general and targeted css, as well as multiple media q
 
 - Fix Applied
 
-  - I tried a few different fixes. But the most effective was simply adding the following code to the top level body DOM element
+  - I tried a few different fixes. But the most effective was simply adding the following CSS to the top level body DOM element
 
   ```
   body{
@@ -149,31 +149,41 @@ I needed to use a blend of general and targeted css, as well as multiple media q
   }
   ```
 
-
 ### Functionality Testing
 
+#### Game Play
 
-#### Game Page
+The game play is a combination of the most important features, and my priority was to make sure that it delivered an excellent experience regardless of device or browser.
 
-The game page contains the most important features, and my priority was to make sure that it delivered an excellent experience regardless of device or browser.
+- Bug Discovered - **Aliens Freezing in Up position on Click/Tap**
 
-- Bug Discovered - **Aliens Freezing as Sitting Ducks on Click/Tap**
-
-  - This was one of the most immediately obvious bugs from friends testing the game. All the aliens would pop out and ambush the user, and then hide again using a basic setTimeout. However, if the user kept clicking on the alien, they would freeze in a sitting duck position. 
-
-- Fix Applied:
-
-  - I added a css function on click, which made sure that the aliens went back behind the plants after you tapped them. This runs in addition to the setTimeout, as they still need to pop in and out even if you ignore them.
-
-- Bug Discovered - **Multiple Scores by Furious Tapping/Clickingp**
-
-  - This was one of the most SATISFYING bugs to SQUASH. Even with the identification of the bug above, and its applied fix, some of my friends were still able to cheat the game. They would tap very quickly before the css fix could be applied to score multiple points on a single alien.
-
-  - In order to keep the visual effect of the alien turning yellow after being shot, I did not want the alien to disappear immediately on being clicked. My original goal had been to make sure he did not freeze, not to vanish him before the nice visual feedback of him turning yellow!
+  - This was one of the most immediately obvious bugs from friends testing the game. The aliens would pop out and ambush the user. And then the aliens would normally hide again using a basic setTimeout. But if the user kept clicking on the alien, they would freeze in an Up position. 
 
 - Fix Applied:
 
-  - I added isWhacked = False / True as a boolean property to every alien, and set the value to true after every tap or click on an alien. Then I reset the values to false before the aliens popped out again. I can't describe how satisfied I was to discover this fix, and eliminate the insanely high scores of some of the cheating testers!
+  - I added a simple CSS effect to my whackAlienOne and smackAlienTwo functions, which made sure that the aliens went back behind the plants after you tapped or clicked on them. This functionality runs in addition to the basic setTimeout for the Up position, as the aliens still need to pop in and out even if you completely ignore them.
+
+
+
+- Bug Discovered - **Cheat Scores by Furious Tapping/Clickingp**
+
+  - This was one of the most SATISFYING bugs to SQUASH. 
+  
+  - Even with the identification and fix of the CSS bug above, some of my friends were still able to cheat the game. They would tap very quickly on the aliens multiple times before the new CSS fix above could be applied. The result is they would score multiple points on a single attack.
+
+  - In order to keep the visual effect of the alien turning yellow after being shot, I did not want the alien to disappear immediately on being clicked. 
+  
+  - My original goal had been to make sure the alien did not freeze on Up. I did not to disappear the alien before the nice visual feedback of the alien turning yellow on being attacked!
+
+- Fix Applied:
+
+  - I added isWhacked = False / True as a boolean value to every alien within my ambush() and whackAlienOne/smackAlienTwo functions.
+
+  - I set the value to true after every tap or click on an alien. 
+  
+  - Then I reset the values to false within ambush before function told the aliens to pop out again. 
+  
+  - I can't describe how satisfied I was to discover this fix by myself, and eliminate the insanely high scores of some of the cheating testers!
 
 - Bug Discovered - **Multiple Scores by Furious Tapping/Clickingp**
 
@@ -184,6 +194,10 @@ The game page contains the most important features, and my priority was to make 
 - Fix Applied:
 
   - I added this.isWhacked = false / true as an attribute to every alien, and set the value to true after every tap or click on an alien. Then I reset the values to false before the aliens popped out again. I can't describe how satisfied I was to discover this fix, and eliminate the insanely high scores of some of the cheating testers!
+
+
+### Audio and Music Testing
+
 
 #### Google Dev tools - Lighthouse Audit
 
