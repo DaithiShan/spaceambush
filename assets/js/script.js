@@ -150,6 +150,8 @@ function pickRandomPlant(plants) {
 // This function controls each space ambush by the aliens
 
 function ambush() {
+    alienOnes.forEach(alienOne => alienOne.isWhacked = false);
+    alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
     const popOutTime = randomTime(1100, 900);
     const plant = pickRandomPlant(plants);
     const popOutTimeTwo = randomTime(1500, 1200);
@@ -188,7 +190,7 @@ function alienOneAttack() {
     if(!this.children[0].isWhacked) {
         this.children[0].isAttacking = Math.random() < 0.28;
         if(this.children[0].isAttacking) {
-        this.children[0].pointerEvent = "none";
+        this.children[0].style.pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(../assets/images/game-assets/alien-one-red.svg)";
         score--;
         scoreDisplay.textContent = score;
@@ -207,14 +209,12 @@ function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
         this.children[1].isAttacking = Math.random() < 0.34;
         if(this.children[1].isAttacking) {
-        this.children[1].pointerEvent = "none";
         this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two-attack.svg)";
         score--;
-        scoreDisplay.textContent = score;
         clickSound();
+        scoreDisplay.textContent = score;
         setTimeout(() => {
     this.children[1].style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
-    this.children[1].style.pointerEvent = "all";
   }, 600);
       }
   }
@@ -223,31 +223,42 @@ function alienTwoAttack() {
 // This function controls the user's ability to whack Alien One
 
 function whackAlienOne(e) {
+    if(!this.isWhacked){
     clickSound();
     score ++;
-    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
+    }
     this.style.pointerEvent = "none";
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
+    setTimeout (()=> {
+        this.parentNode.classList.remove('up');
+    }, 500);
   setTimeout(() => {
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
     this.style.pointerEvent = "all";
-  }, 800);
+  }, 510);
   scoreDisplay.textContent = score;
-  return this.isWhacked;
+  return this.isWhacked = true;
 }
 
 // This function controls the user's ability to smack Alien Two
 
 function smackAlienTwo(e) {
+    if(!this.isWhacked) {
     clickSound();
     score ++;
+    }
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two-dizzy.svg)";
     this.style.pointerEvent = "none";
+  setTimeout (()=> {
+        this.parentNode.classList.remove('up');
+    }, 500);
+
   setTimeout(() => {
     this.style.backgroundImage = "url(../assets/images/game-assets/alien-two.svg)";
     this.style.pointerEvent = "all";
-  }, 800);
+  }, 510);
   scoreDisplay.textContent = score;
-  return this.isWhacked;
+  return this.isWhacked = true;
 }
 
 // This function checks if the game time of 30 seconds is finished
@@ -355,7 +366,6 @@ gameAudioButton.addEventListener("click", toggleAudio);
 gameExitButton.addEventListener("click", ()=>{
     timeUp = true;
     timer = 0;
-    clearInterval(startTimer);
 });
 
 noAndReturn.addEventListener("click", homeReturn);
