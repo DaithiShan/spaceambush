@@ -151,9 +151,11 @@ I needed to use a blend of general and targeted css, as well as multiple media q
 
 ### Functionality Testing
 
-#### Game Play
+#### Game Functionality
 
 The game play is a combination of the most important features, and my priority was to make sure that it delivered an excellent experience regardless of device or browser.
+
+I identified the main bugs with the help of my friends, who used different tablet and mobile devices primarily, but I was able to test off a desktop computer.
 
 - Bug Discovered - **Aliens Freezing in Up position on Click/Tap**
 
@@ -162,7 +164,6 @@ The game play is a combination of the most important features, and my priority w
 - Fix Applied:
 
   - I added a simple CSS effect to my whackAlienOne and smackAlienTwo functions, which made sure that the aliens went back behind the plants after you tapped or clicked on them. This functionality runs in addition to the basic setTimeout for the Up position, as the aliens still need to pop in and out even if you completely ignore them.
-
 
 
 - Bug Discovered - **Cheat Scores by Furious Tapping/Clickingp**
@@ -184,6 +185,26 @@ The game play is a combination of the most important features, and my priority w
   - Then I reset the values to false within ambush before function told the aliens to pop out again. 
   
   - I can't describe how satisfied I was to discover this fix by myself, and eliminate the insanely high scores of some of the cheating testers!
+
+  ```
+function whackAlienOne(e) {
+    if(!this.isWhacked){
+    clickSound();
+    score ++;
+    }
+    this.style.pointerEvent = "none";
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one-yellow.svg)";
+    setTimeout (()=> {
+        this.parentNode.classList.remove('up');
+    }, 500);
+  setTimeout(() => {
+    this.style.backgroundImage = "url(../assets/images/game-assets/alien-one.svg)";
+    this.style.pointerEvent = "all";
+  }, 510);
+  scoreDisplay.textContent = score;
+  return this.isWhacked = true;
+}
+  ```
 
 - Bug Discovered - **Multiple Scores by Furious Tapping/Clickingp**
 
