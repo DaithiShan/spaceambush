@@ -16,8 +16,6 @@ const setUpClose = document.querySelector("#set-up-close")
 
 const audioMenu = document.querySelector("#audio-menu")
 
-const contactForm = document.querySelector("#contact-form")
-
 const game = document.querySelector("#game-container")
 
 const plants  = document.querySelectorAll(".plant");
@@ -340,7 +338,6 @@ easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
 
 contactButton.addEventListener("click", contactFormDisplay);
-contactForm.addEventListener("submit", sendMail)
 
 mainAudioButton.addEventListener("click", audioDisplay);
 
