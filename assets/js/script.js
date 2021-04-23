@@ -189,7 +189,7 @@ function ambush() {
 
 function alienOneAttack() {
     if(!this.children[0].isWhacked) {
-        this.children[0].isAttacking = Math.random() < 0.27;
+        this.children[0].isAttacking = Math.random() < 0.30;
         if(this.children[0].isAttacking) {
         this.children[0].style.pointerEvent = "none";
         this.children[0].style.backgroundImage = "url(https://daithishan.github.io/spaceambush/assets/images/game-assets/alien-one-red.svg)";
@@ -199,7 +199,7 @@ function alienOneAttack() {
         setTimeout(() => {
     this.children[0].style.backgroundImage = "url(https://daithishan.github.io/spaceambush/assets/images/game-assets/alien-one.svg)";
     this.children[0].style.pointerEvent = "all";
-  }, 800);
+  }, 600);
       }
   }
 }
@@ -208,7 +208,7 @@ function alienOneAttack() {
 
 function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
-        this.children[1].isAttacking = Math.random() < 0.37;
+        this.children[1].isAttacking = Math.random() < 0.39;
         if(this.children[1].isAttacking) {
         this.children[1].style.backgroundImage = "url(https://daithishan.github.io/spaceambush/assets/images/game-assets/alien-two-attack.svg)";
         score--;
@@ -216,7 +216,7 @@ function alienTwoAttack() {
         scoreDisplay.textContent = score;
         setTimeout(() => {
     this.children[1].style.backgroundImage = "url(https://daithishan.github.io/spaceambush/assets/images/game-assets/alien-two.svg)";
-  }, 600);
+  }, 500);
       }
   }
 }
