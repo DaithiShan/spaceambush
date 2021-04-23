@@ -1,43 +1,49 @@
 // Global Variables
 
-const donateButton = document.getElementById("donate-container");
-
 const mainMenu = document.getElementsByClassName("main-menu-content")[0];
+
+// These variable are all the main menu buttons
 const mainPlayButton = document.querySelector("#main-play-button");
-const mainAudioButton = document.querySelector("#main-audio-button")
-const contactButton = document.querySelector("#main-contact-button")
-const contactFormContainer = document.querySelector("#contact-container")
+const mainAudioButton = document.querySelector("#main-audio-button");
+const contactButton = document.querySelector("#main-contact-button");
 
+// These variable are all the mini-menus you can call from the main menu
 const setUpMenu = document.querySelector("#set-up");
+const contactFormContainer = document.querySelector("#contact-container");
+const audioMenu = document.querySelector("#audio-menu");
 
+// These variables are the different options on the Set Up mini menu
 const easyLevel = document.querySelector("#easy");
 const hardLevel = document.querySelector("#hard");
-const setUpClose = document.querySelector("#set-up-close")
+const setUpClose = document.querySelector("#set-up-close");
 
-const audioMenu = document.querySelector("#audio-menu")
+// This is the game container variable
+const game = document.querySelector("#game-container");
 
-const game = document.querySelector("#game-container")
-
+// These are all the game assets: alien bushes and alien ambushers
 const plants  = document.querySelectorAll(".plant");
 const alienOnes = document.querySelectorAll(".alien-one");
 const alienTwos = document.querySelectorAll(".alien-two");
+
+// These are all the ingame text elements; time, score and highscore
 const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
 
-const gameHelpButton = document.querySelector("#help")
-const gameHelpClose = document.querySelector("#help-close")
-
+// These are all the ingame buttons; help, audio and quit
+const gameHelpButton = document.querySelector("#help");
+const gameHelpClose = document.querySelector("#help-close");
 const gameAudioButton = document.querySelector("#game-audio-button");
 const gameExitButton = document.querySelector("#game-exit-button");
 
+// These are all the variables for the Game Over Menu
 const gameOverMenu = document.querySelector("#game-over");
 const gameOverScore = document.querySelector("#game-over-score");
 const gameOverHighScore = document.querySelector("#game-over-high-score");
 const noAndReturn = document.querySelector("#no-return");
 const yesAndReturn = document.querySelector("#yes-return");
 
-
+// These are all the mutable variables needed for good gameplay
 let lastPlant;
 let timeUp = false;
 let levelHard = false;
@@ -155,7 +161,7 @@ function pickRandomPlant(plants) {
 // This function controls each space ambush by the aliens
 
 function ambush() {
-    if(gameActive) {
+
     alienOnes.forEach(alienOne => alienOne.isWhacked = false);
     alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
     const popOutTime = randomTime(1900, 1500);
@@ -163,18 +169,22 @@ function ambush() {
     const popOutTimeTwo = randomTime(1700, 1300);
     const plantTwo = pickRandomPlant(plants);
 
+    if(gameActive) {
     plant.classList.add("up");
-    setTimeout(()=>{alienOneAttack.call(plant)}, 670);
+    setTimeout(()=>{
+        alienOneAttack.call(plant);
+    }, 670);
     setTimeout(() => {
         plant.classList.remove("up");
         if(!timeUp) { 
             ambush();
         }
     }, popOutTime);
+  }
 
-    // This part of the function calls in a second alien for the Hard Level
+    // This part of the ambush function calls in a second alien if on Hard Level
 
-    if(levelHard){
+if(levelHard && gameActive){
     if (plant === plantTwo) {
         pickRandomPlant(plants);
     }
@@ -182,14 +192,16 @@ function ambush() {
     if(plantTwo.children[1].isAmbushing) {
         setTimeout(()=> {
         plantTwo.classList.add("up-two");
-        setTimeout(()=>{alienTwoAttack.call(plantTwo)}, 670);
+        setTimeout(()=>{
+            alienTwoAttack.call(plantTwo);
+        }, 670);
         setTimeout(() => {
         plantTwo.classList.remove("up-two");
-      }, popOutTimeTwo)}, 300);
+      }, popOutTimeTwo);
+    }, 300);
+      }
+     }
     }
-   }
-  }
-}
 
 // This function sets probability and attack time of Alien One
 
@@ -338,32 +350,47 @@ function homeReturn() {
     mainMenu.classList.add("d-block");
 }
 
-// Event Listeners
+// All of the Event Listeners
+
+// This event listener calls gameSetUp() when user clicks play on Main Menu
 mainPlayButton.addEventListener("click", gameSetUp);
 
+// This event listener calls startEasyGame() when user clicks on Easy Level in Set Up Menu
 easyLevel.addEventListener("click", startEasyGame);
+
+// This event listener calls startHardGame() when user clicks on Hard Level in Set Up Menu
 hardLevel.addEventListener("click", startHardGame);
 
+// This event listener calls contactFormDisplay() when user clicks Contact on Main Menu
 contactButton.addEventListener("click", contactFormDisplay);
 
+// This event listener calls audioDisplay() when user clicks Audio on Main Menu
 mainAudioButton.addEventListener("click", audioDisplay);
 
+// Helps user adjust sound effect volume using slider in Audio Options Menu
 document.getElementById("sound-button").addEventListener("click", event => {
     soundEffectController();
 });
+
+// Helps user adjust game music volume using slider in Audio Options Menu
 document.getElementById("music-button").addEventListener("click", event => {
     musicController();
 });
 
+// Adds event listener to every alienOne asset, needed for whackAlienOne function
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
+
+// Adds event listener to every alienTwo asset, needed for smackAlienTwo function
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
 
+// Helps user pause the game when they hit on ingame help menu
 gameHelpButton.addEventListener("click", ()=>{
     clearInterval(startTimer);
     timer += 1;
     gameActive = false;
 })
 
+// Helps user restart the game when they close ingame help menu
 gameHelpClose.addEventListener("click", ()=> {
     gameActive = true;
     ambush();
@@ -378,16 +405,19 @@ gameHelpClose.addEventListener("click", ()=> {
     }, 1000);
 })
 
+// Helps user toggle the audio on and off inside the game
 gameAudioButton.addEventListener("click", toggleAudio);
 
+// Helps user exit the game by clicking on the X when they're inside the game
 gameExitButton.addEventListener("click", ()=>{
     timer = 0;
 });
 
-
-
+// Returns user to main menu if they decide not to donate
 noAndReturn.addEventListener("click", homeReturn);
-yesAndReturn.addEventListener("click", homeReturn)
+
+// Returns user to main menu while active new tab opens donate form
+yesAndReturn.addEventListener("click", homeReturn);
 
 
 
