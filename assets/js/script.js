@@ -192,12 +192,12 @@ function alienOneAttack() {
         this.children[0].isAttacking = Math.random() < 0.27;
         if(this.children[0].isAttacking) {
         this.children[0].style.pointerEvent = "none";
-        this.children[0].style.backgroundImage = "url(./images/game-assets/alien-one-red.svg)";
+        this.children[0].style.backgroundImage = "url(/assets/images/game-assets/alien-one-red.svg)";
         score--;
         scoreDisplay.textContent = score;
         clickSound();
         setTimeout(() => {
-    this.children[0].style.backgroundImage = "url(.images/game-assets/alien-one.svg)";
+    this.children[0].style.backgroundImage = "url(/assets/images/game-assets/alien-one.svg)";
     this.children[0].style.pointerEvent = "all";
   }, 800);
       }
@@ -210,12 +210,12 @@ function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
         this.children[1].isAttacking = Math.random() < 0.34;
         if(this.children[1].isAttacking) {
-        this.children[1].style.backgroundImage = "url(./images/game-assets/alien-two-attack.svg)";
+        this.children[1].style.backgroundImage = "url(/assets/images/game-assets/alien-two-attack.svg)";
         score--;
         clickSound();
         scoreDisplay.textContent = score;
         setTimeout(() => {
-    this.children[1].style.backgroundImage = "url(./images/game-assets/alien-two.svg)";
+    this.children[1].style.backgroundImage = "url(/assets/images/game-assets/alien-two.svg)";
   }, 600);
       }
   }
@@ -229,12 +229,12 @@ function whackAlienOne(e) {
     score ++;
     }
     this.style.pointerEvent = "none";
-    this.style.backgroundImage = "url(./images/game-assets/alien-one-yellow.svg)";
+    this.style.backgroundImage = "url(/assets/images/game-assets/alien-one-yellow.svg)";
     setTimeout (()=> {
         this.parentNode.classList.remove('up');
     }, 500);
   setTimeout(() => {
-    this.style.backgroundImage = "url(./images/game-assets/alien-one.svg)";
+    this.style.backgroundImage = "url(/assets/images/game-assets/alien-one.svg)";
     this.style.pointerEvent = "all";
   }, 510);
   scoreDisplay.textContent = score;
@@ -248,14 +248,14 @@ function smackAlienTwo(e) {
     clickSound();
     score ++;
     }
-    this.style.backgroundImage = "url(./images/game-assets/alien-two-dizzy.svg)";
+    this.style.backgroundImage = "url(/assets/images/game-assets/alien-two-dizzy.svg)";
     this.style.pointerEvent = "none";
   setTimeout (()=> {
         this.parentNode.classList.remove('up');
     }, 500);
 
   setTimeout(() => {
-    this.style.backgroundImage = "url(./images/game-assets/alien-two.svg)";
+    this.style.backgroundImage = "url(/assets/images/game-assets/alien-two.svg)";
     this.style.pointerEvent = "all";
   }, 510);
   scoreDisplay.textContent = score;
