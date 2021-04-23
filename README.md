@@ -6,6 +6,8 @@ The game colors are vibrant and bright, the music fits the alien world and both 
 
 Space Ambush was built with HTML, CSS and Javascript and is an experimental form of rich content for younger supporters of The Mater Foundation, the charity for which I work as a digital fundraiser.
 
+![Preview of Space Ambush](assets/images/wireframes/responsive.png)
+
 ## Demo
 
 A live demo of the website can be found here (https://daithishan.github.io/milestoneproject1/).
@@ -170,7 +172,20 @@ The Space Ambush color palette listed above is derived from digital assets desig
 <span id="wireframes"></span>
 
 
-https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0
+Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0 "Link to Blank! Figma Workspace") with providing a positive user experience in mind.
+
+Home Page:
+
+- Game Main Menu:
+
+     ![Main Menu](assets/images/wireframes/main-menu.png "Main Menu Wireframes")
+
+Game Mode:
+
+- Game Page:
+
+     ![Game Page](assets/images/wireframes/game-page.png "Game Mode Page Wireframe")
+
 
 <div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
 
