@@ -6,7 +6,7 @@ const mainMenu = document.getElementsByClassName("main-menu-content")[0];
 const mainPlayButton = document.querySelector("#main-play-button");
 const mainAudioButton = document.querySelector("#main-audio-button")
 const contactButton = document.querySelector("#main-contact-button")
-const contactForm = document.querySelector("#contact-container")
+const contactFormContainer = document.querySelector("#contact-container")
 
 const setUpMenu = document.querySelector("#set-up");
 
@@ -16,6 +16,7 @@ const setUpClose = document.querySelector("#set-up-close")
 
 const audioMenu = document.querySelector("#audio-menu")
 
+const contactForm = document.querySelector("#contact-form")
 
 const game = document.querySelector("#game-container")
 
@@ -96,13 +97,13 @@ function startHardGame() {
 function contactFormDisplay() {
         mainMenu.classList.remove("d-block");
         mainMenu.classList.add("d-none");
-        contactForm.classList.remove("d-none");
-        contactForm.classList.add("d-block");
+        contactFormContainer.classList.remove("d-none");
+        contactFormContainer.classList.add("d-block");
         document.querySelectorAll(".modal-close").forEach(item => {
             item.addEventListener("click", event => {
                 clickSound();
-                contactForm.classList.remove("d-block");
-                contactForm.classList.add("d-none");
+                contactFormContainer.classList.remove("d-block");
+                contactFormContainer.classList.add("d-none");
                 mainMenu.classList.remove("d-none");
                 mainMenu.classList.add("d-block");
             });
@@ -339,6 +340,7 @@ easyLevel.addEventListener("click", startEasyGame);
 hardLevel.addEventListener("click", startHardGame);
 
 contactButton.addEventListener("click", contactFormDisplay);
+contactForm.addEventListener("submit", sendMail)
 
 mainAudioButton.addEventListener("click", audioDisplay);
 
