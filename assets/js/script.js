@@ -153,9 +153,9 @@ function pickRandomPlant(plants) {
 function ambush() {
     alienOnes.forEach(alienOne => alienOne.isWhacked = false);
     alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
-    const popOutTime = randomTime(1300, 1000);
+    const popOutTime = randomTime(1900, 1500);
     const plant = pickRandomPlant(plants);
-    const popOutTimeTwo = randomTime(1500, 1200);
+    const popOutTimeTwo = randomTime(1700, 1300);
     const plantTwo = pickRandomPlant(plants);
     if (plant === plantTwo) {
         pickRandomPlant(plants);
