@@ -208,7 +208,7 @@ function alienOneAttack() {
 
 function alienTwoAttack() {
     if(!this.children[1].isWhacked) {
-        this.children[1].isAttacking = Math.random() < 0.34;
+        this.children[1].isAttacking = Math.random() < 0.37;
         if(this.children[1].isAttacking) {
         this.children[1].style.backgroundImage = "url(https://daithishan.github.io/spaceambush/assets/images/game-assets/alien-two-attack.svg)";
         score--;
