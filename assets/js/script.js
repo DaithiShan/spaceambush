@@ -364,7 +364,6 @@ alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo))
 
 gameAudioButton.addEventListener("click", toggleAudio);
 gameExitButton.addEventListener("click", ()=>{
-    timeUp = true;
     timer = 0;
 });
 
