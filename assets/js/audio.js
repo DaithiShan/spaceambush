@@ -53,18 +53,6 @@ function musicController() {
     }
 }
 
-//The below determines if the game is active, if the game is not active.
-
-// function isGameActive() {
-//     if (app.difficultyLevel !== "") {
-//         audio.gameActive = true;
-//     } else {
-//         audio.gameActive = false;
-//     }
-// }
-
-//The below function will play music as long as the conditions are met.
-
 function playMusic() {
     if (audio.isMusicMuted !== true) {
         audio.gameMusic.play();
@@ -157,7 +145,7 @@ function toggleAudio() {
         audio.clickAudio.play();
         audio.gameMusic.play();
         audio.gameMusic.loop = true;
-        gameAudioButton.innerHTML = "<i class='fas fa-volume-up'></i>"
+        gameAudioButton.innerHTML = "<i class='fas fa-volume-up'></i>";
     }
 }
 
