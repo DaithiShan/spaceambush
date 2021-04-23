@@ -221,7 +221,7 @@ button:active {
 .game-over-content {
     background-image: linear-gradient(#fff, #FF55DD );
     box-sizing: border-box;
-    width: auto;
+    width: 80%;
     height: auto;
     font-size: 1rem;
     z-index: 3;
@@ -441,7 +441,9 @@ button:active {
   }
 
   .controls-container button {
-    font-size: 120%;
+    font-size: 90%;
+    width: 40px;
+    height: 40px;
   }
 
 .plant:after {
