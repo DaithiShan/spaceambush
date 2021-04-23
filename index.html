@@ -139,7 +139,7 @@
         <!-- Scores -->
         <div id="contact-container" class="modal d-none">
             <div class="modal-dialog" role="document">
-                <div class="modal-content contact-content">
+                <div class="modal-content contact-content text-center">
                     <div class="modal-header">
                         <h2 class="modal-title w-100">Get in touch</h2>
                     </div>
@@ -150,10 +150,13 @@
                     </div>
                     <form class="center-form" aria-label="Contact Form" onsubmit="sendMail(this);">
                         <div class="pt-2 px-1 pb-0 text-center justify-content-center flex-column">
+                        <label class="contact-label" for="name">Full Name</label>    
                         <input type="text" id="name" placeholder="Full Name" aria-label="Enter Full Name" name="name" required>
                         <br>
+                        <label class="contact-label" for="emailaddress">Email Address</label>    
                         <input type="email" id="emailaddress" placeholder="Email Address" aria-label="Enter Email" name="emailaddress" required>
                         <br>
+                        <label class="contact-label" for="message">Write a message</label>    
                         <textarea placeholder="Write a message" id="message" aria-label="Enter Message" name="message" required></textarea>
                         </div>
                         <br>
@@ -211,7 +214,7 @@
         <!-- Game Over Menu -->
 
         <div id="game-over" class="game-over modal d-none">
-            <div class="game-over-content modal-content">
+            <div class="game-over-content modal-content text-center">
                 <div class="modal-header text-center">
                     <h2 class="w-100">Game Over</h2>
                 </div>

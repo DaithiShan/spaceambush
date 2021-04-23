@@ -141,7 +141,7 @@ body {
     min-width: 60px;
     border-radius: 20px;
     padding: 10px 10px;
-    margin: 25px 70px 50px;
+    margin: 2vh 7vw 3vh;
     cursor: pointer
 }
 
@@ -197,6 +197,12 @@ button:active {
     margin: auto;
 }
 
+.contact-content input {
+    margin: auto;
+    margin-bottom: 2vh;
+    text-align: center;
+} 
+
 .game-over {
   width: 100vw;
   height: 100vh;
@@ -215,8 +221,8 @@ button:active {
 .game-over-content {
     background-image: linear-gradient(#fff, #FF55DD );
     box-sizing: border-box;
-    width: fit-content;
-    height: fit-content;
+    width: auto;
+    height: auto;
     font-size: 1rem;
     z-index: 3;
 }
