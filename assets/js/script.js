@@ -153,7 +153,7 @@ function pickRandomPlant(plants) {
 function ambush() {
     alienOnes.forEach(alienOne => alienOne.isWhacked = false);
     alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
-    const popOutTime = randomTime(1100, 900);
+    const popOutTime = randomTime(1300, 1000);
     const plant = pickRandomPlant(plants);
     const popOutTimeTwo = randomTime(1500, 1200);
     const plantTwo = pickRandomPlant(plants);
@@ -173,7 +173,7 @@ function ambush() {
     // This part of the function calls in a second alien for the Hard Level
 
     if(levelHard){
-    plantTwo.children[1].isAmbushing = Math.random() < 0.28;
+    plantTwo.children[1].isAmbushing = Math.random() < 0.33;
     if(plantTwo.children[1].isAmbushing) {
         setTimeout(()=> {
         plantTwo.classList.add("up-two");
