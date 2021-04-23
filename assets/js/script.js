@@ -43,6 +43,8 @@ let timeLimit = 30000;
 let score = 0;
 let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
+let exitButtonClicked = false;
+let startTime;
 
 // Main Menu Functions
 
@@ -261,16 +263,6 @@ function smackAlienTwo(e) {
   return this.isWhacked = true;
 }
 
-// This function checks if the game time of 30 seconds is finished
-
-function isTimeUp() {
-    if (timer <= 0) {
-      timeUp = true;
-      gameOver();
-    } else {
-      setTimeout(isTimeUp, timer * 1000);
-    }
-  }
 
 // This is the master function for gameplay, and calls all participating sub-functions e.g. ambush, audio, etc 
 
@@ -287,9 +279,7 @@ function playGame() {
     timeUp = false;
     ambush();
 
-    setTimeout(isTimeUp, timeLimit);
-
-    let startTimer = setInterval(()=>{
+startTimer = setInterval(()=>{
         timer -= 1;
         timerDisplay.textContent = timer;
         if (timer <= 0) {
@@ -363,6 +353,7 @@ alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne))
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
 
 gameAudioButton.addEventListener("click", toggleAudio);
+
 gameExitButton.addEventListener("click", ()=>{
     timer = 0;
 });
