@@ -25,6 +25,9 @@ const scoreDisplay = document.querySelector("#score");
 const highScoreDisplay = document.querySelector("#high-score");
 const timerDisplay = document.querySelector("#timer");
 
+const gameHelpButton = document.querySelector("#help")
+const gameHelpClose = document.querySelector("#help-close")
+
 const gameAudioButton = document.querySelector("#game-audio-button");
 const gameExitButton = document.querySelector("#game-exit-button");
 
@@ -44,6 +47,7 @@ let highScore = localStorage.getItem("gameHighScore")||0;
 let timer;
 let exitButtonClicked = false;
 let startTime;
+let gameActive;
 
 // Main Menu Functions
 
@@ -151,6 +155,7 @@ function pickRandomPlant(plants) {
 // This function controls each space ambush by the aliens
 
 function ambush() {
+    if(gameActive) {
     alienOnes.forEach(alienOne => alienOne.isWhacked = false);
     alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
     const popOutTime = randomTime(1900, 1500);
@@ -181,8 +186,9 @@ function ambush() {
         setTimeout(() => {
         plantTwo.classList.remove("up-two");
       }, popOutTimeTwo)}, 300);
-    };
-  };
+    }
+   }
+  }
 }
 
 // This function sets probability and attack time of Alien One
@@ -276,6 +282,7 @@ function playGame() {
     highScoreDisplay.textContent = highScore;
     timerDisplay.textContent = timer;
     timeUp = false;
+    gameActive = true;
     ambush();
 
 startTimer = setInterval(()=>{
@@ -351,11 +358,33 @@ document.getElementById("music-button").addEventListener("click", event => {
 alienOnes.forEach(alienOne => alienOne.addEventListener("click", whackAlienOne));
 alienTwos.forEach(alienTwo => alienTwo.addEventListener("click", smackAlienTwo));
 
+gameHelpButton.addEventListener("click", ()=>{
+    clearInterval(startTimer);
+    timer += 1;
+    gameActive = false;
+})
+
+gameHelpClose.addEventListener("click", ()=> {
+    gameActive = true;
+    ambush();
+    startTimer = setInterval(()=>{
+        timer -= 1;
+        timerDisplay.textContent = timer;
+        if (timer <= 0) {
+            timer = 0;
+            clearInterval(startTimer);
+            gameOver();
+        }
+    }, 1000);
+})
+
 gameAudioButton.addEventListener("click", toggleAudio);
 
 gameExitButton.addEventListener("click", ()=>{
     timer = 0;
 });
+
+
 
 noAndReturn.addEventListener("click", homeReturn);
 yesAndReturn.addEventListener("click", homeReturn)

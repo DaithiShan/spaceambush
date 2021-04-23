@@ -335,11 +335,6 @@ button:active {
   z-index: 3;
 }
 
-.plant-forward .alien-one.big {
-    left: 15%;
-    width: 105px;
-}
-
 .plant-forward .alien-two.big {
     left: 10%;
 }
@@ -480,13 +475,7 @@ button:active {
 .plant-back .alien-one.small {
     left: 10%;
     height: 70%;
-}
-
-.alien-one.big {
-    width: 66%;
-    height: 95%;   
-    left: 15%;
-}
+  }
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) {
