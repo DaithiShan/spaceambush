@@ -8,17 +8,14 @@ function sendMail(event) {
     .then(function() 
     {
         console.log('SUCCESS!');
-        // confirmation();
-                    }, 
+        alert(`Thank you for your email! We'll be in touch soon.`);
+    },
     function(error) 
     {
         console.log('FAILED...', error);
+        alert(`Unfortunately your email didn't send correctly! Here is the error message: `, error);
             });
     return false;
-}
-
-function confirmation() {
-    
 }
 
 // Event Listeners
