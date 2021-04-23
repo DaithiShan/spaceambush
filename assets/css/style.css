@@ -310,7 +310,7 @@ button:active {
 .alien-one {
   background-image: url("../images/game-assets/alien-one.svg");
   position: absolute;
-  left: 30%;
+  left: 20%;
   bottom: 0;
   top: 100%;
   width: 105px;
@@ -324,7 +324,7 @@ button:active {
 .alien-two {
   background-image: url("../images/game-assets/alien-two.svg");
   position: absolute;
-  left: 27%;
+  left: 17%;
   bottom: 0;
   top: 100%;
   width: 110px;
@@ -336,12 +336,12 @@ button:active {
 }
 
 .plant-forward .alien-one.big {
-    left: 35%;
+    left: 15%;
     width: 105px;
 }
 
 .plant-forward .alien-two.big {
-    left: 20%;
+    left: 10%;
 }
 
 .plant.up .alien-one {
@@ -388,7 +388,7 @@ button:active {
 .plant-forward .alien-one.big {
     width: 66%;
     height: 80%;   
-    left: 30%;
+    left: 15%;
 }
 
 }
@@ -455,14 +455,14 @@ button:active {
 }
 
 .alien-one {
-  left: 32%;
+  left: 12%;
   width: 80%;
   height: 80%;
   transition: 0.3s;
 }
 
 .plant-back .alien-two {
-  left: 10%;
+  left: 5%;
   width: 90%;
   height: 70%;
   transition: 0.3s;
@@ -476,14 +476,14 @@ button:active {
 }
 
 .plant-back .alien-one.small {
-    left: 25%;
+    left: 10%;
     height: 70%;
 }
 
 .alien-one.big {
     width: 66%;
     height: 95%;   
-    left: 33%;
+    left: 15%;
 }
 }
 
@@ -491,7 +491,7 @@ button:active {
 
 .alien-one,
 .alien-two {
-  left: 15%;
+  left: 10%;
   width: 90%;
   height: 75%;
   transition: 0.3s;
@@ -499,7 +499,7 @@ button:active {
 
 .alien-one.big,
 .alien-two.big {
-    left: 33%;
+    left: 20%;
     width: 75%;
     height: 85%;
 }
