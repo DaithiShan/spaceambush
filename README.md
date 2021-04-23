@@ -10,9 +10,9 @@ Space Ambush was built with HTML, CSS and Javascript and is an experimental form
 
 ## Demo
 
-A live demo of the website can be found here (https://daithishan.github.io/milestoneproject1/).
+A live demo of the website can be found immediately below.
 
-**[Live demo](https://daithishan.github.io/milestoneproject1/)**
+**[Live demo](https://daithishan.github.io/spaceambush/)**
 
 ## README Index
 ---
@@ -25,25 +25,23 @@ A live demo of the website can be found here (https://daithishan.github.io/miles
 - <a href="#project-goals">Project Goals</a>
 - <a href="#ux">User Experience</a>
 - <a href="#ux-stories">User stories</a>
+- <a href="#dev-planes">Development Planes</a>
+- <a href="#wireframes">Wireframes</a>
 - <a href="#design">Design</a>
-  - <a href="#inspiration">Inspiration</a>
   - <a href="#color">Color Scheme</a>
   - <a href="#type">Typography</a>
   - <a href="#imagery">Imagery</a>  
-- <a href="#wireframes">Wireframes</a>
 - <a href="#features">Features</a>
   - <a href="#features-current">Current</a>
   - <a href="#features-future">Future</a>
 - <a href="#testing">Testing</a>
-  - <a href="#code-validation">Current</a>
-  - <a href="#manual-testing">Future</a>
 - <a href="#credits">Credits</a>
 
 ---
 
+## Context
 <span id="context"></span>
 
-## Context
 
 Space Ambush is a mini game developed for marketing purposes. I developed it as an experimental way of developing new content for the younger supporters of The Mater Foundation, the charity for which I work in digital fundraising.
 
@@ -51,9 +49,8 @@ It's based off the retro-arcade game Whack-A-Mole, but I've tried to add a chall
 
 ---
 
-<span id="project-goals"></span>
-
 ## Project Goals
+<span id="project-goals"></span>
 
 1. To positively engage and entertain the younger subscriber list of The Mater Foundation with something unexpected.
 
@@ -63,6 +60,7 @@ It's based off the retro-arcade game Whack-A-Mole, but I've tried to add a chall
 
 ## User Experience (UX)
 <span id="ux"></span>
+
 ### Overview
 
 Space Ambush has been designed for quick play, while using local storage for repeat visits. The idea is also to funnel players towards The Mater Foundation's donation form.
@@ -75,6 +73,8 @@ Space Ambush has been designed for quick play, while using local storage for rep
 - Replayability
 
 ### User Stories
+<span id="ux-stories"></span>
+
 
 -   #### As a first time visitor, I want to:
 
@@ -96,36 +96,103 @@ Space Ambush has been designed for quick play, while using local storage for rep
 
 <div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
+### Development Planes
+<span id="dev-planes"></span>
+
+
+These user stories were further detailed by considering the 5 planes of user experience:
+
+#### Strategy
+Broken into three categories, the strategy for this mini-game focuses on three perspectives:
+
+- **First Time Visitors:**
+     - Signposted to game from email or social media
+     - No prior game experience
+     - High probability to bounce
+     - Low attention span
+     - Initially curious
+     - Initially open minded
+
+- **Returning Visitors**
+     - Prior game experience
+     - Interested in higher difficulty
+     - Interested in beating highest score
+     - Require future addition of new features
+
+- **Charity**
+     - Lacking resources to commit to experimental content
+     - Priority is engaging supporters, with % of them donating
+     - Will potentially invest more into new features if successful
+
+For **visitors**, the mini-game needs to:
+
+- Immediately grab their attention, and offer replayability
+     - Bright, vibrant colors
+     - Clear navigation
+     - Minimal load times
+     - Intuitive controls
+     - Intuitive scoring
+     - Visual feedback
+     - Audio feedback
+
+For the **charity**, the mini-game needs to
+
+- Effectively test a new kind of supporter engagement, and help evaluate ROI and impact:
+     - Responsive across all user devices
+     - Provides all visitors with a contact option
+     - Contact form prompts for user reviews, and new ideas
+     - No substantial costs to building a game of this type
+
+#### Scope
+A scope was defined in order to clearly identify what needed to be done in order to align features with the strategy previously defined. This was broken into two categories:
+
+- **User Requirements**
+     - The user will need:
+          - Responsiveness
+          - Minimal load times
+          - Concise help/tutorial
+          - Simple, intuitive controls
+          - Continuous user feedback
+          - Higher difficulty options
+          - Record of their highest score
+          - Ability to request additional features
+          
+- **Charity Requirements**
+     - The charity will need:
+          - Low cost project
+          - Potential for return on engagement from donations
+          - Contact form for users to submit reviews, feature requests & bug reports
+
+#### Structure
+The information architecture was organized in a **horizontal tree structure** in order to ensure that users could navigate through the site with ease and efficiency, with the following results: 
+
+![Site Map](assets/images/wireframes/sitemap.png)
+
+#### Skeleton & Surface 
+Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0 "Link to Blank! Figma Workspace") with providing a positive user experience in mind.
+
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
+#### Wireframes
+<span id="wireframes"></span>
+
+Home Page:
+
+- Game Main Menu:
+
+     ![Main Menu](assets/images/wireframes/main-menu.png "Main Menu Wireframes")
+
+Game Mode:
+
+- Game Page:
+
+     ![Game Page](assets/images/wireframes/game-page.png "Game Mode Page Wireframe")
+
+
+<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 ### Design
 <span id="design"></span>
-
-#### Project Inspiration
-<span id="inspiration"></span>
-
-#### Branded Minigames
-
-A conceptual inspiration for this mini game is from an Irish beer company that developed a video game as part of their marketing. The company is called Yellowbelly Beer, and the game is called [Hop Rocket](https://www.youtube.com/watch?v=i7G-gFBJzVk)
-
-![Hop Rocket by Yellowbelly](./assets/influences/brand-minigame.png)
-
-While this game is no longer available for play, I thought it was an interesting way of engaging a customerbase.
-
-#### Dovile Krasnickaite - Whack-A-Monster
-
-The other major inspiration for this project was from a fellow student from the Code Institute diploma. Their name is Dovile Krasnickaite, and their project was similarly based on the Whack-A-Mole game.
-
-![Dovile Krasnickaite - Whack-A-Monster](./assets/influences/whack-a-monster.png)
-
-Their project showed how design and music could revitalise a game from 1970s arcades.
-
-#### Memory Improvement Tips - Whack-Em-All
-
-A further inspiration came from Memory Improvement Tips and their version of Whack-A-Mole, especially in terms of adding a new twist where the moles can fight back.
-
-![Memory Improvement Tips - Whack-Em-All](./assets/influences/whack-em-all.jpg)
-
-I also loved how they introduce a penalty click with the mole-bomb, which I didn't have time to introduce. I also liked how they pressured the user to make choices between different, simultaneously appearing moles. Cognitive overload makes the simple concept of Whack-A-Mole more difficult than a pure reflex test.
-
 
 #### Color Scheme
 <span id="color"></span>
@@ -166,25 +233,21 @@ The Space Ambush color palette listed above is derived from digital assets desig
 
 - These assets have been revised in Adobe Illustrator by me to remove their initial sideways-scrolling left-facing design, and to provide Whack-A-Mole style animations!
 
-<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
+- Alien Planet
 
-### Wireframes
-<span id="wireframes"></span>
+![Alien Planet](assets/images/planet/planet.jpg "Alien Planet setting for Space Ambush")
 
+- Alien Bush
 
-Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/EOkhXQoglVdZMW3VcIozuy/Mater-Mini-Game?node-id=59%3A0 "Link to Blank! Figma Workspace") with providing a positive user experience in mind.
+![Alien Bush](assets/images/game-assets/plant.png "Alien Bush asset for Space Ambush")
 
-Home Page:
+- Alien Monster One
 
-- Game Main Menu:
+![Alien Monster One](assets/images/game-assets/alien-one.svg "Alien Bush asset for Space Ambush")
 
-     ![Main Menu](assets/images/wireframes/main-menu.png "Main Menu Wireframes")
+- Alien Monster Two
 
-Game Mode:
-
-- Game Page:
-
-     ![Game Page](assets/images/wireframes/game-page.png "Game Mode Page Wireframe")
+![Alien Monster Two](assets/images/game-assets/alien-two.svg "Alien Bush asset for Space Ambush")
 
 
 <div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
@@ -195,7 +258,6 @@ Game Mode:
 ### Current
 <span id="features-current"></span>
 
-
 **1. Modal Menus**
 
 | Menu Type  | Description                                                                                                                                                                                                         |
@@ -203,16 +265,28 @@ Game Mode:
 | Main Menu | Provides access to level selection and gameplay, audio options and contact form                                                                                                                                     |
 | Level Selection | Provides options between easy and hard which will determine gameplay                                                                                                                                              |
 | Audio | Provides volume choice using sliders, with immediate feedback on sound levels                                                                                                                                             |
+| Ingame Help | Provides quick instructions, and pauses gameplay                                                                                                                                            |
 | Game Over  | Displays score, all time high score and a prompt for donation to Mater Foundation
 
-**2. Level Selection**
+**2. Varying Difficulty**
 
 - Space Ambush can be played in easy or hard mode.
     * In easy mode, players must click or tap a randomly appearing monster to win points. If they don't act quickly, the alien turns red and attacks them, losing them points.
 
     * In hard mode, players are in double trouble. They face two aliens that both have a random chance of turning red and attacking them. It's harder to win points, as the aliens appear in quick succession, which is confusing.
 
-**3. Game Area**
+**3. Contact Form with Confirmation Email**
+
+- Users can click on contact from the main menu to open a contact form.
+    * The contact form prompts for a review or a new idea, and sends it through a Javascript function linked to emailjs
+
+    * The user in turn receives a confirmation email to the email address that they've entered.
+
+    * An alert pops up with a confirmation message on successful contact form submission
+
+    * An alert pops up with the relevant error message in case of failure
+
+**4. Game Area**
 
 - The game area has a responsive design which will adapt to the user's device dimensions.
 
@@ -220,7 +294,7 @@ Game Mode:
 
 - The layout of the alien plants is also responsive and will vary slightly on wide screens vs mobile screens to offer the best type of game play on each.
 
-**4. Alien Ambushers**
+**5. Alien Ambushers**
 
 - When the user starts the game, they will immediately be ambushed by aliens.
 
@@ -230,7 +304,7 @@ Game Mode:
 
 - When the user successfully attacks, they'll gain points. When the alien attacks, the user will lose points.
 
-**5. Timer and Score**
+**6. Timer and Score**
 
 - When the user starts the game, there is an active timer that immediately triggers and continues counting down to game end. 
 
@@ -238,21 +312,21 @@ Game Mode:
 
 - High score is saved and pulled from local storage.
 
-**6. Visual Feedback**
+**7. Visual Feedback**
 
 - Every time a player makes a menu choice, clicks on an alien monster, or fails to click on a monster in time a visual effect is programmed as a result. Monsters turn red when they attack, and yellow when they're hit, and a modal generates when the game is over. At every stage of user experience, visual effects are used to give feedback.
 
-**5. Audio**
+**8. Audio**
 
 - The game has four types of audio; a lasergun click sound, a short gameplay audio clip, a longer menu music audio clip and a game over laser cannon effect.
 
 - The user can set the volume of the sound effects (lasergun, laser cannon) and the music (game music, menu music) using sliders. The user can also toggle on and off the game music in the game.
 
-**6. Responsive/Intuitive Input**
+**9. Responsive/Intuitive Input**
 
 - The game can be controlled with either a mouse or touch-screen tap gestures
 
-**7. Minigame Marketing**
+**10. Minigame Marketing**
 
 - The business goal for the mini game is to generate donations from subscribers and supporters of The Mater Foundation.
 
@@ -260,7 +334,8 @@ Game Mode:
 
 - All players have the option to select No, which will return them to the main menu where they can choose the difficulty level of their next game.
 
-<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 
 ### Future Features
 <span id="features-future"></span>
@@ -275,7 +350,8 @@ Game Mode:
 
 - I'd also like to add a feature where users could choose different backgrounds and aliens for their ambush. This might involve Javascript which sets the background image, and the images to be used for alien and plant div classes.
 
-<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 
 ## Technologies Used
 <span id="tech"></span>
@@ -285,6 +361,11 @@ Game Mode:
 - HTML
 - CSS
 - Javascript
+
+### Frameworks & Services
+
+- Bootstrap
+- Emailjs
 
 ### Project management
 
@@ -302,24 +383,9 @@ Game Mode:
 ## Testing
 <span id="testing"></span>
 
-### Code Validation
-<span id="code-validation"></span>
+You can view the testing done in the [test.md](https://github.com/DaithiShan/spaceambush/blob/master/testing.md) where I have written in-depth on the various tests I have performed.
 
-All code written has been thoroughly validated and passed through the following online validators:
-
-- HTML - All code was run through the [W3C HTML Validator](https://validator.w3.org/) to ensure it was valid code and no errors were made.
-
-- CSS - All styling was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to ensure it was valid and no errors were made.
-
-- JavaScript - All my script was run through the [JSHint](https://jshint.com/) validator and no errors were found.
-
-### Manual Testing
-<span id="manual-testing"></span>
-
-You can view the testing done in the [test.md](https://daithishan.github.io/milestoneproject1/) where I have written in-depth on the various tests I have performed.
-
-<div class="text-align:right"><a style="text-align:right" href="#top">Return to index </a></div>
-
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 ## Deployment
 <span id="deployment"></span>
@@ -328,10 +394,10 @@ This project was developed using GitPod, committed to Git and pushed to GitHub u
 
 ### Deploy this project from its GitHub repository
 
-To deploy this project to GitHub Pages from its [GitHub repository](https://github.com/DaithiShan/milestoneproject1), the following steps were taken:
+To deploy this project to GitHub Pages from its [GitHub repository](https://github.com/DaithiShan/spaceambush/), the following steps were taken:
 
 1. Log into GitHub.
-2. From the list of repositories, select **DaithiShan/milestoneproject1**
+2. From the list of repositories, select **DaithiShan/spaceambush/**
 3. From the menu items near the top of the page, select **Settings**.
 4. Scroll down to **GitHub Pages** section.
 5. Under **Source** click the dropdown menu labelled **None** and select **Master Branch**
@@ -342,7 +408,7 @@ To deploy this project to GitHub Pages from its [GitHub repository](https://gith
 
 To clone this project from GitHub
 
-1. Follow this link to the [Project GitHub repository](https://github.com/DaithiShan/milestoneproject1)
+1. Follow this link to the [Project GitHub repository](https://github.com/DaithiShan/spaceambush/)
 2. Under the repository name, click "Clone or download".
 3. In the Clone with HTTPS section, copy the clone URL for the repository.
 4. In your local IDE open Git Bash.
@@ -361,6 +427,9 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 > remove: Total 10 (delta 1), reused 10 (delta 1)
 > Unpacking objects: 100% (10/10), done.
 ```
+
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 
 ## Credits
 
@@ -387,7 +456,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ### Code Credits
 
-1. The HTML structure and JS for modal menus and landing pages was inspired by an incredible Code Institute student, and his own game based MS2 Project [Andy Osborne](https://github.com/Andy-Osborne/Dwarf-Match).
+1. The HTML structure and JS for modal menus to avoid load times was inspired by an incredible Code Institute student, and his own game based MS2 Project [Andy Osborne](https://github.com/Andy-Osborne/Dwarf-Match).
 
 2. The basic game functionality was inspired by this tutorial by Frank's Labratory [video](https://www.youtube.com/watch?v=RTb8icFiSfk).
 
@@ -395,11 +464,19 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 4. The randomized probability that alien ambushers would attack you if not clicked on quickly was inspired by this tutorial on Better Programming [video and article](https://betterprogramming.pub/building-a-whack-a-mole-game-with-rn-sprite-sheet-e8871ca594ce)
 
+5. The idea for integrating Emailjs came from the Code Institute's walkthrough-project on that service, and the specific code for the contact form set up came from Emailjs docs themselves.
+
+6. The inspiration for the entire project came from looking at other student projects, particularly that of Dovile Krasnickaite. Their project was similarly based on the Whack-A-Mole game and Frank's Labratory tutorials.
+
+![Dovile Krasnickaite - Whack-A-Monster](./assets/influences/whack-a-monster.png)
+
+Their project showed how modern design and music could revitalise a retro-arcade game.
+
 ### Acknowledgements
 
-A special thanks to:
+A very, very, very special thanks to:
 
-- My Code Institute Mentor Owonikoko Oluwaseun for her support and superb direction during the project.
+- My Code Institute Mentor Owonikoko Oluwaseun for her support and superb direction during the project. She helped me identify 2 very tricky bugs, and moved around her schedule to make time for me. I highly, highly rate her as a mentor. She's excellent!
 
 ### Learning Resources
 
