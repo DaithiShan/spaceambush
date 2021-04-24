@@ -2,7 +2,9 @@
 
 In order for Space Ambush to be a successful mini game, its code was tested extensively across browsers and different device sizes.
 
-## Table of Contents
+<span id="top"></span>
+
+## Index
 
 1. [**Code Validation**](#code-validation)
 
@@ -11,21 +13,27 @@ In order for Space Ambush to be a successful mini game, its code was tested exte
 3. [**Manual Testing**](#manual-testing)
     - [**Responsive Design Testing**](#responsive-design-testing)
         - [**Overview**](#overview)
-            - [**Landing Page**](#landing-page)
-            - [**Modals**](#modals)
+            - [**Game Main Menu**](#main-menu)
+            - [**Audio Menu**](#audio-menu)
+            - [**Game Over Menu**](#game-over-menu)
             - [**Game Area**](#game-area)
-                - [**Google Dev tools - Lighthouse Audit**](#google-dev-tools---lighthouse-audit)
+
+    - [**Functionality Testing**](#functionality-testing)
+        - [**Game Functionality Testing**](#game-functionality-testing)
+        - [**Ambush Functionality Testing**](#ambush-functionality)
+        - [**Scoring Functionality Testing**](#scoring-functionality)
+        - [**Game Over Functionality Testing**](#game-over-functionality)
+        - [**Audio-Testing**](#audio-testing)
+
+    
+    - [**Google Dev tools - Lighthouse Audit**](#google-dev-tools---lighthouse-audit)
                     - [**Desktop Audit Result**](#desktop-audit-result)
                     - [**Mobile Audit Result**](#mobile-audit-result)
 
-    - [**Functionality Testing**](#functionality-testing)
-        - [**Modal Testing Overview**](#overview)
-        - [**Individual Modal Testing**](#individual-modal-testing)
-        - [**Audio and Music Testing**](#audio-and-music-testing)
-        - [**Game Functionality Testing**](#game-functionality-testing)
     - [**Additional Testing**](#additional-testing)
 
 ## Code Validation
+<span id="code-validation"></span>
 
 All code written has been thoroughly validated and passed through the following online validators:
 
@@ -35,7 +43,11 @@ All code written has been thoroughly validated and passed through the following 
 
 - JavaScript - All my script was run through the [JSHint](https://jshint.com/) validator and any errors flagged were fixed.
 
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 ## Testing Against User Stories
+<span id="testing-against-user-stories"></span>
+
 
 Below I test each of the user stories listed in [README.md](https://github.com/DaithiShan/spaceambush/blob/master/README.md).
 
@@ -97,12 +109,16 @@ Below I test each of the user stories listed in [README.md](https://github.com/D
   - The main menu contains a contact form for players to leave feedback
   - The text element prompts bug reports and user suggestions specifically
 
+  <div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
+
 ## Manual Testing
+<span id="manual-testing"></span>
 
 I have detailed the manual testing undertaken during the development stage to try reduce any bugs, and make sure the game play delivers as intended.
 
 
 ### Responsive Design Testing
+<span id="responsive-design-testing"></span>
 
 All testing was performed using:
 
@@ -115,6 +131,7 @@ All testing was performed using:
 - Tablets - All emulated devices offered in Google Dev Tools as well as parents devices.
 
 #### Overview
+<span id="overview"></span>
 
 This game was intended to be responsive on all devices such as mobile phones, tablets, desktops.
 
@@ -125,6 +142,7 @@ This was particularly challenging given the irregular sizes of the game's main a
 I needed to use a blend of general and targeted css, as well as multiple media queries, to try and deliver the same experience.
 
 ##### Game Main Menu
+<span id="game-main-menu"></span>
 
   - Bug Identified - **Main Menu Positioning**
 
@@ -138,6 +156,7 @@ I needed to use a blend of general and targeted css, as well as multiple media q
 
 
 ##### Audio Menu
+<span id="audio-menu"></span>
 
 - Bug Identified - **Audio Menu Button Icons Not Centred on Mobile**
 
@@ -150,6 +169,7 @@ I needed to use a blend of general and targeted css, as well as multiple media q
   - This was one of those minor bugs that actually take a while to fix. I first tried adding text-center to the parent element (the buttons) and then tried adding center to the icon classes (recommended). Then I tried using min-width, and after that max-width. Eventually I changed the actual size of the element to 10px larger than original, and it fixed it!
 
 ##### Game Over Menu
+<span id="game-over-menu"></span>
 
   - Bug Identified - **Game Over Menu Responsiveness**
 
@@ -160,6 +180,7 @@ I needed to use a blend of general and targeted css, as well as multiple media q
    - The fix applied here was similar to how I improved responsiveness in other areas. Instead of using fixed values, I tested auto values for width and height using Google Chrome Dev Tools. The improvement was immediately evident.
 
 ##### Game Page
+<span id="game-page"></span>
 
 - Bug Identified - **Accidental Double Zoom on Game Area When Trying to Tap on Aliens**
 
@@ -175,13 +196,20 @@ I needed to use a blend of general and targeted css, as well as multiple media q
   }
   ```
 
-### Functionality Testing
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
-#### Game Functionality
+### Functionality Testing
+<span id="functionality-testing"></span>
+
+#### Game Functionality Testing
+<span id="game-functionality"></span>
 
 The game play is a combination of the most important features, and my priority was to make sure that it delivered an excellent experience regardless of device or browser.
 
 I identified the main bugs with the help of my friends, who used different tablet and mobile devices primarily, but I was able to test off a desktop computer.
+
+#### Ambush Functionality Testing
+<span id="ambush-functionality"></span>
 
 - Bug Discovered - **Aliens Freezing in Up position on Click/Tap**
 
@@ -192,6 +220,9 @@ I identified the main bugs with the help of my friends, who used different table
 - Fix Applied:
 
   - I added a simple CSS effect to my whackAlienOne and smackAlienTwo functions, which made sure that the aliens went back behind the plants after you tapped or clicked on them. This functionality runs in addition to the basic setTimeout for the Up position, as the aliens still need to pop in and out even if you completely ignore them.
+
+#### Scoring Functionality Testing
+<span id="scoring-functionality"></span>
 
 - Bug Discovered - **Cheat Scores by Furious Tapping/Clicking**
 
@@ -235,6 +266,9 @@ function whackAlienOne(e) {
 }
 ```
 
+#### Game Over Functionality Testing
+<span id="game-over-functionality"></span>
+
 - Bug Discovered - **Game Over Menu Called Twice**
 
   - This was the second most satisfying bug to squash. It took me 3 days to identify it, as I searched in the wrong area.
@@ -247,36 +281,34 @@ function whackAlienOne(e) {
 
   - I had two functions running to carry out identical tests. One was a setTimeout function that combined with an if statement to gauge when to call gameOver() and the other was the aforementioned setInterval function. I removed the setTimeout function, and this squashed the bug.
 
+### Audio Testing
+<span id="audio-testing"></span>
 
-### Audio and Music Testing
+1. **Click Sound Effect Function**
 
-1. Audio & Music
+    - I tested that the click sound is called whenever the user selects a menu option, and whenever he shoots an alien. I've also tested that it calls whenever an alien attacks.
 
-    1. **Click Sound Effect Function**
+    - I've had to cut the sound a few times to make sure that it can be called at very short intervals.
 
-        - I tested that the click sound is called whenever the user selects a menu option, and whenever he shoots an alien. I've also tested that it calls whenever an alien attacks.
+    - I tested that the function does not play when the volume has been muted and that it plays at corresponding level that the Sound Effect slider is set at.
 
-        - I've had to cut the sound a few times to make sure that it can be called at very short intervals.
+    - No bugs were discovered with this function.
 
-        - I tested that the function does not play when the volume has been muted and that it plays at corresponding level that the Sound Effect slider is set at.
+2. **Game Over Sound Function**
 
-        - No bugs were discovered with this function.
+    - I tested that the function gets called once the level has been completed and gameOverLaunch() has been launched.
 
-    2. **Game Over Sound Function**
-
-        - I tested that the function gets called once the level has been completed and gameOverLaunch() has been launched.
-
-        - No bugs were discovered with this function.
+    - No bugs were discovered with this function.
     
-    3. **Game Music**
+3. **Game Music**
 
-        - I tested that the function gets called at the start of a game and stops playing the moment the user exits the game.
+    - I tested that the function gets called at the start of a game and stops playing the moment the user exits the game.
 
-        - The original audio for the game music was quite long, and so it had a build for the first 30 seconds.
+    - The original audio for the game music was quite long, and so it had a build for the first 30 seconds.
 
-        - My solution was to edit out a clip of 30 seconds for game play.
+    - My solution was to edit out a clip of 30 seconds for game play.
 
-        - But I kept the longer music clip as test audio for when the user adjusts their audio. Just in case they spend longer than 30 seconds on the menu, so that it's not the same annoying clip. 
+    - I kept a slightly longer music clip as test audio for when the user adjusts their audio. Just in case they spend longer than 30 seconds on the menu, so that their loop isn't too short. 
 
         - Bug Discovered:
 
@@ -285,15 +317,33 @@ function whackAlienOne(e) {
         - Fix Applied
 
             -  I created a function called stopMenuMusic() to handle this bug.
+        
+        - Bug Discovered:
+
+            - The longer clip was too long, and affected the effective cache policy for desktop.
+        
+        - Fix Applied
+
+            -  I further shortened the clip to 1.37 seconds.
+
+<div align="right"><a style="text-align:right" href="#top">Return to index </a></div>
 
 #### Google Dev tools - Lighthouse Audit
+<span id="google-dev-tools--lighthouse-audit"></span>
 
 The below screenshots have been taken use the Google Chrome Dev Tools Lighthouse Audit functionality 
 
-##### Desktop Audit Result
+#### Desktop Audit Result
+<span id="desktop-audit-result"></span>
 
-##### Mobile Audit Result
+![Google Chrome Light House Audit - Desktop Result](./assets/images/screenshots/lighthouse-desktop.png)
+
+#### Mobile Audit Result
+<span id="mobile-audit-result"></span>
+
+![Google Chrome Light House Audit - Desktop Result](./assets/images/screenshots/lighthouse-mobile.png)
 
 ### Additional Testing
+<span id="additional-testing"></span>
 
-I asked my friends and family to play the game on their various devices and...
+I asked all my friends and family to play on their devices. This was extremely helpful in supplementing my own testing!
