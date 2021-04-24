@@ -235,11 +235,11 @@ The Space Ambush color palette listed above is derived from digital assets desig
 
 - Alien Planet
 
-![Alien Planet](assets/images/planet/planet.jpg "Alien Planet setting for Space Ambush")
+![Alien Planet](assets/images/game-assets/planet.jpg "Alien Planet setting for Space Ambush")
 
 - Alien Bush
 
-![Alien Bush](assets/images/game-assets/plant.png "Alien Bush asset for Space Ambush")
+![Alien Bush](assets/images/game-assets/plant.svg "Alien Bush asset for Space Ambush")
 
 - Alien Monster One
 
@@ -482,10 +482,10 @@ A very, very, very special thanks to:
 
 - Throughout my journey of creating this site, I was continuously learning and improving my knowledge and I used the following resources to achieve this:
 
-- [Code Institute](https://codeinstitute.net/).
+- [Code Institute](https://codeinstitute.net/)
 
-- [Udemy](https://www.udemy.com/course/understand-javascript/).
+- [Udemy](https://www.udemy.com/course/understand-javascript/)
 
-- [YouTube](https://www.youtube.com/watch?v=RTb8icFiSfk.
+- [YouTube](https://www.youtube.com/watch?v=RTb8icFiSfk)
 
-- [w3schools](https://www.w3schools.com/).
+- [w3schools](https://www.w3schools.com/)
