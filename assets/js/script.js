@@ -164,7 +164,7 @@ function ambush() {
 
     alienOnes.forEach(alienOne => alienOne.isWhacked = false);
     alienTwos.forEach(alienTwo => alienTwo.isWhacked = false);
-    const popOutTime = randomTime(1900, 1500);
+    const popOutTime = randomTime(1700, 1400);
     const plant = pickRandomPlant(plants);
     const popOutTimeTwo = randomTime(1700, 1300);
     const plantTwo = pickRandomPlant(plants);
